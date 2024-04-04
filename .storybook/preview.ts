@@ -2,7 +2,7 @@ import { Preview, setup } from "@storybook/vue3";
 
 import { Button } from "@progress/kendo-vue-buttons";
 
-import '@progress/kendo-theme-default/dist/all.css';
+import '@progress/kendo-theme-material/dist/all.css';
 
 export const preview: Preview = {
   parameters: {
