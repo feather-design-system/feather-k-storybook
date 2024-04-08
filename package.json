@@ -15,6 +15,7 @@
     "@progress/kendo-svg-icons": "^2.3.0",
     "@progress/kendo-theme-material": "^7.2.1",
     "@progress/kendo-vue-buttons": "^4.3.2",
+    "@progress/kendo-vue-inputs": "^4.3.2",
     "vue": "^3.4.21"
   },
   "devDependencies": {

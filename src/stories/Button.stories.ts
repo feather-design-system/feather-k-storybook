@@ -3,7 +3,7 @@ import { Button } from "@progress/kendo-vue-buttons";
 import { folderIcon, calendarIcon } from "@progress/kendo-svg-icons";
 
 const meta: Meta<typeof Button> = {
-  title: "KendoFeather/Button",
+  title: "Feather K/Button/Button",
   component: Button,
   tags: ["autodocs"],
   argTypes: {
