@@ -3,16 +3,20 @@ import { Button } from "@progress/kendo-vue-buttons";
 import { folderIcon, calendarIcon } from "@progress/kendo-svg-icons";
 
 const meta: Meta<typeof Button> = {
-  title: "Feather K/Button/Button",
+  title: "Feather K/Buttons/Button",
   component: Button,
   tags: ["autodocs"],
   argTypes: {
     themeColor: { control: "select", options: ["primary", "secondary"] },
     disabled: { control: "boolean" },
+    fillMode: { control: "select", options: ["solid", "outline", "flat"] },
+    rounded: { control: "select", options: ["full", "small", "medium", "large"] },
   },
   args: {
     themeColor: "primary",
     disabled: false,
+    fillMode: "solid",
+    rounded: "medium",
   },
 };
 
