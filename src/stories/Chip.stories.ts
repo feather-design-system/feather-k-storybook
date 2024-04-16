@@ -5,6 +5,19 @@ const meta: Meta<typeof Chip> = {
   title: "Feather K/Buttons/Chip",
   component: Chip,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: `<p>Chip is a component that allows users to enter information, make selections, filter content, or trigger actions.</p>` +
+        `<h3>Links</h3>` + 
+         `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/ChipProps/" target="_blank">Chip API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/chip/" target="_blank">Chip Documentation</a></li>
+          </ul>
+        `,        
+      },
+    },    
+  },
 };
 
 export default meta;

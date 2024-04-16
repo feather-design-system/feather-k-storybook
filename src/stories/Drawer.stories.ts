@@ -28,6 +28,29 @@ const meta: Meta<typeof Drawer> = {
   title: "Feather K/Layout/Drawer",
   component: Drawer,
   tags: ["autodocs"],
+	parameters: {
+		docs: {
+			description: {
+				component:
+					`<p>Drawer is a container for content that can be hidden or shown by the user.</p>` +
+					`<h3>Links</h3>` +
+					`<ul>
+						<li><a href="https://www.telerik.com/kendo-vue-ui/components/layout/api/DrawerProps/" target="_blank">Drawer API</a></li>
+						<li><a href="https://www.telerik.com/kendo-vue-ui/components/layout/drawer/" target="_blank">Drawer Documentation</a></li>
+						<li><a href="https://www.telerik.com/kendo-vue-ui/components/layout/api/DrawerItemProps/" target="_blank">Drawer Items API</a></li>
+					</ul>` +
+					`<h3>Notes on Content of Drawer</h3>` + 
+					`<ul>
+						<li>Drawer content does NOT employ slots</li>
+						<li>You cannot just pass any child node (ex. TabList) within a slot and expect it to be displayed within the drawer</li>
+						<li>You must use lists of DrawerContent type or DrawerItem type and pass as prop to Drawer</li>
+						<li>Do not see a way to mimic Feather Drawer behavior with Tabs in its current state.</li>
+						<li>Do not see a way to mimic Feather Drawer behavior with Tabs in its current state.</li>
+					</ul>
+				`,
+			},
+		},
+	},
 };
 
 export default meta;
@@ -42,9 +65,9 @@ export const Default: Story = {
 		items: { control: "object" },
   },
   args: {
-    expanded: true,
-    animation: false,
-		position: "start",
+    expanded: false,
+    animation: true,
+		position: "end",
 		mode: "overlay",
 		items: drawerItems,
   },
@@ -63,23 +86,9 @@ export const Default: Story = {
 				:items="args.items"
 				>
 					<div>
-					<DrawerContent>
-						<h2>Drawer Content</h2>
-						<p>Drawer content does not appear within drawer???</p>
-					</DrawerContent>
-					<DrawerItem :text="'DrawerItem not within drawer???'">
-					</DrawerItem>
-					</div>
-					<div style="background-color: #ccc; padding: 2em;">
-					<hr />
-					<h2>Notes on Content of Drawer</h2>
-					<ul>
-						<li>Drawer content does NOT employ slots</li>
-						<li>You cannot just pass any child node (ex. TabList) within a slot and expect it to be displayed within the drawer</li>
-						<li>You must use lists of DrawerContent type or DrawerItem type and pass as prop to Drawer</li>
-						<li>Do not see a way to mimic Feather Drawer behavior with Tabs in its current state.</li>
-						<li>Do not see a way to mimic Feather Drawer behavior with Tabs in its current state.</li>
-					</ul>
+						<h2>App Content</h2>
+						<p>This is some content for some app.  The drawer will display when "expanded" is set to true.</p>
+						<p>There is an "overlay" mode which darkens the App Content behind the Drawer and a "push" mode which moves the content to make room for the Drawer.</p>
 					</div>
 				</Drawer>
 			</div>

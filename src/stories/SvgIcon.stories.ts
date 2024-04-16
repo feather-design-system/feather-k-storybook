@@ -6,6 +6,20 @@ const meta: Meta<typeof SvgIcon> = {
   title: "Feather K/Icons/SvgIcon",
   component: SvgIcon,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          `<p>SvgIcon is a component that displays an SVG icon.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/icons/api/SvgIconProps/" target="_blank">SvgIcon API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/icons/svgicon/" target="_blank">SvgIcon Documentation</a></li>
+          </ul>
+        `,
+      },
+    },
+  },
 };
 
 export default meta;

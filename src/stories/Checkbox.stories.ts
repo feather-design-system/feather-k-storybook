@@ -7,6 +7,19 @@ const meta: Meta<typeof Checkbox> = {
   tags: ["autodocs"],
   argTypes: {},
   args: {},
+  parameters: {
+    docs: {
+      description: {
+        component: `<p>Checkbox is a component that allows the user to select a boolean value.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/CheckboxProps/" target="_blank">Checkbox API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/checkbox/" target="_blank">Checkbox Documentation</a></li>
+          </ul>
+        `,
+      },
+    },
+  },
 };
 
 export default meta;
@@ -27,14 +40,11 @@ export const Default: Story = {
       return { args };
     },
     template: `
-      <Checkbox v-bind="args" />
+      <Checkbox 
+      :disabled="args.disabled" 
+      :label="args.label"
+      :value="args.value" />
     `,
-    // template: `
-    //   <Checkbox 
-    //   :disabled="args.disabled" 
-    //   :label="args.label" 
-    //   :value="args.value" />
-    // `,
   }),
 };
 export const DefaultChecked: Story = {
@@ -88,19 +98,41 @@ export const DefaultChecked: Story = {
       </p>
     `,
   }),
-
 };
 
 export const CheckboxGroup: Story = {
   args: {},
-  render: (args) =>  ({
+  render: (args) => ({
+    components: {
+      Checkbox,
+    },
+    data() {
+      return {
+        options: [
+          { id: 1, label: "Option 1", text: "Option 1" },
+          { id: 2, label: "Option 2", text: "Option 2" },
+          { id: 3, label: "Option 3", text: "Option 3" },
+        ],
+      };
+    },
     setup() {
       return { args };
     },
     template: `
-    <a href="https://feather.nanthealth.com/Components/Checkbox/#checkboxgroup">
-      No Kendo UI equivalent to Feather DS CheckboxGroup
-    </a>
+    <div>
+      <a href="https://feather.nanthealth.com/Components/Checkbox/#checkboxgroup">
+        No Kendo UI equivalent to Feather DS CheckboxGroup.
+      </a>
+      <p>Below is just a rendering of multiple checkboxes.</p>
+      <p>Forced inline style for spacing (i.e. style="margin-right: 1rem;") 😔</p>
+      <Checkbox 
+        style="margin-right: 1rem;"
+        v-for="option in options" 
+        :key="option.id" 
+        :label="option.label" 
+        v-model="option.value"
+        />
+    </div>
     `,
   }),
 };

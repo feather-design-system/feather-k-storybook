@@ -5,6 +5,20 @@ const meta: Meta<typeof FontIcon> = {
   title: "Feather K/Icons/FontIcon",
   component: FontIcon,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          `<p>FontIcon is a component that displays a Font Awesome icon.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/icons/api/FontIconProps/" target="_blank">FontIcon API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/icons/icon/" target="_blank">FontIcon Documentation</a></li>
+          </ul>
+        `,
+      },
+    },
+  },
 };
 
 export default meta;

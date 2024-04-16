@@ -29,6 +29,20 @@ const meta: Meta<typeof MultiSelect> = {
   title: "Feather K/DropDowns/MultiSelect",
   component: MultiSelect,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          `<p>MultiSelect is a form component that allows multiple selections form a provided list of options.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/api/MultiSelectProps/" target="_blank">MultiSelect API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/multiselect/" target="_blank">MultiSelect Documentation</a></li>
+          </ul>
+        `,
+      },
+    },
+  },
 };
 
 export default meta;

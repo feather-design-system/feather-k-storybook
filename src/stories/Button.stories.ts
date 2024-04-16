@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/vue3";
+import type { ArgTypes, Args, Meta, StoryObj } from "@storybook/vue3";
 import { Button } from "@progress/kendo-vue-buttons";
 import { folderIcon, calendarIcon } from "@progress/kendo-svg-icons";
 
@@ -6,43 +6,93 @@ const meta: Meta<typeof Button> = {
   title: "Feather K/Buttons/Button",
   component: Button,
   tags: ["autodocs"],
-  argTypes: {
-    themeColor: { control: "select", options: ["primary", "secondary"] },
-    disabled: { control: "boolean" },
-    fillMode: { control: "select", options: ["solid", "outline", "flat"] },
-    rounded: { control: "select", options: ["full", "small", "medium", "large"] },
-  },
-  args: {
-    themeColor: "primary",
-    disabled: false,
-    fillMode: "solid",
-    rounded: "medium",
+  parameters: {
+    docs: {
+      description: {
+        component:
+          `<p>Button is a component that triggers an action when clicked.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/ButtonProps/" target="_blank">Button API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/button/" target="_blank">Button Documentation</a></li>
+          </ul>
+        `,
+      },
+    },
+  
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// ArgTypes and Args are defined as partials to allow for merging
+const ArgTypesButtonText: Partial<ArgTypes> = {
+  _buttonText: { control: "text" },
+};
+const ArgsButtonText: Partial<Args> = { _buttonText: "Button" };
+
+const ArgTypesDefault: Partial<ArgTypes> = {
+  fillMode: {
+    control: "select",
+    options: ["primary", "secondary", "text"],
+    mapping: { "primary": "solid", "secondary": "outline", "text": "flat" },
+  },
+  rounded: {
+    control: "select",
+    options: ["full", "small", "medium", "large"],
+  },
+  disabled: { control: "boolean" },
+};
+const ArgsDefault: Partial<Args> = {
+  fillMode: "primary",
+  rounded: "medium",
+  disabled: false,
+};
+const ArgTypesIconOnly: Partial<ArgTypes> = {
+  svgIcon: {
+    control: "select",
+    options: ["folder", "calendar"],
+    mapping: { folder: folderIcon, calendar: calendarIcon },
+  },
+};
+const ArgsIconOnly: Partial<Args> = { svgIcon: "folder" };
+
+// The Default, IconOnly, and IconAndLabel stories are defined as separate Story objects
 export const Default: Story = {
+  argTypes: {
+    ...ArgTypesButtonText,
+    ...ArgTypesDefault,
+  },
+  args: {
+    ...ArgsButtonText,
+    ...ArgsDefault,
+  },
   render: (args) => ({
     setup() {
       return { args };
     },
     template: `
-    <Button v-bind="args">Browse</Button>
+    <Button 
+      themeColor="primary"
+      :disabled="args.disabled" 
+      :fillMode="args.fillMode"
+      :rounded="args.rounded"
+    >
+      {{args._buttonText}}
+    </Button>
     `,
   }),
 };
 
-export const WithIcon: Story = {
+export const IconOnly: Story = {
   argTypes: {
-    // @ts-ignore slots
-    buttonText: { control: "text"},
+    ...ArgTypesDefault,
+    ...ArgTypesIconOnly,
   },
   args: {
-    svgIcon: folderIcon,
-    // @ts-ignore slots
-    buttonText: "Button",
+    ...ArgsDefault,
+    ...ArgsIconOnly,
   },
   render: (args) => ({
     data() {
@@ -55,14 +105,27 @@ export const WithIcon: Story = {
       return { args };
     },
     template: `
-    <Button v-bind="args">{{args.buttonText}}</Button>
+    <Button 
+      themeColor="primary" 
+      :svgIcon="args.svgIcon" 
+      :fillMode="args.fillMode"
+      :rounded="args.rounded"
+      :disabled="args.disabled"
+    />
     `,
   }),
 };
-export const IconOnly: Story = {
-  argTypes: {},
+
+export const IconAndLabel: Story = {
+  argTypes: {
+    ...ArgTypesButtonText,
+    ...ArgTypesDefault,
+    ...ArgTypesIconOnly,
+  },
   args: {
-    svgIcon: folderIcon,
+    ...ArgsButtonText,
+    ...ArgsDefault,
+    ...ArgsIconOnly,
   },
   render: (args) => ({
     data() {
@@ -75,7 +138,15 @@ export const IconOnly: Story = {
       return { args };
     },
     template: `
-    <Button v-bind="args"></Button>
+    <Button 
+      themeColor="primary" 
+      :svgIcon="args.svgIcon" 
+      :fillMode="args.fillMode"
+      :rounded="args.rounded"
+      :disabled="args.disabled"
+      >
+        {{args._buttonText}}
+      </Button>
     `,
   }),
 };

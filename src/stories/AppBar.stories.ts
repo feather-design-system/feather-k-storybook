@@ -13,6 +13,21 @@ const meta: Meta<typeof AppBar> = {
   title: "Feather K/Layout/AppBar",
   component: AppBar,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          `<p>AppBar provides information and actions related to the current application screen.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/layout/api/AppBarProps/" target="_blank">AppBar API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/layout/appbar/" target="_blank">AppBar Documentation</a></li>
+          </ul>
+        `,
+      },
+    },
+  
+  },
 };
 
 export default meta;
@@ -43,26 +58,28 @@ export const Default: Story = {
       return { args };
     },
     template: ` 
-    <AppBar 
-      :position="args.position" 
-      :themeColor="args.themeColor" 
-      :positionMode="args.positionMode"
-      >
-      <AppBarSection>
-        <Button :svgIcon="menuIcon" :fillMode="'flat'" />
-      </AppBarSection>
-      <AppBarSpacer :width="'1em'"/>
-      <AppBarSection>
-        <h1>Feather K App</h1>
-      </AppBarSection>
-      <AppBarSection>
-        <ul>
-          <li><span>Home</span></li>
-          <li><span>Products</span></li>
-          <li><span>About</span></li>
-        </ul>
-      </AppBarSection>
-    </AppBar>
+    <div>
+      <AppBar 
+        :position="args.position" 
+        :themeColor="args.themeColor" 
+        :positionMode="args.positionMode"
+        >
+        <AppBarSection>
+          <Button :svgIcon="menuIcon" :fillMode="'flat'" />
+        </AppBarSection>
+        <AppBarSpacer :width="'1em'"/>
+        <AppBarSection>
+          <h1>Feather K App</h1>
+        </AppBarSection>
+        <AppBarSection>
+          <ul class="flex-list">
+            <li class="flex-list-item"><span>Home</span></li>
+            <li class="flex-list-item"><span>Products</span></li>
+            <li class="flex-list-item"><span>About</span></li>
+          </ul>
+        </AppBarSection>
+      </AppBar>
+    </div>
     `,
   }),
 };
