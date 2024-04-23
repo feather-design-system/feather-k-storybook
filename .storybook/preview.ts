@@ -14,6 +14,7 @@ import {
 import {
   Checkbox,
   ColorGradient,
+  ColorPalette,
   MaskedTextBox,
   NumericTextBox,
   RadioButton,
@@ -79,6 +80,7 @@ setup(async (app) => {
   app.component("Chip", Chip);
   app.component("ChipList", ChipList);
   app.component("ColorGradient", ColorGradient);
+  app.component("ColorPalette", ColorPalette);
   app.component("ComboBox", ComboBox);
   app.component("DatePicker", DatePicker);
   app.component("Drawer", Drawer);
