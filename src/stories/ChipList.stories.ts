@@ -2,11 +2,24 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { ChipList } from "@progress/kendo-vue-buttons";
 import { mapMarkerTargetIcon } from "@progress/kendo-svg-icons";
 
-
 const meta: Meta<typeof ChipList> = {
   title: "Feather K/Buttons/ChipList",
   component: ChipList,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          `<p>ChipList is a component that displays a list of chips.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/ChipListProps/" target="_blank">ChipList API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/chiplist/" target="_blank">ChipList Documentation</a></li>
+          </ul>
+        `,
+      },
+    },
+  },
 };
 
 export default meta;
@@ -23,7 +36,7 @@ const cities = [
     text: "Boston",
     value: "Boston",
     disabled: false,
-    icon: mapMarkerTargetIcon,
+    icon: mapMarkerTargetIcon.name,
   },
   {
     text: "Dallas",
@@ -34,7 +47,7 @@ const cities = [
   {
     text: "Raleigh",
     value: "Raleigh",
-    disabled: false,
+    disabled: true,
     icon: mapMarkerTargetIcon.name,
   },
   {

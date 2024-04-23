@@ -1,5 +1,5 @@
-import { Meta, StoryObj } from "@storybook/vue3";
-import { DropDownList } from "@progress/kendo-vue-dropdowns";
+import{ Meta, StoryObj } from "@storybook/vue3";
+import{ ComboBox } from "@progress/kendo-vue-dropdowns";
 
 const items = [
     "Basketball",
@@ -8,19 +8,19 @@ const items = [
     "Volleyball",
 ];
 
-const meta: Meta<typeof DropDownList> = {
-  title: "Feather K/DropDowns/DropDownList",
-  component: DropDownList,
+const meta: Meta<typeof ComboBox> = {
+  title: "Feather K/DropDowns/ComboBox",
+  component: ComboBox,
   tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
         component:
-          `<p>DropDownList is a form component that provides a list of options.</p>` +
+          `<p>ComboBox is a form component that provides a list of options.</p>` +
           `<h3>Links</h3>` +
           `<ul>
-            <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/api/DropDownListProps/" target="_blank">DropDownList API</a></li>
-            <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/dropdownlist/" target="_blank">DropDownList Documentation</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/api/ComboBoxProps/" target="_blank">ComboBox API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/combobox/" target="_blank">ComboBox Documentation</a></li>
           </ul>
         `,
       },
@@ -38,7 +38,6 @@ export const Default: Story = {
     fillMode: { control: "select", options: ["solid", "outline"] },
     rounded: { control: "select", options: ["full", "small", "medium", "large"] },
     size: { control: "select", options: ["small", "medium", "large"] },
-    style: { control: "object" },
   },
   args: {
     label: "Favorite Sport",
@@ -46,6 +45,5 @@ export const Default: Story = {
     fillMode: "outline",
     rounded: "medium",
     size: "medium",
-    style: { width: "15em" },
   },
 };

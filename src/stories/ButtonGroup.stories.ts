@@ -11,6 +11,19 @@ const meta: Meta<typeof ButtonGroup> = {
   args: {
     disabled: false,
   },
+  parameters: {
+    docs: {
+      description: {
+        component: `<p>ButtonGroup is a container for buttons that can be grouped together.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/ButtonGroupProps/" target="_blank">ButtonGroup API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/buttongroup/" target="_blank">ButtonGroup Documentation</a></li>
+          </ul>
+        `,
+      },
+    },
+  },
 };
 
 export default meta;

@@ -5,6 +5,21 @@ const meta: Meta<typeof TextBox> = {
   title: "Feather K/Input/TextBox",
   component: TextBox,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          `<p>TextBox is a component that allows the user to enter text.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/TextBoxProps/" target="_blank">TextBox API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/textbox/" target="_blank">TextBox Documentation</a></li>
+          </ul>
+        `,
+      },
+    },
+  
+  },
 };
 
 export default meta;

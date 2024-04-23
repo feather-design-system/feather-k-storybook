@@ -6,6 +6,19 @@ const meta: Meta<typeof AutoComplete> = {
   title: "Feather K/DropDowns/Autocomplete",
   component: AutoComplete,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: `<p>AutoComplete is a form component that provides suggestions depending on the typed text.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/api/AutoCompleteProps/" target="_blank">AutoComplete API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/autocomplete/" target="_blank">AutoComplete Documentation</a></li>
+          </ul>
+        `,
+      },
+    },
+  },
   argTypes: {
     placeholder: { control: "text" },
   },

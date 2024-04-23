@@ -20,6 +20,21 @@ const meta: Meta<typeof RadioGroup> = {
   title: "Feather K/Input/RadioGroup",
   component: RadioGroup,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          `<p>RadioGroup is a component that allows the user to select a single value from a predefined set of options.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/RadioGroupProps/" target="_blank">RadioGroup API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/radiogroup/" target="_blank">RadioGroup Documentation</a></li>
+          </ul>
+        `,
+      },
+    },
+  
+  },
 };
 
 export default meta;

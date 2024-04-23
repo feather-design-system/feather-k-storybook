@@ -7,7 +7,7 @@ body {
     margin: 0;
   }
   
-  ul {
+  ul.flex-list {
     font-size: 14px;
     list-style-type: none;
     padding: 0;
@@ -15,7 +15,7 @@ body {
     display: flex;
   }
   
-  li {
+  li.flex-list-item {
     margin: 0 10px;
   }
   
