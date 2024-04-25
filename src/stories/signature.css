@@ -1,0 +1,19 @@
+.storybook-demo-signature-wrapper {
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: end; */
+  gap: 2rem;
+  .storybook-demo-signature {
+    width: 50vw;
+    height: 20vh;
+    border: 1px solid #000;
+  }
+  .storybook-demo-textarea {
+    width: 50vw;
+    height: auto;
+  }
+}

@@ -1,0 +1,43 @@
+/* FOCUS v. FOCUS-VISIBLE */
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible#focus_vs_focus-visible */
+
+/* 
+  HMM: Brian P. - What should focus style be? 
+  */
+.k-button.k-button-solid-primary:focus,
+.k-button:focus.k-button-solid-base,
+.k-checkbox-wrap .k-checkbox:checked:focus,
+.k-radio:checked:focus,
+button.k-button.k-button-flat:focus,
+.k-button.k-button-outline.k-button-outline-primary:focus {
+  box-shadow:
+    0px 0px 0px 0px transparent;
+}
+
+/* 
+  HMM: Brian P. - What should focus visible style be? 
+  */
+.k-button.k-button-solid-primary:focus-visible,
+.k-button:focus-visible.k-button-solid-base,
+.k-checkbox-wrap .k-checkbox:checked:focus-visible,
+.k-radio:checked:focus-visible,
+button.k-button.k-button-flat:focus-visible,
+.k-button.k-button-outline.k-button-outline-primary:focus-visible {
+  outline: 2px solid rgba(20, 20, 20, 0.4);
+}
+
+/* SLIDER, RANGESLIDER */
+.k-slider-track {
+  /* 
+  HMM: Brian P. - Should we give a visual hint to the track, without ticks? 
+  */
+  outline: 1px solid rgba(10, 10, 10, 0.15);
+}
+/* "There's no ticks in baseball" */
+.k-tick.k-tick-large.k-tick-horizontal,
+.k-tick.k-tick-large.k-tick-vertical {
+  visibility: hidden;
+  .k-label {
+    visibility: visible;
+  }
+}

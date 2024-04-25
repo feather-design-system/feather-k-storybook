@@ -32,10 +32,16 @@ export const Default: Story = {
     value: { control: "select", options: [true, false, null] },
   },
   args: {
-    disabled: false,
     label: "Self-Employed?",
+    value: true,
+    disabled: false,
   },
   render: (args) => ({
+    methods: {
+      handleChange(e:any) {
+        console.log(e);
+      },
+    },
     setup() {
       return { args };
     },
