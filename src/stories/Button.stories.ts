@@ -35,8 +35,8 @@ const ArgsButtonText: Partial<Args> = { _buttonText: "Button" };
 const ArgTypesDefault: Partial<ArgTypes> = {
   fillMode: {
     control: "select",
-    options: ["primary", "secondary", "text"],
-    mapping: { "primary": "solid", "secondary": "outline", "text": "flat" },
+    options: ["solid (primary)", "outline (secondary)", "flat (text)"],
+    mapping: { "solid (primary)": "solid", "outline (secondary)": "outline", "flat (text)": "flat" },
   },
   rounded: {
     control: "select",
@@ -45,7 +45,7 @@ const ArgTypesDefault: Partial<ArgTypes> = {
   disabled: { control: "boolean" },
 };
 const ArgsDefault: Partial<Args> = {
-  fillMode: "primary",
+  fillMode: "solid (primary)",
   rounded: "medium",
   disabled: false,
 };

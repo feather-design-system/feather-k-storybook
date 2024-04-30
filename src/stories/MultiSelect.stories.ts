@@ -52,7 +52,7 @@ export const Default: Story = {
   argTypes: {
     // label: { control: 'text' },
     dataItems: { control: "object" },
-    valueField: { control: "value" },
+    valueField: { control: "object" },
     textField: { control: "text" },
     disabled: { control: "boolean" },
     filterable: { control: "boolean" },

@@ -15,29 +15,69 @@ import Accessibility from "./assets/accessibility.png";
 import Theming from "./assets/theming.png";
 import AddonLibrary from "./assets/addon-library.png";
 
-export const RightArrow = () => <svg 
-    viewBox="0 0 14 14" 
-    width="8px" 
-    height="14px" 
-    style={{ 
-      marginLeft: '4px',
-      display: 'inline-block',
-      shapeRendering: 'inherit',
-      verticalAlign: 'middle',
-      fill: 'currentColor',
-      'path fill': 'currentColor'
+export const RightArrow = () => (
+  <svg
+    viewBox="0 0 14 14"
+    width="8px"
+    height="14px"
+    style={{
+      marginLeft: "4px",
+      display: "inline-block",
+      shapeRendering: "inherit",
+      verticalAlign: "middle",
+      fill: "currentColor",
+      "path fill": "currentColor",
     }}
->
-  <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
-</svg>
+  >
+    <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
+  </svg>
+);
 
 <Meta title="Configure your project" />
+{/* <Meta title="Feather K Storybook" /> */}
 
 <div className="sb-container">
+  <div className='sb-section-title'>
+      # Introducing Feather K
+
+      Feather K is a design system that helps you build high-quality, consistent user interfaces.
+      It's a collection of reusable components, guided by clear standards, that can be assembled
+      together to build any number of applications. Feather K is built with Kendo for Vue and is
+      designed to be easy to use and customize.
+
+  </div>
+
+<div className="sb-container">
+  <div className="sb-section">
+    <div className="sb-section-item">
+      <h4 className="sb-section-item-heading">Collaborate</h4>
+      <p className="sb-section-item-paragraph">
+        With Storybook, Engineering, UX and Design teams can work from a
+        consistent set of components.
+      </p>
+    </div>
+    <div className="sb-section-item">
+      <h4 className="sb-section-item-heading">Collaborate</h4>
+      <p className="sb-section-item-paragraph">
+        With Storybook, Engineering, UX and Design teams can work from a
+        consistent set of components.
+      </p>
+    </div>
+    <div className="sb-section-item">
+      <h4 className="sb-section-item-heading">Collaborate</h4>
+      <p className="sb-section-item-paragraph">
+        With Storybook, Engineering, UX and Design teams can work from a
+        consistent set of components.
+      </p>
+    </div>
+  </div>
+</div>
+
   <div className='sb-section-title'>
     # Configure your project
 
     Because Storybook works separately from your app, you'll need to configure it for your specific stack and setup. Below, explore guides for configuring Storybook with popular frameworks and tools. If you get stuck, learn how you can ask for help from our community.
+
   </div>
   <div className="sb-section">
     <div className="sb-section-item">
@@ -84,6 +124,7 @@ export const RightArrow = () => <svg
     # Do more with Storybook
 
     Now that you know the basics, let's explore other parts of Storybook that will improve your experience. This list is just to get you started. You can customise Storybook in many ways to fit your needs.
+
   </div>
 
   <div className="sb-section">
@@ -203,6 +244,7 @@ export const RightArrow = () => <svg
           target="_blank"
         >Discover tutorials<RightArrow /></a>
     </div>
+
 </div>
 
 <style>

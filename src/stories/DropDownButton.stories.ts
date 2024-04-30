@@ -36,7 +36,7 @@ export const Default: Story = {
       options: [undefined, "primary", "secondary"],
     },
     disabled: { control: "boolean" },
-    items: { control: "array" },
+    items: { control: "object" },
     svgIcon: {
       control: "select",
       options: [undefined, "gear", "globeLink"],

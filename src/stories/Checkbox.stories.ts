@@ -5,8 +5,6 @@ const meta: Meta<typeof Checkbox> = {
   title: "Feather K/Input/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
-  argTypes: {},
-  args: {},
   parameters: {
     docs: {
       description: {
@@ -15,6 +13,11 @@ const meta: Meta<typeof Checkbox> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/CheckboxProps/" target="_blank">Checkbox API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/checkbox/" target="_blank">Checkbox Documentation</a></li>
+          </ul>` + 
+          `<h3>Notes on Checkbox</h3>` +
+          `<ul>
+            <li>There is a bug with labelPlacement="before".  Punctuation pushed to beginning of label.  Very odd.</li>
+            <li>This has been reproduced outside of Storybook.  It is a 🪳 in the Kendo UI Vue Checkbox component.</li>
           </ul>
         `,
       },
@@ -27,13 +30,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   argTypes: {
-    disabled: { control: "boolean" },
     label: { control: "text" },
-    value: { control: "select", options: [true, false, null] },
+    labelPlacement: { control: "select", options: ["before", "after"] },
+    disabled: { control: "boolean" },
+    // value: { control: "select", options: [true, false, null] },
   },
   args: {
     label: "Self-Employed?",
-    value: true,
+    labelPlacement: "after",
     disabled: false,
   },
   render: (args) => ({
@@ -47,9 +51,10 @@ export const Default: Story = {
     },
     template: `
       <Checkbox 
-      :disabled="args.disabled" 
-      :label="args.label"
-      :value="args.value" />
+        :labelPlacement="args.labelPlacement"
+        :label="args.label"
+        :disabled="args.disabled" 
+       />
     `,
   }),
 };
