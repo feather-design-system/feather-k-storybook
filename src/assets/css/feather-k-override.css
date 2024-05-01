@@ -10,8 +10,7 @@
 .k-radio:checked:focus,
 button.k-button.k-button-flat:focus,
 .k-button.k-button-outline.k-button-outline-primary:focus {
-  box-shadow:
-    0px 0px 0px 0px transparent;
+  box-shadow: 0px 0px 0px 0px transparent;
 }
 
 /* 
@@ -47,4 +46,9 @@ button.k-button.k-button-flat:focus-visible,
   span.k-button-text {
     color: white;
   }
+}
+
+/* FLOATING ACTION BUTTON (FAB) */
+.k-fab > .k-fab-icon {
+  color: white;
 }
