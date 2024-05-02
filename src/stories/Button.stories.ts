@@ -38,15 +38,10 @@ const ArgTypesDefault: Partial<ArgTypes> = {
     options: ["solid (primary)", "outline (secondary)", "flat (text)"],
     mapping: { "solid (primary)": "solid", "outline (secondary)": "outline", "flat (text)": "flat" },
   },
-  rounded: {
-    control: "select",
-    options: ["full", "small", "medium", "large"],
-  },
   disabled: { control: "boolean" },
 };
 const ArgsDefault: Partial<Args> = {
   fillMode: "solid (primary)",
-  rounded: "medium",
   disabled: false,
 };
 const ArgTypesIconOnly: Partial<ArgTypes> = {
@@ -77,7 +72,7 @@ export const Default: Story = {
       themeColor="primary"
       :disabled="args.disabled" 
       :fillMode="args.fillMode"
-      :rounded="args.rounded"
+      :rounded="'medium'"
     >
       {{args._buttonText}}
     </Button>
@@ -109,7 +104,7 @@ export const IconOnly: Story = {
       themeColor="primary" 
       :svgIcon="args.svgIcon" 
       :fillMode="args.fillMode"
-      :rounded="args.rounded"
+      :rounded="'medium'"
       :disabled="args.disabled"
     />
     `,
@@ -142,7 +137,7 @@ export const IconAndLabel: Story = {
       themeColor="primary" 
       :svgIcon="args.svgIcon" 
       :fillMode="args.fillMode"
-      :rounded="args.rounded"
+      :rounded="'medium'"
       :disabled="args.disabled"
       >
         {{args._buttonText}}
