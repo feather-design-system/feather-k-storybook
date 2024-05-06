@@ -1,16 +1,10 @@
 import { Meta, StoryObj } from '@storybook/vue3';
-import { ButtonGroup } from '@progress/kendo-vue-buttons';
+import { ButtonGroup, Button } from '@progress/kendo-vue-buttons';
 
 const meta: Meta<typeof ButtonGroup> = {
   title: 'Feather K/Buttons/ButtonGroup',
   component: ButtonGroup,
   tags: ['autodocs'],
-  argTypes: {
-    disabled: { control: 'boolean' },
-  },
-  args: {
-    disabled: false,
-  },
   parameters: {
     docs: {
       description: {
@@ -30,21 +24,25 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
+  argTypes: {
+    disabled: { control: 'boolean' },
+  },
+  args: {
+    disabled: false,
+  },
   render: (args) => ({
-    data () {
-      return {
-        togglable: true,
-      };
-    },
+    components: { ButtonGroup, Button },
     setup() {
       return { args };
     },
     template: `
-    <ButtonGroup v-bind="args">
-      <Button :togglable="togglable">Bold</Button>
-      <Button :togglable="togglable">Italic</Button>
-      <Button :togglable="togglable">Underline</Button>
-    </ButtonGroup>
+    <div>
+      <ButtonGroup v-bind="args">
+        <Button :togglable="true">Bold</Button>
+        <Button :togglable="true">Italic</Button>
+        <Button :togglable="true">Underline</Button>
+      </ButtonGroup>
+    </div>
     `,
   }),
 };
