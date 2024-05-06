@@ -1,0 +1,54 @@
+{
+  "html": {
+    "snippets": {
+      "fk-appbar": "<AppBar :position=\"'${1:top}'\" :positionMode=\"'${2:sticky}'\">${3:|}</AppBar>",
+      "fk-appbarsection:title": "<AppBarSection><h1>${1:Title}</h1></AppBarSection>",
+      "fk-appbarsection:nav": "<AppBarSection><nav><RouterLink to=\"/\">${1:Home}</RouterLink></nav></AppBarSection>",
+      "fk-appbarspacer": "<AppBarSpacer />",
+      "fk-appbar:full": "<AppBar :position=\"'${1:top}'\" :positionMode=\"'${2:sticky}'\"><AppBarSection><h1>${3:App Name}</h1></AppBarSection></AppBar>",
+      "fk-autocomplete": "<AutoComplete \n\tplaceholder=\"${1:Search the veggies!}\" \n\t:dataItems=\"${2:['Asparagus', 'Beets', 'Broccoli', 'Cauliflower', 'Carrots']}\" \n\tfillMode=\"outline\" \n\trounded=\"medium\">\n</AutoComplete>",
+      "fk-autocomplete:filter": "<AutoComplete \n\tplaceholder=\"${1:Search the fruits!}\" \n\t:dataItems=\"${2:['Apples', 'Bananas', 'Oranges', 'Pears', 'Pineapple']}\" \n\tfillMode=\"outline\" \n\trounded=\"medium\" \n\t:filterOperator=\"${3:FilterOperator.Contains}\" \n\t@change=\"${4:console.log('change event called')}\">\n</AutoComplete>",
+      "fk-button:primary": "<Button \n\ttype=\"${1:(submit,button)}\" \n\t:fillMode=\"'solid'\" \n\t:themeColor=\"'primary'\" \n\t:rounded=\"'medium'\">\n\t${2:Primary}\n</Button>",
+      "fk-button:secondary": "<Button \n\t@click=\"${1:console.log('clicked')}\" \n\ttype=\"button\" \n\t:fillMode=\"'outline'\" \n\t:themeColor=\"'primary'\" \n\t:rounded=\"'medium'\"\n\t>${2:Secondary}\n</Button>",
+      "fk-button:text": "<Button \n\t@click=\"${1:console.log('clicked')}\" \n\ttype=\"button\" \n\t:fillMode=\"'flat'\" \n\t:themeColor=\"'primary'\" \n\t:rounded=\"'medium'\">${2:Text}\n</Button>",
+      "fk-buttongroup": "<ButtonGroup>\n\t<Button :togglable=\"true\">${1:Button 1}</Button>\n\t<Button :togglable=\"true\">${2:Button 2}</Button>\n\t<Button :togglable=\"true\">${3:Button 3}</Button>\n</ButtonGroup>",
+      "fk-card:full": "<Card type=\"${1:default}\" :orientation=\"'${2:vertical}'\" >\n\t<CardHeader>\n\t<CardTitle>${3:Title}</CardTitle>\n<CardSubtitle>${4:This is the subtitle.}</CardSubtitle>\n</CardHeader>\n<CardBody>\n<p>${5:lorem}</p>\n</CardBody>\n<CardFooter>${6:Footer}</CardFooter>\n<CardActions>\n${7:fk-button:primary}\n</CardActions>\n</Card>",
+      "fk-card": "<Card type=\"${1:default}\"  :orientation=\"'${2:vertical}'\" >${2:|}</Card>",
+      "fk-cardheader": "<CardHeader>\n\t<CardTitle>${1:Title}</CardTitle>\n<CardSubtitle>${2:This is a subtitle.}\n\t</CardSubtitle>\n</CardHeader>",
+      "fk-cardtitle": "<CardTitle>${1:Title}</CardTitle>",
+      "fk-cardsubtitle": "<CardSubtitle>${1:Subtitle}</CardSubtitle>",
+      "fk-cardimage": "<CardImage src=\"${1:https://via.placeholder.com/150}\" alt=\"${2:Image}\" width=\"150px\" height=\"150px\" />",
+      "fk-cardbody": "<CardBody>\n\t${1:|}\n</CardBody>",
+      "fk-cardfooter": "<CardFooter>${1:|}</CardFooter>",
+      "fk-cardactions": "<CardActions>${1:|}</CardActions>",
+      "fk-checkbox": "<Checkbox label=\"${1:Subscribe?}\" labelPlacement=\"after\" />",
+      "fk-chip": "<Chip\n\t:text=\"'${1:Triage}'\"\n\t:removable=\"true\"\n\t@remove=\"${2:console.log('remove event called')}\"\n\trounded=\"full\"\n />",
+      "fk-chiplist": "<div>\n\t<ChipList \n\tsize=\"medium\"\n\trounded=\"full\"\n\t:dataItems=\"Array('Boston', 'Paris', 'London', 'Buenos Aires', 'Dublin').map((item, index) => ({ text: item, value: item }))\" \n/>\n</div>",
+      "fk-chiplist:single": "<div>\n\t<ChipList \n\tselection=\"single\"\n\tsize=\"medium\"\n\trounded=\"full\"\n\t:dataItems=\"Array('Boston', 'Paris', 'London', 'Buenos Aires', 'Dublin').map((item, index) => ({ text: item, value: item }))\" \n/>\n</div>",
+      "fk-chiplist:multi": "<div>\n\t<ChipList \n\tselection=\"multiple\"\n\tsize=\"medium\"\n\trounded=\"full\"\n\t:dataItems=\"Array('Boston', 'Paris', 'London', 'Buenos Aires', 'Dublin').map((item, index) => ({ text: item, value: item }))\" \n/>\n</div>",
+      "fk-colorgradient": "<ColorGradient />",
+      "fk-colorpalette": "<ColorPalette :palette=\"${1:basic}\" :tileSize=\"${2:40}\"/>",
+      "fk-colorpicker": "<ColorPicker :palette=\"${1:basic}\" :tileSize=\"${2:40}\" />",
+      "fk-combobox": "<ComboBox \n\t:dataItems=\"${1:['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']}\" \n\t:label=\"'${2:Favorite sport}'\" \n\tfillMode=\"outline\" \n\trounded=\"medium\" \n\tsize=\"medium\" \n/>",
+      "fk-drawer": "<Drawer \n\t:position=\"'${1:start,end}'\" \n\t:mode=\"'${2:overlay}'\" \n\t:expanded=\"true\" \n\t:animation=\"true\" \n\t:width=\"${4:300}\">${5:|}\n</Drawer>",
+      "fk-drawer:routerview": "<Drawer \n\t:position=\"'${1:start or end}'\" \n\t:mode=\"'overlay'\" \n\t:expanded=\"true\" \n\t:animation=\"true\" \n\t:width=\"${4:300}\">\n<RouterView />\nfk-button:primary\n</Drawer>",
+      "fk-dropdownbutton": "<DropDownButton \n\ttext=\"${1:Menu}\"\n\tthemeColor=\"primary\"\n\tfillMode=\"outline\"\n\trounded=\"medium\"\n\t:items=\"['My Profile', 'Settings', 'Sign Out']\" \n/>",
+      "fk-floatingactionbutton": "<FloatingActionButton\n\t:align=\"{horizontal: 'end', vertical: 'bottom'}\"\n\t:alignOffset=\"{ x:60, y:60}\"\n\t:svgIcon=\"menuIcon\"\n\tfillMode=\"solid\"\n\tthemeColor=\"primary\"\n\t@click=\"${4:console.log('clicked')}\"\n\t:items=\"[{ text: 'Profile' }, { text: 'Settings' }, { text: 'Sign Out' }]\" \n/>",
+      "fk-maskedtextbox:phone": "<MaskedTextBox \n\t:label=\"'${1:Enter phone number}'\"\n\t:mask=\"'${2:(999) 000-0000}'\" \n\t:placeholder=\"'(___) ___-____'\" \n\tfillMode=\"outline\" \n\trounded=\"medium\" \n/>",
+      "fk-multiselect": "<MultiSelect \n\t:style=\"{ width: '${1:40}em' }\" \n\tlabel=\"${2:Pizza Toppings (component label)}\" \n\ttextField='${3:text}' \n\tvalueField='${4:value}' \n\tplaceholder=\"\" \n\tfillMode=\"outline\" \n\trounded=\"medium\" \n\t:dataItems=\"Array('Garlic', 'Cheese', 'Pepperoni', 'Onions', 'Peppers').map((item, index) => ({ text: item, value: index }))\"\n />",
+      "fk-multiselect:ext": "<Label>${1:Label}</Label>\n<MultiSelect \n\ttextField='${2:text}' \n\tvalueField='${3:value}' \n\tplaceholder=\"\" \n\tfillMode=\"outline\" \n\trounded=\"medium\" \n\t:dataItems=\"Array('Apples', 'Bananas', 'Oranges', 'Pears', 'Pineapples').map((item, index) => ({ text: item, value: index }))\"\n />\n<Hint>${4:Hint}</Hint>",
+      "fk-splitbutton": "<SplitButton \n\ttext=\"${1:Save}\"\n\tthemeColor=\"primary\"\n\tfillMode=\"outline\"\n\trounded=\"medium\"\n\t:items=\"[${2:'Save As', 'Forward to...', 'Delete'}]\" \n/>",
+      "fk-toolbar": "<Toolbar>\n\t<ButtonGroup>\n\t<Button :togglable=\"true\" :svgIcon=\"userIcon\" />\n\t<Button :togglable=\"true\" :svgIcon=\"menuIcon\" />\n\t</ButtonGroup>\n</Toolbar>\n<!--https://www.telerik.com/design-system/docs/foundation/iconography/icon-list/ -->",
+
+      "fk-label": "<Label>${1:Label}</Label>",
+      "fk-hint": "<Hint>${1:Hint}</Hint>",
+
+      "fk-routerlink": "<RouterLink to=\"/${1:path}\">${2:Home}</RouterLink>",
+      "fk-routerview": "<RouterView name=\"${1:default}\"/>"
+      
+    }
+  },
+  "css": {
+    "snippets": {}
+  }
+}

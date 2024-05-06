@@ -45,7 +45,6 @@ const meta: Meta<typeof Drawer> = {
 						<li>You cannot just pass any child node (ex. TabList) within a slot and expect it to be displayed within the drawer</li>
 						<li>You must use lists of DrawerContent type or DrawerItem type and pass as prop to Drawer</li>
 						<li>Do not see a way to mimic Feather Drawer behavior with Tabs in its current state.</li>
-						<li>Do not see a way to mimic Feather Drawer behavior with Tabs in its current state.</li>
 					</ul>
 				`,
 			},

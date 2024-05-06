@@ -26,7 +26,6 @@ const meta: Meta<typeof AppBar> = {
         `,
       },
     },
-  
   },
 };
 
@@ -37,12 +36,10 @@ export const Default: Story = {
   argTypes: {
     position: { control: "select", options: ["top", "bottom"] },
     positionMode: { control: "select", options: ["fixed", "static", "sticky"] },
-    themeColor: { control: "select", options: ["light", "dark"] },
   },
   args: {
     position: "top",
     positionMode: "fixed",
-    themeColor: "light",
   },
   parameters: {
     style: {
@@ -58,25 +55,23 @@ export const Default: Story = {
       return { args };
     },
     template: ` 
-    <div>
+    <div class="storybook-demo">
       <AppBar 
         :position="args.position" 
-        :themeColor="args.themeColor" 
         :positionMode="args.positionMode"
         >
         <AppBarSection>
           <Button :svgIcon="menuIcon" :fillMode="'flat'" />
         </AppBarSection>
-        <AppBarSpacer :width="'1em'"/>
         <AppBarSection>
-          <h1>Feather K App</h1>
+        <h1 class="title">Feather K App</h1>
         </AppBarSection>
         <AppBarSection>
-          <ul class="flex-list">
-            <li class="flex-list-item"><span>Home</span></li>
-            <li class="flex-list-item"><span>Products</span></li>
-            <li class="flex-list-item"><span>About</span></li>
-          </ul>
+          <nav class="flex-list">
+            <div class="flex-list-item"><span>Home</span></div>
+            <div class="flex-list-item"><span>Products</span></div>
+            <div class="flex-list-item"><span>About</span></div>
+          </nav>
         </AppBarSection>
       </AppBar>
     </div>

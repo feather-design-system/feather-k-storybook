@@ -34,24 +34,24 @@ export const Default: Story = {
   render: (args) => ({
     components: { ColorGradient },
     data() {
-      return { 
+      return {
         value: "#ff2599",
-      }
+      };
     },
-    methods: {
-      onChange(e: any) {
-        this.value = e.value;
-      },
-    },
+    // methods: {
+    //   onChange(e: any) {
+    //     this.value = e.value;
+    //   },
+    // },
     setup() {
       return { args };
     },
     template: `
     <ColorGradient 
-      :disabled="args.disabled" 
       v-model="value"
+      // @change="onChange"
+      :disabled="args.disabled" 
     />
     `,
   }),
-
 };
