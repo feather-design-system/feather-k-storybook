@@ -1,6 +1,7 @@
 import type { ArgTypes, Args, Meta, StoryObj } from "@storybook/vue3";
 import { Button } from "@progress/kendo-vue-buttons";
 import { folderIcon, calendarIcon } from "@progress/kendo-svg-icons";
+import "../style.css";
 
 const meta: Meta<typeof Button> = {
   title: "Feather K/Buttons/Button",
@@ -15,11 +16,54 @@ const meta: Meta<typeof Button> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/ButtonProps/" target="_blank">Button API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/button/" target="_blank">Button Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-button:primary</legend>
+            <pre>
+            &lt;Button 
+              @click="console.log('clicked')"
+              type="button" 
+              fillMode="solid" 
+              themeColor="primary" 
+              rounded="medium"
+              &gt;Primary
+            &lt;/Button&gt;
+            </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-button:secondary</legend>
+            <pre>
+            &lt;Button 
+              @click="console.log('clicked')"
+              type="button" 
+              fillMode="outline" 
+              themeColor="primary" 
+              rounded="medium"
+              &gt;Secondary
+            &lt;/Button&gt;
+            </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-button:text</legend>
+            <pre>
+            &lt;Button 
+              @click="console.log('clicked')"
+              type="button" 
+              fillMode="flat" 
+              themeColor="primary" 
+              rounded="medium"
+              &gt;Text
+            &lt;/Button&gt;
+            </pre>
+            </fieldset>
+          </div>`,
       },
     },
-  
   },
 };
 
@@ -36,7 +80,11 @@ const ArgTypesDefault: Partial<ArgTypes> = {
   fillMode: {
     control: "select",
     options: ["solid (primary)", "outline (secondary)", "flat (text)"],
-    mapping: { "solid (primary)": "solid", "outline (secondary)": "outline", "flat (text)": "flat" },
+    mapping: {
+      "solid (primary)": "solid",
+      "outline (secondary)": "outline",
+      "flat (text)": "flat",
+    },
   },
   disabled: { control: "boolean" },
 };
