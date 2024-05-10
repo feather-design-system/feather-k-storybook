@@ -39,3 +39,16 @@ export const Default: Story = {
     disabled: false,
   },
 };
+
+export const YesNo: Story = {
+  argTypes: {
+    ...Default.argTypes,
+    onLabel: { control: "text" },
+    offLabel: { control: "text" },
+  },
+  args: {
+    ...Default.args,
+    onLabel: "Yes",
+    offLabel: "No",
+  },
+};
