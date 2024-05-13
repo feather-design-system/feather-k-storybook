@@ -19,8 +19,15 @@ const meta: Meta<typeof Checkbox> = {
           `<ul>
             <li>There is a bug with labelPlacement="before".  Punctuation pushed to beginning of label.  Very odd.</li>
             <li>This has been reproduced outside of Storybook.  It is a 🪳 in the Kendo UI Vue Checkbox component.</li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-checkbox</legend>
+              <pre>
+                &lt;Checkbox label="Subscribe?" labelPlacement="after" /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

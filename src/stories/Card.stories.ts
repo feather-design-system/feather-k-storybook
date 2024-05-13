@@ -25,13 +25,111 @@ const meta: Meta<typeof Card> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/layout/api/CardProps/" target="_blank">Card API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/layout/card/" target="_blank">Card Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-card:full</legend>
+              <pre>
+                &lt;Card 
+                  type="default" 
+                  orientation="vertical" 
+                  &gt;
+                  &lt;CardHeader&gt;
+                    &lt;CardTitle&gt;Title&lt;/CardTitle&gt;
+                    &lt;CardSubtitle&gt;This is the subtitle.&lt;/CardSubtitle&gt;
+                  &lt;/CardHeader&gt;
+                  &lt;CardBody&gt;
+                    &lt;p&gt;lorem&lt;/p&gt;
+                  &lt;/CardBody&gt;
+                  &lt;CardFooter&gt;Footer&lt;/CardFooter&gt;
+                  &lt;CardActions&gt;
+                    &lt;Button 
+                      themeColor="primary"
+                      fillMode="solid"
+                      rounded="medium"
+                      &gt;Ok
+                    &lt;/Button&gt;
+                  &lt;/CardActions&gt;
+                &lt;/Card&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-card</legend>
+              <pre>
+                &lt;Card 
+                  type="default" 
+                  orientation="vertical" 
+                &gt;
+                &lt;/Card&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-cardheader</legend>
+              <pre>
+                &lt;Card 
+                  type="default" 
+                  orientation="vertical"
+                  &gt;
+                  &lt;CardHeader&gt;
+                    &lt;CardTitle&gt;Title&lt;/CardTitle&gt;
+                    &lt;CardSubtitle&gt;This is a subtitle. &lt;/CardSubtitle&gt;
+                  &lt;/CardHeader&gt;
+                &lt;/Card&gt;              
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-cardtitle</legend>
+              <pre>
+                &lt;CardTitle&gt;Title&lt;/CardTitle&gt;              
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-cardsubtitle</legend>
+              <pre>
+                &lt;CardSubtitle&gt;Subtitle&lt;/CardSubtitle&gt;              
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-cardbody</legend>
+              <pre>
+                &lt;CardBody&gt;
+                  lorem
+                &lt;/CardBody&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-cardfooter</legend>
+              <pre>
+              &lt;CardFooter&gt;footer goes here&lt;/CardFooter&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-cardactions</legend>
+              <pre>
+                &lt;CardActions&gt;
+                  &lt;Button themeColor="primary" fillMode="solid" rounded="medium"&gt;Ok&lt;/Button&gt;
+                &lt;/CardActions&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },
 };
-
 export default meta;
 type Story = StoryObj<typeof meta>;
 

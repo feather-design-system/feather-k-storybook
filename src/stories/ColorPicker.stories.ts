@@ -15,8 +15,15 @@ const meta: Meta<typeof ColorPicker> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/ColorPickerProps/" target="_blank">ColorPicker API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/colorpicker/" target="_blank">ColorPicker Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-colorpicker</legend>
+              <pre>
+                &lt;ColorPicker palette="basic" :tileSize="20" /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

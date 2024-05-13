@@ -15,8 +15,15 @@ const meta: Meta<typeof ColorGradient> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/ColorGradientProps/" target="_blank">ColorGradient API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/colorgradient/" target="_blank">ColorGradient Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-colorgradient</legend>
+              <pre>
+                &lt;ColorGradient /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

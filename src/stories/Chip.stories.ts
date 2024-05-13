@@ -14,8 +14,21 @@ const meta: Meta<typeof Chip> = {
          `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/ChipProps/" target="_blank">Chip API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/chip/" target="_blank">Chip Documentation</a></li>
-          </ul>
-        `,        
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-chip</legend>
+              <pre>
+                &lt;Chip
+                  text="Triage"
+                  :removable="true"
+                  @remove="console.log('remove event called')"
+                  rounded="full"
+                  :style="{ width: '8em' }"
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>`,        
       },
     },    
   },

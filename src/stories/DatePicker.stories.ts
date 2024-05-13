@@ -15,8 +15,40 @@ const meta: Meta<typeof DatePicker> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dateinputs/api/DatePickerProps/" target="_blank">DatePicker API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dateinputs/datepicker/" target="_blank">DatePicker Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-datepicker</legend>
+              <pre>
+                &lt;DatePicker 
+                  label="Select a date" 
+                  :defaultValue="new Date()" 
+                  :defaultShow="false"
+                  :style="{ width: '258px' }" 
+                  fillMode="outline" 
+                  rounded="medium" 
+                  size="medium" 
+                /&gt;            
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-datepicker:weeknum</legend>
+              <pre>
+                &lt;DatePicker 
+                  label="Select a date" 
+                  :defaultValue="new Date()" 
+                  :defaultShow="false"
+                  :weekNumber="true" 
+                  :style="{ width: '285px' }" 
+                  fillMode="outline" 
+                  rounded="medium" 
+                  size="medium" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },
@@ -39,7 +71,7 @@ export const Default: Story = {
     disabled: { control: "boolean" },
   },
   args: {
-    defaultShow: true,
+    defaultShow: false,
     defaultValue: new Date(),
     fillMode: "solid",
     rounded: "medium",

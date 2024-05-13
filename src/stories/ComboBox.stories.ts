@@ -22,8 +22,21 @@ const meta: Meta<typeof ComboBox> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/api/ComboBoxProps/" target="_blank">ComboBox API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/combobox/" target="_blank">ComboBox Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-combobox</legend>
+              <pre>
+                &lt;ComboBox 
+                  :dataItems="['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']" 
+                  label="Favorite sport" 
+                  fillMode="outline" 
+                  rounded="medium" 
+                  size="medium" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

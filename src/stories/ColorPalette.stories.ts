@@ -15,8 +15,15 @@ const meta: Meta<typeof ColorPalette> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/ColorPaletteProps/" target="_blank">ColorPalette API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/colorpalette/" target="_blank">ColorPalette Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-colorpalette</legend>
+              <pre>
+                &lt;ColorPalette palette="basic" :tileSize="40"/&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

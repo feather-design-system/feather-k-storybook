@@ -16,8 +16,45 @@ const meta: Meta<typeof ChipList> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/ChipListProps/" target="_blank">ChipList API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/chiplist/" target="_blank">ChipList Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-chiplist</legend>
+              <pre>
+                &lt;ChipList 
+                  size="medium"
+                  rounded="full"
+                  :dataItems="Array('Boston', 'Paris', 'London', 'Buenos Aires', 'Belfast').map((item, index) => ({ text: item, value: item }))" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-chiplist:single</legend>
+              <pre>
+                &lt;ChipList 
+                  selection="single"
+                  size="medium"
+                  rounded="full"
+                  :dataItems="Array('Boston', 'Paris', 'London', 'Buenos Aires', 'Belfast').map((item, index) => ({ text: item, value: item }))" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-chiplist:multi</legend>
+              <pre>
+                &lt;ChipList 
+                  selection="multiple"
+                  size="medium"
+                  rounded="full"
+                  :dataItems="Array('Boston', 'Paris', 'London', 'Buenos Aires', 'Belfast').map((item, index) => ({ text: item, value: item }))" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

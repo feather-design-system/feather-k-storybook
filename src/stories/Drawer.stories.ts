@@ -46,8 +46,37 @@ const meta: Meta<typeof Drawer> = {
 						<li>You cannot just pass any child node (ex. TabList) within a slot and expect it to be displayed within the drawer</li>
 						<li>You must use lists of DrawerContent type or DrawerItem type and pass as prop to Drawer</li>
 						<li>Do not see a way to mimic Feather Drawer behavior with Tabs in its current state.</li>
-					</ul>
-				`,
+					</ul>` +
+					`<div className="fk-emmet">
+					  <fieldset>
+						<legend>fk-drawer</legend>
+						<pre>
+							&lt;Drawer 
+								position="end" 
+								mode="overlay" 
+								:animation="true" 
+								:expanded="true" 
+								:width="300" 
+								:items="[{ text: 'My Profile' },{ text: 'Settings' },{ text: 'Help' }].map((item, index) => ({ text: item.text })) "
+							/&gt;
+						</pre>
+					  </fieldset>
+					</div>` +
+					`<div className="fk-emmet">
+					  <fieldset>
+						<legend>fk-drawer:routerview</legend>
+						<pre>
+							&lt;Drawer 
+								position="end" 
+								mode="overlay" 
+								:animation="true" 
+								:expanded="true" 
+								:width="300"&gt;
+								&lt;RouterView /&gt;
+							&lt;/Drawer&gt;						
+						</pre>
+					  </fieldset>
+					</div>`,
 			},
 		},
 	},
