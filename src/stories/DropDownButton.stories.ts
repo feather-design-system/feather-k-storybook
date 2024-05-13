@@ -17,8 +17,21 @@ const meta: Meta<typeof DropDownButton> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/DropDownButtonProps/" target="_blank">DropDownButton API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/dropdownbutton/" target="_blank">DropDownButton Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-dropdownbutton</legend>
+              <pre>
+                &lt;DropDownButton 
+                  text="Menu"
+                  themeColor="primary"
+                  fillMode="outline"
+                  rounded="medium"
+                  :items="['My Profile', 'Settings', 'Sign Out']" 
+                /&gt;
+            </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

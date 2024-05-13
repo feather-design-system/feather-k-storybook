@@ -22,8 +22,22 @@ const meta: Meta<typeof DropDownList> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/api/DropDownListProps/" target="_blank">DropDownList API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/dropdownlist/" target="_blank">DropDownList Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-dropdownlist</legend>
+              <pre>
+                &lt;DropDownList 
+                  :dataItems="['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']" 
+                  label="Favorite sport" 
+                  fillMode="outline" 
+                  rounded="medium" 
+                  size="medium" 
+                  :style="{ width: '30em' }" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },
@@ -47,6 +61,6 @@ export const Default: Story = {
     fillMode: "outline",
     rounded: "medium",
     size: "medium",
-    style: { width: "15em" },
+    style: { width: "30em" },
   },
 };

@@ -21,8 +21,23 @@ const meta: Meta<typeof FloatingActionButton> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/FloatingActionButtonProps/" target="_blank">FloatingActionButton API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/floatingactionbutton/" target="_blank">FloatingActionButton Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-floatingactionbutton</legend>
+              <pre>
+                &lt;FloatingActionButton
+                  :align="{horizontal: 'end', vertical: 'bottom'}"
+                  :alignOffset="{ x:60, y:60}"
+                  :svgIcon="menuIcon"
+                  fillMode="solid"
+                  themeColor="primary"
+                  @click="console.log('clicked')"
+                  :items="[{ text: 'Profile' }, { text: 'Settings' }, { text: 'Sign Out' }]" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },
