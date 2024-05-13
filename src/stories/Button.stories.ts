@@ -129,6 +129,57 @@ export const Default: Story = {
   }),
 };
 
+export const Primary: Story = {
+  render: (args) => ({
+    setup() {
+      return { args };
+    },
+    template: `
+    <Button 
+      themeColor="primary"
+      fillMode="solid"
+      rounded="medium"
+    >
+      Submit
+    </Button>
+    `,
+  }),
+};
+
+export const Secondary: Story = {
+  render: (args) => ({
+    setup() {
+      return { args };
+    },
+    template: `
+    <Button 
+      themeColor="primary"
+      fillMode="outline"
+      rounded="medium"
+    >
+      Cancel
+    </Button>
+    `,
+  }),
+};
+
+export const Text: Story = {
+  render: (args) => ({
+    setup() {
+      return { args };
+    },
+    template: `
+    <Button 
+      themeColor="primary"
+      fillMode="flat"
+      rounded="medium"
+    >
+      Details
+    </Button>
+    `,
+  }),
+};
+
 export const IconOnly: Story = {
   argTypes: {
     ...ArgTypesDefault,

@@ -15,8 +15,38 @@ const meta: Meta<typeof AutoComplete> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/api/AutoCompleteProps/" target="_blank">AutoComplete API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/autocomplete/" target="_blank">AutoComplete Documentation</a></li>
-          </ul>
-        `,
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/autocomplete/filtering/" target="_blank">AutoComplete Filtering</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/dataquery/api/FilterOperator/" target="_blank">FilterOperator</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/dataquery/api/FilterDescriptor/" target="_blank">FilterDescriptor</a></li>
+          </ul>` +
+          `<div className="fk-emmet">` +
+            `<fieldset>` +
+              `<legend>fk-autocomplete</legend>` +
+              `<pre>
+                &lt;AutoComplete 
+                  placeholder="Search the veggies!" 
+                  :dataItems="['Asparagus', 'Beets', 'Broccoli', 'Cauliflower', 'Carrots']" 
+                  fillMode="outline" 
+                  rounded="medium"&gt;
+                &lt;/AutoComplete&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">` +
+            `<fieldset>` +
+              `<legend>fk-autocomplete:filter</legend>` +
+              `<pre>
+                &lt;AutoComplete 
+                  placeholder="Search the fruits!" 
+                  :dataItems="['Apples', 'Bananas', 'Oranges', 'Pears', 'Pineapple']" 
+                  fillMode="outline" 
+                  rounded="medium" 
+                  :filterOperator="FilterOperator.Contains" 
+                  @change="console.log('change event called')"&gt;
+                &lt;/AutoComplete&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

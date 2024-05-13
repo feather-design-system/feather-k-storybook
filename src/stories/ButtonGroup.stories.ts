@@ -14,8 +14,37 @@ const meta: Meta<typeof ButtonGroup> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/ButtonGroupProps/" target="_blank">ButtonGroup API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/buttongroup/" target="_blank">ButtonGroup Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">` +
+            `<fieldset>` +
+              `<legend>fk-buttongroup</legend>` +
+              `<pre>
+                &lt;ButtonGroup&gt;
+                  &lt;Button 
+                  :togglable="true"
+                  themeColor="primary"
+                  fillMode="outline" 
+                  rounded="medium"
+                  &gt;Button 1
+                &lt;/Button&gt;
+                &lt;Button 
+                  :togglable="true"
+                  themeColor="primary"
+                  fillMode="outline" 
+                  rounded="medium"
+                  &gt;Button 2
+                &lt;/Button&gt;
+                &lt;Button 
+                  :togglable="true"
+                  themeColor="primary"
+                  fillMode="outline" 
+                  rounded="medium"
+                  &gt;Button 3
+                &lt;/Button&gt;
+                &lt;/ButtonGroup&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },
