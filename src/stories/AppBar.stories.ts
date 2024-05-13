@@ -10,7 +10,8 @@ import { menuIcon } from "@progress/kendo-svg-icons";
 import "./app-bar.css";
 
 const meta: Meta<typeof AppBar> = {
-  title: "Feather K/Layout/AppBar",
+  title: "Feather K/AppBar",
+  // title: "Feather K/Layout/AppBar",
   component: AppBar,
   tags: ["autodocs"],
   parameters: {

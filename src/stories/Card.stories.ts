@@ -12,7 +12,8 @@ import {
 import { Button } from "@progress/kendo-vue-buttons";
 
 const meta: Meta<typeof Card> = {
-  title: "Feather K/Layout/Card",
+  title: "Feather K/Card",
+  // title: "Feather K/Layout/Card",
   component: Card,
   tags: ["autodocs"],
   parameters: {

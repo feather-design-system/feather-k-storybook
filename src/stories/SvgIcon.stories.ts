@@ -3,7 +3,8 @@ import { SvgIcon } from "@progress/kendo-vue-common";
 import { calendarIcon, globeIcon, mapMarkerIcon, pinIcon } from "@progress/kendo-svg-icons";
 
 const meta: Meta<typeof SvgIcon> = {
-  title: "Feather K/Icons/SvgIcon",
+  title: "Feather K/SvgIcon",
+  // title: "Feather K/Icons/SvgIcon",
   component: SvgIcon,
   tags: ["autodocs"],
   parameters: {

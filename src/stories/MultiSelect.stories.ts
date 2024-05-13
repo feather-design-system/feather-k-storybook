@@ -26,7 +26,8 @@ const items = [
 ];
 
 const meta: Meta<typeof MultiSelect> = {
-  title: "Feather K/DropDowns/MultiSelect",
+  title: "Feather K/MultiSelect",
+  // title: "Feather K/DropDowns/MultiSelect",
   component: MultiSelect,
   tags: ["autodocs"],
   parameters: {

@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { FontIcon } from "@progress/kendo-vue-common";
 
 const meta: Meta<typeof FontIcon> = {
-  title: "Feather K/Icons/FontIcon",
+  title: "Feather K/FontIcon",
+  // title: "Feather K/Icons/FontIcon",
   component: FontIcon,
   tags: ["autodocs"],
   parameters: {

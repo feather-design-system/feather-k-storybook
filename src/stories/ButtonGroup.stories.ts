@@ -2,7 +2,8 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import { ButtonGroup, Button } from '@progress/kendo-vue-buttons';
 
 const meta: Meta<typeof ButtonGroup> = {
-  title: 'Feather K/Buttons/ButtonGroup',
+  title: 'Feather K/ButtonGroup',
+  // title: 'Feather K/Buttons/ButtonGroup',
   component: ButtonGroup,
   tags: ['autodocs'],
   parameters: {

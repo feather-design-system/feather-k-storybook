@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import { Checkbox } from "@progress/kendo-vue-inputs";
 
 const meta: Meta<typeof Checkbox> = {
-  title: "Feather K/Input/Checkbox",
+  title: "Feather K/Checkbox",
+  // title: "Feather K/Input/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
   parameters: {

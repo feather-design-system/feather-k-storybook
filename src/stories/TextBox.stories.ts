@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { TextBox } from "@progress/kendo-vue-inputs";
 
 const meta: Meta<typeof TextBox> = {
-  title: "Feather K/Input/TextBox",
+  title: "Feather K/TextBox",
+  // title: "Feather K/Input/TextBox",
   component: TextBox,
   tags: ["autodocs"],
   parameters: {

@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { NumericTextBox } from "@progress/kendo-vue-inputs";
 
 const meta: Meta<typeof NumericTextBox> = {
-  title: "Feather K/Input/NumericTextBox",
+  title: "Feather K/NumericTextBox",
+  // title: "Feather K/Input/NumericTextBox",
   component: NumericTextBox,
   tags: ["autodocs"],
   parameters: {

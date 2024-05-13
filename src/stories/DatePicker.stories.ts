@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { DatePicker } from "@progress/kendo-vue-dateinputs";
 
 const meta: Meta<typeof DatePicker> = {
-  title: "Feather K/DateInputs/DatePicker",
+  title: "Feather K/DatePicker",
+  // title: "Feather K/DateInputs/DatePicker",
   component: DatePicker,
   tags: ["autodocs"],
   parameters: {

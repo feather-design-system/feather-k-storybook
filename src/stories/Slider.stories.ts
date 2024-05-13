@@ -5,7 +5,8 @@ import { NumericTextBox } from "@progress/kendo-vue-inputs";
 import "./slider.css";
 
 const meta: Meta<typeof Slider> = {
-  title: "Feather K/Input/Slider",
+  title: "Feather K/Slider",
+  // title: "Feather K/Input/Slider",
   component: Slider,
   tags: ["autodocs"],
   parameters: {

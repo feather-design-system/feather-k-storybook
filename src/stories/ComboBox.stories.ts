@@ -9,7 +9,8 @@ const items = [
 ];
 
 const meta: Meta<typeof ComboBox> = {
-  title: "Feather K/DropDowns/ComboBox",
+  title: "Feather K/ComboBox",
+  // title: "Feather K/DropDowns/ComboBox",
   component: ComboBox,
   tags: ["autodocs"],
   parameters: {

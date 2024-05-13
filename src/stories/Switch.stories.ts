@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { Switch } from "@progress/kendo-vue-inputs";
 
 const meta: Meta<typeof Switch> = {
-  title: "Feather K/Input/Switch",
+  title: "Feather K/Switch",
+  // title: "Feather K/Input/Switch",
   component: Switch,
   tags: ["autodocs"],
   parameters: {

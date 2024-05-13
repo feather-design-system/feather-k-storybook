@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { MaskedTextBox } from "@progress/kendo-vue-inputs";
 
 const meta: Meta<typeof MaskedTextBox> = {
-  title: "Feather K/Input/MaskedTextBox",
+  title: "Feather K/MaskedTextBox",
+  // title: "Feather K/Input/MaskedTextBox",
   component: MaskedTextBox,
   tags: ["autodocs"],
   parameters: {

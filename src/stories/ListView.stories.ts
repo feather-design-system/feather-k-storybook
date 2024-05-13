@@ -6,7 +6,8 @@ import {
 } from "@progress/kendo-vue-listview";
 
 const meta: Meta<typeof ListView> = {
-  title: "Feather K/ListView/ListView",
+  title: "Feather K/ListView",
+  // title: "Feather K/ListView/ListView",
   component: ListView,
   tags: ["autodocs"],
   parameters: {

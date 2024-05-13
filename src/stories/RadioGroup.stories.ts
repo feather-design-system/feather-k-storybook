@@ -20,7 +20,8 @@ const items = [
 ];
 
 const meta: Meta<typeof RadioGroup> = {
-  title: "Feather K/Input/RadioGroup",
+  title: "Feather K/RadioGroup",
+  // title: "Feather K/Input/RadioGroup",
   component: RadioGroup,
   tags: ["autodocs"],
   parameters: {

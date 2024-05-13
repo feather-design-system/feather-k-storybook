@@ -4,7 +4,8 @@ import { DropDownButton } from "@progress/kendo-vue-buttons";
 import { gearIcon, globeLinkIcon } from "@progress/kendo-svg-icons";
 
 const meta: Meta<typeof DropDownButton> = {
-  title: "Feather K/Buttons/DropDownButton",
+  title: "Feather K/DropDownButton",
+  // title: "Feather K/Buttons/DropDownButton",
   component: DropDownButton,
   tags: ["autodocs"],
   parameters: {

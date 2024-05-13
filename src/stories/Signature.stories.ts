@@ -4,7 +4,8 @@ import { Signature, TextArea } from "@progress/kendo-vue-inputs"
 import "./signature.css";
 
 const meta: Meta<typeof Signature> = {
-  title: "Feather K/Input/Signature",
+  title: "Feather K/Signature",
+  // title: "Feather K/Input/Signature",
   component: Signature,
   parameters: {
     docs: {

@@ -8,7 +8,8 @@ import {
 } from "@progress/kendo-svg-icons";
 
 const meta: Meta<typeof FloatingActionButton> = {
-  title: "Feather K/Buttons/FloatingActionButton",
+  title: "Feather K/FloatingActionButton",
+  // title: "Feather K/Buttons/FloatingActionButton",
   component: FloatingActionButton,
   tags: ["autodocs"],
   parameters: {

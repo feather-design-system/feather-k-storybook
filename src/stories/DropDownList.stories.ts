@@ -9,7 +9,8 @@ const items = [
 ];
 
 const meta: Meta<typeof DropDownList> = {
-  title: "Feather K/DropDowns/DropDownList",
+  title: "Feather K/DropDownList",
+  // title: "Feather K/DropDowns/DropDownList",
   component: DropDownList,
   tags: ["autodocs"],
   parameters: {

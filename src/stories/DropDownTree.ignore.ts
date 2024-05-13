@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { DropDownTree } from "@progress/kendo-vue-dropdowns";
 
 const meta: Meta<typeof DropDownTree> = {
-  title: "Feather K/Dropdowns/DropDownTree",
+  title: "Feather K/DropDownTree",
+  // title: "Feather K/Dropdowns/DropDownTree",
   component: DropDownTree,
   tags: ["autodocs"],
   parameters: {

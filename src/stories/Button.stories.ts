@@ -4,7 +4,8 @@ import { folderIcon, calendarIcon } from "@progress/kendo-svg-icons";
 import "../style.css";
 
 const meta: Meta<typeof Button> = {
-  title: "Feather K/Buttons/Button",
+  title: "Feather K/Button",
+  // title: "Feather K/Buttons/Button",
   component: Button,
   tags: ["autodocs"],
   parameters: {

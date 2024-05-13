@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { ColorPicker } from "@progress/kendo-vue-inputs";
 
 const meta: Meta<typeof ColorPicker> = {
-  title: "Feather K/Input/ColorPicker",
+  title: "Feather K/ColorPicker",
+  // title: "Feather K/Input/ColorPicker",
   component: ColorPicker,
   tags: ["autodocs"],
   parameters: {

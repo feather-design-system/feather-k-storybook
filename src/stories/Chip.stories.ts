@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { Chip } from "@progress/kendo-vue-buttons";
 
 const meta: Meta<typeof Chip> = {
-  title: "Feather K/Buttons/Chip",
+  title: "Feather K/Chip",
+  // title: "Feather K/Buttons/Chip",
   component: Chip,
   tags: ["autodocs"],
   parameters: {

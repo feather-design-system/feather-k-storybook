@@ -4,7 +4,8 @@ import { Toolbar, Button, ButtonGroup } from "@progress/kendo-vue-buttons";
 import { boldIcon, italicIcon, underlineIcon } from "@progress/kendo-svg-icons";
 
 const meta: Meta<typeof Toolbar> = {
-  title: "Feather K/Buttons/Toolbar",
+  title: "Feather K/Toolbar",
+  // title: "Feather K/Buttons/Toolbar",
   component: Toolbar,
   tags: ["autodocs"],
   parameters: {

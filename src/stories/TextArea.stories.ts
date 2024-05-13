@@ -3,7 +3,8 @@ import { TextArea } from "@progress/kendo-vue-inputs";
 import { Hint, Label } from "@progress/kendo-vue-labels";
 
 const meta: Meta<typeof TextArea> = {
-  title: "Feather K/Input/TextArea",
+  title: "Feather K/TextArea",
+  // title: "Feather K/Input/TextArea",
   component: TextArea,
   tags: ["autodocs"],
   parameters: {

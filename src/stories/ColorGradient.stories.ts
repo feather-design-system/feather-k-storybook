@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { ColorGradient } from "@progress/kendo-vue-inputs";
 
 const meta: Meta<typeof ColorGradient> = {
-  title: "Feather K/Input/ColorGradient",
+  title: "Feather K/ColorGradient",
+  // title: "Feather K/Input/ColorGradient",
   component: ColorGradient,
   tags: ["autodocs"],
   parameters: {

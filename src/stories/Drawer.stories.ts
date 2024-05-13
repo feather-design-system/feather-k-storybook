@@ -25,7 +25,8 @@ const drawerItems = [
 ];
 
 const meta: Meta<typeof Drawer> = {
-  title: "Feather K/Layout/Drawer",
+  title: "Feather K/Drawer",
+//   title: "Feather K/Layout/Drawer",
   component: Drawer,
   tags: ["autodocs"],
 	parameters: {

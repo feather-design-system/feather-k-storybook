@@ -3,7 +3,8 @@ import { ChipList } from "@progress/kendo-vue-buttons";
 import { mapMarkerTargetIcon } from "@progress/kendo-svg-icons";
 
 const meta: Meta<typeof ChipList> = {
-  title: "Feather K/Buttons/ChipList",
+  title: "Feather K/ChipList",
+  // title: "Feather K/Buttons/ChipList",
   component: ChipList,
   tags: ["autodocs"],
   parameters: {

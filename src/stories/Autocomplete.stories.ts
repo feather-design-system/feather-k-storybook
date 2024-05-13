@@ -3,7 +3,8 @@ import { AutoComplete } from "@progress/kendo-vue-dropdowns";
 import { FilterOperator, filterBy } from "@progress/kendo-data-query";
 
 const meta: Meta<typeof AutoComplete> = {
-  title: "Feather K/DropDowns/Autocomplete",
+  title: "Feather K/Autocomplete",
+  // title: "Feather K/DropDowns/Autocomplete",
   component: AutoComplete,
   tags: ["autodocs"],
   parameters: {

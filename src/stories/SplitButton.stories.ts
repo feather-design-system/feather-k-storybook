@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { SplitButton } from "@progress/kendo-vue-buttons";
 
 const meta: Meta<typeof SplitButton> = {
-  title: "Feather K/Buttons/SplitButton",
+  title: "Feather K/SplitButton",
+  // title: "Feather K/Buttons/SplitButton",
   component: SplitButton,
   tags: ["autodocs"],
   parameters: {

@@ -4,7 +4,8 @@ import { RangeSlider, SliderLabel } from "@progress/kendo-vue-inputs";
 import "./slider.css";
 
 const meta: Meta<typeof RangeSlider> = {
-  title: "Feather K/Input/RangeSlider",
+  title: "Feather K/RangeSlider",
+  // title: "Feather K/Input/RangeSlider",
   component: RangeSlider,
   tags: ["autodocs"],
   parameters: {

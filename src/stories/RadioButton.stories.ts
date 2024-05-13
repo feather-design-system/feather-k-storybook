@@ -2,7 +2,8 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { RadioButton } from "@progress/kendo-vue-inputs";
 
 const meta: Meta<typeof RadioButton> = {
-  title: "Feather K/Input/RadioButton",
+  title: "Feather K/RadioButton",
+  // title: "Feather K/Input/RadioButton",
   component: RadioButton,
   tags: ["autodocs"],
   parameters: {

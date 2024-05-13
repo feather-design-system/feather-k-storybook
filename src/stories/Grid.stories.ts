@@ -56,7 +56,8 @@ const columns = [
 ];
 
 const meta: Meta<typeof Grid> = {
-  title: "Feather K/Grid/Grid",
+  title: "Feather K/Grid",
+  // title: "Feather K/Grid/Grid",
   component: Grid,
   tags: ["autodocs"],
   parameters: {
