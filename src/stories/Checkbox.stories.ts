@@ -5,7 +5,7 @@ const meta: Meta<typeof Checkbox> = {
   title: "Feather K/Checkbox",
   // title: "Feather K/Input/Checkbox",
   component: Checkbox,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -31,6 +31,7 @@ const meta: Meta<typeof Checkbox> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

@@ -23,6 +23,7 @@ const meta: Meta<typeof RadioGroup> = {
   title: "Feather K/RadioGroup",
   // title: "Feather K/Input/RadioGroup",
   component: RadioGroup,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -61,6 +62,7 @@ const meta: Meta<typeof RadioGroup> = {
     },
   
   },
+  // #endregion autodocs
 };
 
 export default meta;

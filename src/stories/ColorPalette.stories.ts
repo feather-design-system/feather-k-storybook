@@ -5,7 +5,7 @@ const meta: Meta<typeof ColorPalette> = {
   title: "Feather K/ColorPalette",
   // title: "Feather K/Input/ColorPalette",
   component: ColorPalette,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -27,6 +27,7 @@ const meta: Meta<typeof ColorPalette> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

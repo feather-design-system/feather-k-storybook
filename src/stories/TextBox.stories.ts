@@ -5,6 +5,7 @@ const meta: Meta<typeof TextBox> = {
   title: "Feather K/TextBox",
   // title: "Feather K/Input/TextBox",
   component: TextBox,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -33,6 +34,7 @@ const meta: Meta<typeof TextBox> = {
     },
   
   },
+  // #endregion autodocs
 };
 
 export default meta;

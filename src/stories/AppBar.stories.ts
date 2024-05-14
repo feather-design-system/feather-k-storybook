@@ -13,7 +13,7 @@ const meta: Meta<typeof AppBar> = {
   title: "Feather K/AppBar",
   // title: "Feather K/Layout/AppBar",
   component: AppBar,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -72,6 +72,7 @@ const meta: Meta<typeof AppBar> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

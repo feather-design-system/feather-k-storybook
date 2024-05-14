@@ -5,6 +5,7 @@ const meta: Meta<typeof SplitButton> = {
   title: "Feather K/SplitButton",
   // title: "Feather K/Buttons/SplitButton",
   component: SplitButton,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -46,6 +47,7 @@ const meta: Meta<typeof SplitButton> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

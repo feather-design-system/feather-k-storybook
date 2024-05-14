@@ -5,7 +5,7 @@ const meta: Meta<typeof DatePicker> = {
   title: "Feather K/DatePicker",
   // title: "Feather K/DateInputs/DatePicker",
   component: DatePicker,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -52,6 +52,7 @@ const meta: Meta<typeof DatePicker> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

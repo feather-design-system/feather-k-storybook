@@ -29,6 +29,7 @@ const meta: Meta<typeof MultiSelect> = {
   title: "Feather K/MultiSelect",
   // title: "Feather K/DropDowns/MultiSelect",
   component: MultiSelect,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -82,6 +83,7 @@ const meta: Meta<typeof MultiSelect> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

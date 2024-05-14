@@ -8,6 +8,7 @@ const meta: Meta<typeof Slider> = {
   title: "Feather K/Slider",
   // title: "Feather K/Input/Slider",
   component: Slider,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -34,6 +35,7 @@ const meta: Meta<typeof Slider> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

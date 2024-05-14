@@ -12,7 +12,7 @@ const meta: Meta<typeof DropDownList> = {
   title: "Feather K/DropDownList",
   // title: "Feather K/DropDowns/DropDownList",
   component: DropDownList,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -41,6 +41,7 @@ const meta: Meta<typeof DropDownList> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

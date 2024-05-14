@@ -6,7 +6,7 @@ const meta: Meta<typeof ChipList> = {
   title: "Feather K/ChipList",
   // title: "Feather K/Buttons/ChipList",
   component: ChipList,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -58,6 +58,7 @@ const meta: Meta<typeof ChipList> = {
       },
     },
   },
+  //#endregion autodocs
 };
 
 export default meta;

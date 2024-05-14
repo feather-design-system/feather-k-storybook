@@ -12,7 +12,7 @@ const meta: Meta<typeof ComboBox> = {
   title: "Feather K/ComboBox",
   // title: "Feather K/DropDowns/ComboBox",
   component: ComboBox,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -40,6 +40,7 @@ const meta: Meta<typeof ComboBox> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

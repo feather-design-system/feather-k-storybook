@@ -7,6 +7,7 @@ const meta: Meta<typeof Toolbar> = {
   title: "Feather K/Toolbar",
   // title: "Feather K/Buttons/Toolbar",
   component: Toolbar,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -34,6 +35,7 @@ const meta: Meta<typeof Toolbar> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

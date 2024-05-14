@@ -59,7 +59,7 @@ const meta: Meta<typeof Grid> = {
   title: "Feather K/Grid",
   // title: "Feather K/Grid/Grid",
   component: Grid,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -101,6 +101,7 @@ const meta: Meta<typeof Grid> = {
       },
     },
   },
+  //#endregion autodocs
 };
 
 export default meta;

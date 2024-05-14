@@ -5,6 +5,7 @@ const meta: Meta<typeof MaskedTextBox> = {
   title: "Feather K/MaskedTextBox",
   // title: "Feather K/Input/MaskedTextBox",
   component: MaskedTextBox,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -45,6 +46,7 @@ const meta: Meta<typeof MaskedTextBox> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

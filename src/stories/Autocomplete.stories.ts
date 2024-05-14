@@ -6,7 +6,7 @@ const meta: Meta<typeof AutoComplete> = {
   title: "Feather K/Autocomplete",
   // title: "Feather K/DropDowns/Autocomplete",
   component: AutoComplete,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -50,6 +50,7 @@ const meta: Meta<typeof AutoComplete> = {
       },
     },
   },
+  // #endregion autodocs
   argTypes: {
     placeholder: { control: "text" },
   },

@@ -7,7 +7,7 @@ const meta: Meta<typeof DropDownButton> = {
   title: "Feather K/DropDownButton",
   // title: "Feather K/Buttons/DropDownButton",
   component: DropDownButton,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -35,6 +35,7 @@ const meta: Meta<typeof DropDownButton> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 const items = ["Home", "My Account", "Settings", "Sign Out"];

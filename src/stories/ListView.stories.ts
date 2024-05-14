@@ -9,6 +9,7 @@ const meta: Meta<typeof ListView> = {
   title: "Feather K/ListView",
   // title: "Feather K/ListView/ListView",
   component: ListView,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -23,6 +24,7 @@ const meta: Meta<typeof ListView> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

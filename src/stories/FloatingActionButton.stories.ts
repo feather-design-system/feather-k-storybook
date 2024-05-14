@@ -11,7 +11,7 @@ const meta: Meta<typeof FloatingActionButton> = {
   title: "Feather K/FloatingActionButton",
   // title: "Feather K/Buttons/FloatingActionButton",
   component: FloatingActionButton,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -41,6 +41,7 @@ const meta: Meta<typeof FloatingActionButton> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

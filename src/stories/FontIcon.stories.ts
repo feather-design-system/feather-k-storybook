@@ -5,7 +5,7 @@ const meta: Meta<typeof FontIcon> = {
   title: "Feather K/FontIcon",
   // title: "Feather K/Icons/FontIcon",
   component: FontIcon,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -20,6 +20,7 @@ const meta: Meta<typeof FontIcon> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

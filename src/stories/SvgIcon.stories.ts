@@ -6,6 +6,7 @@ const meta: Meta<typeof SvgIcon> = {
   title: "Feather K/SvgIcon",
   // title: "Feather K/Icons/SvgIcon",
   component: SvgIcon,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -31,6 +32,7 @@ const meta: Meta<typeof SvgIcon> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

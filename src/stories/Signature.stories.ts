@@ -7,6 +7,7 @@ const meta: Meta<typeof Signature> = {
   title: "Feather K/Signature",
   // title: "Feather K/Input/Signature",
   component: Signature,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -33,6 +34,7 @@ const meta: Meta<typeof Signature> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

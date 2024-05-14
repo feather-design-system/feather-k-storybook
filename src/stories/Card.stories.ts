@@ -15,7 +15,7 @@ const meta: Meta<typeof Card> = {
   title: "Feather K/Card",
   // title: "Feather K/Layout/Card",
   component: Card,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -70,15 +70,10 @@ const meta: Meta<typeof Card> = {
             <fieldset>
               <legend>fk-cardheader</legend>
               <pre>
-                &lt;Card 
-                  type="default" 
-                  orientation="vertical"
-                  &gt;
-                  &lt;CardHeader&gt;
-                    &lt;CardTitle&gt;Title&lt;/CardTitle&gt;
-                    &lt;CardSubtitle&gt;This is a subtitle. &lt;/CardSubtitle&gt;
-                  &lt;/CardHeader&gt;
-                &lt;/Card&gt;              
+                &lt;CardHeader&gt;
+                  &lt;CardTitle&gt;Title&lt;/CardTitle&gt;
+                  &lt;CardSubtitle&gt;This is a subtitle. &lt;/CardSubtitle&gt;
+                &lt;/CardHeader&gt;          
               </pre>
             </fieldset>
           </div>` +
@@ -129,6 +124,7 @@ const meta: Meta<typeof Card> = {
       },
     },
   },
+  //#endregion autodocs
 };
 export default meta;
 type Story = StoryObj<typeof meta>;

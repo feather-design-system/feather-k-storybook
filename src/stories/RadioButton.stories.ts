@@ -5,7 +5,7 @@ const meta: Meta<typeof RadioButton> = {
   title: "Feather K/RadioButton",
   // title: "Feather K/Input/RadioButton",
   component: RadioButton,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -19,6 +19,7 @@ const meta: Meta<typeof RadioButton> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

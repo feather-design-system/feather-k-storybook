@@ -5,7 +5,7 @@ const meta: Meta<typeof ColorPicker> = {
   title: "Feather K/ColorPicker",
   // title: "Feather K/Input/ColorPicker",
   component: ColorPicker,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -27,6 +27,7 @@ const meta: Meta<typeof ColorPicker> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

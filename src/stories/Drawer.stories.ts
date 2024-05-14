@@ -28,7 +28,7 @@ const meta: Meta<typeof Drawer> = {
   title: "Feather K/Drawer",
 //   title: "Feather K/Layout/Drawer",
   component: Drawer,
-  tags: ["autodocs"],
+	// #region autodocs
 	parameters: {
 		docs: {
 			description: {
@@ -80,6 +80,7 @@ const meta: Meta<typeof Drawer> = {
 			},
 		},
 	},
+	// #endregion autodocs
 };
 
 export default meta;

@@ -5,7 +5,7 @@ const meta: Meta<typeof ButtonGroup> = {
   title: 'Feather K/ButtonGroup',
   // title: 'Feather K/Buttons/ButtonGroup',
   component: ButtonGroup,
-  tags: ['autodocs'],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -48,6 +48,7 @@ const meta: Meta<typeof ButtonGroup> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

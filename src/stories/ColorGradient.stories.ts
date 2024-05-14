@@ -5,7 +5,7 @@ const meta: Meta<typeof ColorGradient> = {
   title: "Feather K/ColorGradient",
   // title: "Feather K/Input/ColorGradient",
   component: ColorGradient,
-  tags: ["autodocs"],
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -27,6 +27,7 @@ const meta: Meta<typeof ColorGradient> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

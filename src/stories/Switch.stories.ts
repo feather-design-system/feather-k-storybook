@@ -5,6 +5,7 @@ const meta: Meta<typeof Switch> = {
   title: "Feather K/Switch",
   // title: "Feather K/Input/Switch",
   component: Switch,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -40,6 +41,7 @@ const meta: Meta<typeof Switch> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

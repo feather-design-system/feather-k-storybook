@@ -5,6 +5,7 @@ const meta: Meta<typeof NumericTextBox> = {
   title: "Feather K/NumericTextBox",
   // title: "Feather K/Input/NumericTextBox",
   component: NumericTextBox,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -31,6 +32,7 @@ const meta: Meta<typeof NumericTextBox> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

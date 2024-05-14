@@ -6,6 +6,7 @@ const meta: Meta<typeof TextArea> = {
   title: "Feather K/TextArea",
   // title: "Feather K/Input/TextArea",
   component: TextArea,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -34,6 +35,7 @@ const meta: Meta<typeof TextArea> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;

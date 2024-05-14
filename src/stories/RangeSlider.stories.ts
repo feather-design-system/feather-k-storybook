@@ -7,6 +7,7 @@ const meta: Meta<typeof RangeSlider> = {
   title: "Feather K/RangeSlider",
   // title: "Feather K/Input/RangeSlider",
   component: RangeSlider,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -35,6 +36,7 @@ const meta: Meta<typeof RangeSlider> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;
