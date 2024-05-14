@@ -21,26 +21,26 @@ const meta: Meta<typeof ButtonGroup> = {
               `<pre>
                 &lt;ButtonGroup&gt;
                   &lt;Button 
-                  :togglable="true"
-                  themeColor="primary"
-                  fillMode="outline" 
-                  rounded="medium"
-                  &gt;Button 1
-                &lt;/Button&gt;
-                &lt;Button 
-                  :togglable="true"
-                  themeColor="primary"
-                  fillMode="outline" 
-                  rounded="medium"
-                  &gt;Button 2
-                &lt;/Button&gt;
-                &lt;Button 
-                  :togglable="true"
-                  themeColor="primary"
-                  fillMode="outline" 
-                  rounded="medium"
-                  &gt;Button 3
-                &lt;/Button&gt;
+                    :togglable="true"
+                    themeColor="primary"
+                    fillMode="outline" 
+                    rounded="medium"
+                    &gt;Button 1
+                  &lt;/Button&gt;
+                  &lt;Button 
+                    :togglable="true"
+                    themeColor="primary"
+                    fillMode="outline" 
+                    rounded="medium"
+                    &gt;Button 2
+                  &lt;/Button&gt;
+                  &lt;Button 
+                    :togglable="true"
+                    themeColor="primary"
+                    fillMode="outline" 
+                    rounded="medium"
+                    &gt;Button 3
+                  &lt;/Button&gt;
                 &lt;/ButtonGroup&gt;
               </pre>
             </fieldset>

@@ -64,7 +64,7 @@ const meta: Meta<typeof AppBar> = {
               &lt;AppBarSection&gt;
                 &lt;nav&gt;
                 &lt;RouterLink to="/"&gt;Home&lt;/RouterLink&gt;
-              &lt;/nav&gt;
+                &lt;/nav&gt;
               &lt;/AppBarSection&gt;       
             </pre>
           </fieldset>

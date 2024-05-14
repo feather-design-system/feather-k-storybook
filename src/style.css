@@ -33,7 +33,6 @@
     pre {
       transition: opacity 0.125s ease-in;
       opacity: .5;
-      white-space: pre-line;
       user-select: auto;
     }
   }

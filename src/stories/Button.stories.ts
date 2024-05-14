@@ -21,46 +21,46 @@ const meta: Meta<typeof Button> = {
           `<div className="fk-emmet">
             <fieldset>
               <legend>fk-button:primary</legend>
-            <pre>
-            &lt;Button 
-              @click="console.log('clicked')"
-              type="button" 
-              fillMode="solid" 
-              themeColor="primary" 
-              rounded="medium"
-              &gt;Primary
-            &lt;/Button&gt;
-            </pre>
+              <pre>
+                &lt;Button 
+                  @click="console.log('clicked')"
+                  type="button" 
+                  fillMode="solid" 
+                  themeColor="primary" 
+                  rounded="medium"
+                  &gt;Primary
+                &lt;/Button&gt;
+              </pre>
             </fieldset>
           </div>` +
           `<div className="fk-emmet">
             <fieldset>
               <legend>fk-button:secondary</legend>
-            <pre>
-            &lt;Button 
-              @click="console.log('clicked')"
-              type="button" 
-              fillMode="outline" 
-              themeColor="primary" 
-              rounded="medium"
-              &gt;Secondary
-            &lt;/Button&gt;
-            </pre>
+              <pre>
+                &lt;Button 
+                  @click="console.log('clicked')"
+                  type="button" 
+                  fillMode="outline" 
+                  themeColor="primary" 
+                  rounded="medium"
+                  &gt;Secondary
+                &lt;/Button&gt;
+              </pre>
             </fieldset>
           </div>` +
           `<div className="fk-emmet">
             <fieldset>
               <legend>fk-button:text</legend>
-            <pre>
-            &lt;Button 
-              @click="console.log('clicked')"
-              type="button" 
-              fillMode="flat" 
-              themeColor="primary" 
-              rounded="medium"
-              &gt;Text
-            &lt;/Button&gt;
-            </pre>
+              <pre>
+                &lt;Button 
+                  @click="console.log('clicked')"
+                  type="button" 
+                  fillMode="flat" 
+                  themeColor="primary" 
+                  rounded="medium"
+                  &gt;Text
+                &lt;/Button&gt;
+              </pre>
             </fieldset>
           </div>`,
       },

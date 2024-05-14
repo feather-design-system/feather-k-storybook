@@ -71,8 +71,33 @@ const meta: Meta<typeof Grid> = {
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/grid/grid/" target="_blank">Grid Documentation</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/grid/columns/column-menu/" target="_blank">Column Menu</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/grid/filtering/" target="_blank">Filter Data Types</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-grid</legend>
+              <pre>
+                &lt;Grid
+                  :dataItems="[
+                    { id: 1, name: 'Jane Doe', age: 30, smoker: true, city: 'New York' },
+                    { id: 2, name: 'Tom Brown', age: 45, smoker: false, city: 'Paris' },
+                    { id: 3, name: 'Linda Brown', age: 35, smoker: true, city: 'Belfast' },
+                  ]"
+                  :columns="[
+                    { field: 'name', title: 'Name', width: '200px' },
+                    { field: 'age', title: 'Age', width: '100px' },
+                    { field: 'smoker', title: 'Smoker', width: '100px' },
+                    { field: 'city', title: 'City', width: '200px' },
+                  ]"
+                  :resizable="true"
+                  :reorderable="true"
+                  :sortable="true"
+                  :sort="[{ field: 'name', dir: 'asc' }]"
+                  @columnreorder="() => console.log('invoke local columnReorder fn')"
+                  @sortchange="() => console.log('invoke local sortChange fn')"
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },
