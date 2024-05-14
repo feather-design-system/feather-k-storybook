@@ -113,3 +113,4 @@ setup(async (app) => {
   app.component("TextBox", TextBox);
   app.component("Toolbar", Toolbar);
 });
+export const tags = ["autodocs"];

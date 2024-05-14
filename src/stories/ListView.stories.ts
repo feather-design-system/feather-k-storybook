@@ -9,7 +9,6 @@ const meta: Meta<typeof ListView> = {
   title: "Feather K/ListView",
   // title: "Feather K/ListView/ListView",
   component: ListView,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -27,6 +26,7 @@ const meta: Meta<typeof ListView> = {
 };
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
 const contacts = [
@@ -72,9 +72,9 @@ export const Default: Story = {
     template: `
     <ListView 
       :dataItems="args.dataItems"
-      :item="'itemSlot'"
-      :header="'headerSlot'"
-      :footer="'footerSlot'"
+      item="itemSlot"
+      header="headerSlot"
+      footer="footerSlot"
       >
       <template v-slot:headerSlot="{ props }">
         <div>Header</div>
@@ -101,6 +101,6 @@ export const Default: Story = {
         </div>
       </template>
     </ListView>
-    `
+    `,
   }),
 };
