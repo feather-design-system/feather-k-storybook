@@ -14,7 +14,7 @@
       "fk-buttongroup": "<ButtonGroup>\n\t<Button \n\t:togglable=\"true\"\n\tthemeColor=\"primary\"\n\tfillMode=\"outline\" \n\trounded=\"medium\"\n\t>${1:Button 1}\n</Button>\n\t<Button \n\t:togglable=\"true\"\n\tthemeColor=\"primary\"\n\tfillMode=\"outline\" \n\trounded=\"medium\"\n\t>${2:Button 2}\n</Button>\n\t<Button \n\t:togglable=\"true\"\n\tthemeColor=\"primary\"\n\tfillMode=\"outline\" \n\trounded=\"medium\"\n\t>${3:Button 3}\n</Button>\n</ButtonGroup>",
       "fk-card:full": "<Card \n\ttype=\"${1:default}\" \n\torientation=\"${2:vertical}\" >\n\t<CardHeader>\n\t<CardTitle>${3:Title}</CardTitle>\n\t<CardSubtitle>${4:This is the subtitle.}</CardSubtitle>\n</CardHeader>\n\t<CardBody>\n\t<p>${5:lorem}</p>\n</CardBody>\n\t<CardFooter>${6:Footer}</CardFooter>\n\t<CardActions>\n\t${7:<Button \n\tthemeColor=\"primary\"\n\tfillMode=\"solid\"\n\trounded=\"medium\"\n\t>Ok\n</Button>}\n</CardActions>\n</Card>",
       "fk-card": "<Card \n\ttype=\"${1:default}\" \n\torientation=\"${2:vertical}\" \n>${3}\n</Card>",
-      "fk-cardheader": "<CardHeader>\n\t<CardTitle>${1:Title}</CardTitle>\n<CardSubtitle>${2:This is a subtitle.}\n\t</CardSubtitle>\n</CardHeader>",
+      "fk-cardheader": "<CardHeader>\n\t<CardTitle>${1:Title}</CardTitle>\n\t<CardSubtitle>${2:This is a subtitle.}\n\t</CardSubtitle>\n</CardHeader>",
       "fk-cardtitle": "<CardTitle>${1:Title}</CardTitle>",
       "fk-cardsubtitle": "<CardSubtitle>${1:Subtitle}</CardSubtitle>",
       "fk-cardimage": "<CardImage src=\"${1:https://via.placeholder.com/150}\" alt=\"${2:Image}\" width=\"150px\" height=\"150px\" />",
