@@ -48,6 +48,8 @@ import { FontIcon, SvgIcon } from "@progress/kendo-vue-common";
 import { Grid } from "@progress/kendo-vue-grid";
 import { DatePicker } from "@progress/kendo-vue-dateinputs";
 
+import "../src/style.css";
+
 // import '@progress/kendo-theme-material/dist/all.css';
 // import "../src/assets/css/feather-ui.css";
 import "../src/assets/css/feather-ks.css";

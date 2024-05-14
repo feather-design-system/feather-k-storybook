@@ -7,7 +7,6 @@ const meta: Meta<typeof Toolbar> = {
   title: "Feather K/Toolbar",
   // title: "Feather K/Buttons/Toolbar",
   component: Toolbar,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -17,8 +16,21 @@ const meta: Meta<typeof Toolbar> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/ToolbarProps/" target="_blank">Toolbar API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/toolbar/" target="_blank">Toolbar Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-toolbar</legend>
+              <pre>
+                &lt;Toolbar&gt;
+                  &lt;ButtonGroup&gt;
+                    &lt;Button :togglable="true" :svgIcon="userIcon" /&gt;
+                    &lt;Button :togglable="true" :svgIcon="menuIcon" /&gt;
+                  &lt;/ButtonGroup&gt;
+                &lt;/Toolbar&gt;
+                &lt;!--https://www.telerik.com/design-system/docs/foundation/iconography/icon-list/ --&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

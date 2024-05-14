@@ -23,7 +23,6 @@ const meta: Meta<typeof RadioGroup> = {
   title: "Feather K/RadioGroup",
   // title: "Feather K/Input/RadioGroup",
   component: RadioGroup,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -34,6 +33,22 @@ const meta: Meta<typeof RadioGroup> = {
           <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/RadioGroupProps/" target="_blank">RadioGroup API</a></li>
           <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/radiogroup/" target="_blank">RadioGroup Documentation</a></li>
           </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-radiogroup</legend>
+              <pre>
+                &lt;RadioGroup
+                  labelPlacement="after"
+                  layout="horizontal"
+                  :dataItems="
+                    ['Option 1', 'Option 2', 'Option 3'].map((item, index) => ({
+                      label: item,
+                      value: index,
+                    }))"
+                /&gt;             
+              </pre>
+            </fieldset>
+          </div>` +
           `<h3>Potential Kendo UI Bug</h3>` +
           `<p>
             There appears to be a bug with passing size to the RadioButtonProps object.  No matter what size is passed, the radio button is always the same size.

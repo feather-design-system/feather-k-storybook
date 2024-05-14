@@ -17,8 +17,19 @@ const meta: Meta<typeof Signature> = {
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/SignatureProps/" target="_blank">Signature API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/signature/" target="_blank">Signature Documentation</a></li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs" target="_blank">Data URLs</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-signature</legend>
+              <pre>
+                &lt;Signature 
+                  backgroundColor="#fff" 
+                  color="#000" 
+                  fillMode="solid" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

@@ -29,7 +29,6 @@ const meta: Meta<typeof MultiSelect> = {
   title: "Feather K/MultiSelect",
   // title: "Feather K/DropDowns/MultiSelect",
   component: MultiSelect,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -39,8 +38,47 @@ const meta: Meta<typeof MultiSelect> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/api/MultiSelectProps/" target="_blank">MultiSelect API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/multiselect/" target="_blank">MultiSelect Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-multiselect</legend>
+              <pre>
+                &lt;MultiSelect 
+                  label="Pizza Toppings (component label)" 
+                  textField="text" 
+                  valueField="value" 
+                  placeholder="" 
+                  fillMode="outline" 
+                  rounded="medium" 
+                  :dataItems="
+                    Array('Garlic', 'Cheese', 'Pepperoni', 'Onions', 'Peppers').map(
+                      (item, index) => ({ text: item, value: index })
+                    )"
+                  :style="{ width: '40em' }" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-multiselect:ext</legend>
+              <pre>
+                &lt;Label>Label&lt;/Label&gt;
+                &lt;MultiSelect
+                  textField="text"
+                  valueField="value"
+                  placeholder=""
+                  fillMode="outline"
+                  rounded="medium"
+                  :dataItems="
+                    Array('Apples', 'Bananas', 'Oranges', 'Pears', 'Pineapples').map(
+                      (item, index) => ({ text: item, value: index })
+                    )"
+                /&gt;
+                &lt;Hint&gt;Hint&lt;/Hint&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },
@@ -51,7 +89,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   argTypes: {
-    // label: { control: 'text' },
     dataItems: { control: "object" },
     valueField: { control: "object" },
     textField: { control: "text" },
@@ -65,7 +102,6 @@ export const Default: Story = {
     },
   },
   args: {
-    // label: 'Favorite Sports',
     dataItems: items,
     valueField: "value",
     textField: "text",

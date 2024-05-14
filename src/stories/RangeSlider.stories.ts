@@ -7,7 +7,6 @@ const meta: Meta<typeof RangeSlider> = {
   title: "Feather K/RangeSlider",
   // title: "Feather K/Input/RangeSlider",
   component: RangeSlider,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -16,8 +15,23 @@ const meta: Meta<typeof RangeSlider> = {
         `<ul>
           <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/RangeSliderProps/" target="_blank">RangeSlider API</a></li>
           <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/rangeslider/" target="_blank">RangeSlider Documentation</a></li>
-        </ul>
-        `,
+        </ul>` +
+        `<div className="fk-emmet">
+          <fieldset>
+            <legend>fk-rangeslider</legend>
+            <pre>
+              &lt;RangeSlider 
+                :min="0" 
+                :max="100" 
+                :step="10" 
+                :defaultValue="{start: 30, end: 60}" &gt;
+                &lt;SliderLabel slot="label" :position="0"&gt;0&lt;/SliderLabel&gt;
+                &lt;SliderLabel slot="label" :position="50"&gt;50&lt;/SliderLabel&gt;
+                &lt;SliderLabel slot="label" :position="100"&gt;100&lt;/SliderLabel&gt;
+              &lt;/RangeSlider&gt;
+            </pre>
+          </fieldset>
+        </div>`,
       },
     },
   },

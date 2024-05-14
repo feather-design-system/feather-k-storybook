@@ -5,7 +5,6 @@ const meta: Meta<typeof MaskedTextBox> = {
   title: "Feather K/MaskedTextBox",
   // title: "Feather K/Input/MaskedTextBox",
   component: MaskedTextBox,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -14,8 +13,35 @@ const meta: Meta<typeof MaskedTextBox> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/MaskedTextBoxProps/" target="_blank">MaskedTextBox API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/maskedtextbox/" target="_blank">MaskedTextBox Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-maskedtextbox:phone</legend>
+              <pre>
+                &lt;MaskedTextBox 
+                  label="Enter phone number"
+                  mask="(999) 000-0000" 
+                  placeholder="(___) ___-____" 
+                  fillMode="outline" 
+                  rounded="medium" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-maskedtextbox:ssn</legend>
+              <pre>
+                &lt;MaskedTextBox 
+                  label="Enter SSN"
+                  mask="000-00-0000" 
+                  placeholder="___-__-____" 
+                  fillMode="outline" 
+                  rounded="medium" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

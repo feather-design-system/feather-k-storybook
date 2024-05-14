@@ -5,7 +5,6 @@ const meta: Meta<typeof Switch> = {
   title: "Feather K/Switch",
   // title: "Feather K/Input/Switch",
   component: Switch,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -15,8 +14,29 @@ const meta: Meta<typeof Switch> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/SwitchProps/" target="_blank">Switch API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/switch/" target="_blank">Switch Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-switch</legend>
+              <pre>
+                &lt;Switch size="medium" thumbRounded="full" trackRounded="full" /&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-switch:yn</legend>
+              <pre>
+                &lt;Switch 
+                  size="medium" 
+                  thumbRounded="full" 
+                  trackRounded="full" 
+                  onLabel="yes" 
+                  offLabel="no"
+                /&gt;         
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

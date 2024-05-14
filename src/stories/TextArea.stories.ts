@@ -6,7 +6,6 @@ const meta: Meta<typeof TextArea> = {
   title: "Feather K/TextArea",
   // title: "Feather K/Input/TextArea",
   component: TextArea,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -15,8 +14,23 @@ const meta: Meta<typeof TextArea> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/TextAreaProps/" target="_blank">TextArea API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/textarea/" target="_blank">TextArea Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-textarea</legend>
+              <pre>
+                &lt;Label&gt;Comments:&lt;/Label&gt;
+                &lt;TextArea 
+                  :rows="5"
+                  placeholder="Enter your comments" 
+                  fillMode="outline" 
+                  rounded="medium" 
+                  size="medium" 
+                /&gt;
+                &lt;Hint&gt;Hint goes here. (optional)&lt;/Hint&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

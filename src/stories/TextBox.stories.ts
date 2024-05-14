@@ -5,7 +5,6 @@ const meta: Meta<typeof TextBox> = {
   title: "Feather K/TextBox",
   // title: "Feather K/Input/TextBox",
   component: TextBox,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -15,8 +14,21 @@ const meta: Meta<typeof TextBox> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/TextBoxProps/" target="_blank">TextBox API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/textbox/" target="_blank">TextBox Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-textbox</legend>
+              <pre>
+                &lt;TextBox 
+                  label="First Name"
+                  placeholder="Enter your first name" 
+                  fillMode="outline" 
+                  rounded="medium" 
+                  size="medium" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   

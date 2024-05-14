@@ -5,7 +5,6 @@ const meta: Meta<typeof NumericTextBox> = {
   title: "Feather K/NumericTextBox",
   // title: "Feather K/Input/NumericTextBox",
   component: NumericTextBox,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -14,8 +13,21 @@ const meta: Meta<typeof NumericTextBox> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/NumericTextBoxProps/" target="_blank">NumericTextBox API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/numerictextbox/" target="_blank">NumericTextBox Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-numerictextbox</legend>
+              <pre>
+                &lt;NumericTextBox 
+                  label="Years of service" 
+                  placeholder="Enter a number" 
+                  fillMode="outline" 
+                  rounded="medium" 
+                  format="n0" 
+                /&gt;              
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

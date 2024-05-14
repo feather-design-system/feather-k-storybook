@@ -8,7 +8,6 @@ const meta: Meta<typeof Slider> = {
   title: "Feather K/Slider",
   // title: "Feather K/Input/Slider",
   component: Slider,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -17,8 +16,21 @@ const meta: Meta<typeof Slider> = {
          `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/SliderProps/" target="_blank">Slider API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/slider/" target="_blank">Slider Documentation</a></li>
-          </ul>
-        `,        
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-slider</legend>
+              <pre>
+                &lt;Slider :min="0" :max="20" :step="5"&gt;
+                  &lt;SliderLabel slot="label" :position="0"&gt;0&lt;/SliderLabel&gt;
+                  &lt;SliderLabel slot="label" :position="5"&gt;5&lt;/SliderLabel&gt;
+                  &lt;SliderLabel slot="label" :position="10"&gt;10&lt;/SliderLabel&gt;
+                  &lt;SliderLabel slot="label" :position="15"&gt;15&lt;/SliderLabel&gt;
+                  &lt;SliderLabel slot="label" :position="20"&gt;20&lt;/SliderLabel&gt;
+                &lt;/Slider&gt;
+              </pre>
+            </fieldset>
+          </div>`,        
       },
     },
   },

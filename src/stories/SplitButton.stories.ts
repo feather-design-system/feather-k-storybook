@@ -5,7 +5,6 @@ const meta: Meta<typeof SplitButton> = {
   title: "Feather K/SplitButton",
   // title: "Feather K/Buttons/SplitButton",
   component: SplitButton,
-  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -15,8 +14,35 @@ const meta: Meta<typeof SplitButton> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/SplitButtonProps/" target="_blank">SplitButton API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/splitbutton/" target="_blank">SplitButton Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-splitbutton</legend>
+              <pre>
+                &lt;SplitButton 
+                  text="Send"
+                  themeColor="primary"
+                  fillMode="outline"
+                  rounded="medium"
+                  :items="['Save Draft', 'Forward to...', 'Delete']" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-splitbutton:primary</legend>
+              <pre>
+                &lt;SplitButton 
+                  text="Send"
+                  themeColor="primary"
+                  fillMode="solid"
+                  rounded="medium"
+                  :items="['Save Draft', 'Forward to...', 'Delete']" 
+                /&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },
