@@ -46,6 +46,7 @@ export const ViaRender: Story = {
     size: "medium",
   },
   render: (args) => ({
+    components: { FontIcon },
     data() {
       return {
         name: args.name,

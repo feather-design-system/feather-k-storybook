@@ -130,9 +130,7 @@ export const Default: Story = {
     columns: columns,
   },
   render: (args) => ({
-    components: {
-      Grid,
-    },
+    components: { Grid },
     data() {
       return {
         providers,

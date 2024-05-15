@@ -20,6 +20,32 @@ const meta: Meta<typeof Checkbox> = {
             <li>There is a bug with labelPlacement="before".  Punctuation pushed to beginning of label.  Very odd.</li>
             <li>This has been reproduced outside of Storybook.  It is a 🪳 in the Kendo UI Vue Checkbox component.</li>
           </ul>` +
+          `<p>
+            <strong>NOTE</strong>:  "defaultChecked" should only used in "uncontrolled" 
+            mode.  
+          </p>` +
+          `<p>
+            Please read the 
+            <a 
+              href="https://www.telerik.com/kendo-vue-ui/components/inputs/checkbox/controlled/"
+              target="_blank"
+              >Kendo UI Checkbox Controlled mode</a> 
+            to understand the difference between "controlled" mode and 
+            "uncontrolled" mode.  Essentially "controlled" mode is defined by 
+            binding a variable to the value property of the checkbox
+          </p>` +
+          `<p>
+            Also see 
+              <a 
+              href="https://www.telerik.com/kendo-vue-ui/components/inputs/checkbox/default-state/"
+              target="_blank">
+              Kendo UI Checkbox Default State
+              </a>
+          </p>` +
+          `<p>
+            In Summary, The value prop (controlled) and the defaultChecked prop 
+            (uncontrolled) should not be used together.
+          </p>` +
           `<div className="fk-emmet">
             <fieldset>
               <legend>fk-checkbox</legend>
@@ -50,6 +76,7 @@ export const Default: Story = {
     disabled: false,
   },
   render: (args) => ({
+    components: { Checkbox },
     methods: {
       handleChange(e:any) {
         console.log(e);
@@ -80,6 +107,7 @@ export const DefaultChecked: Story = {
     defaultChecked: true,
   },
   render: (args) => ({
+    components: { Checkbox },
     setup() {
       return { args };
     },
@@ -89,34 +117,7 @@ export const DefaultChecked: Story = {
         :label="args.label"
         :defaultChecked="args.defaultChecked">
       </Checkbox>
-      <hr/>
-      <p>
-        <strong>NOTE</strong>:  "defaultChecked" should only used in "uncontrolled" 
-        mode.  
-      </p>
-      <p>
-        Please read the 
-        <a 
-          href="https://www.telerik.com/kendo-vue-ui/components/inputs/checkbox/controlled/"
-          target="_blank"
-          >Kendo UI Checkbox Controlled mode</a>
-        to understand the difference between "controlled" mode and 
-        "uncontrolled" mode.  Essentially "controlled" mode is defined by 
-        binding a variable to the value property of the checkbox
-      </p>
-      <p>
-        Also see 
-          <a 
-          href="https://www.telerik.com/kendo-vue-ui/components/inputs/checkbox/default-state/"
-          target="_blank">
-          Kendo UI Checkbox Default State
-          </a>
-      </p>
-      <p>
-        In Summary, The value prop (controlled) and the defaultChecked prop 
-        (uncontrolled) should not be used together.
-      </p>
-    `,
+      `,
   }),
 };
 

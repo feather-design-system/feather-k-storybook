@@ -113,6 +113,7 @@ export const Default: Story = {
     ...ArgsDefault,
   },
   render: (args) => ({
+    components: { Button },
     setup() {
       return { args };
     },
@@ -131,6 +132,7 @@ export const Default: Story = {
 
 export const Primary: Story = {
   render: (args) => ({
+    components: { Button },
     setup() {
       return { args };
     },
@@ -148,6 +150,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   render: (args) => ({
+    components: { Button },
     setup() {
       return { args };
     },
@@ -165,6 +168,7 @@ export const Secondary: Story = {
 
 export const Text: Story = {
   render: (args) => ({
+    components: { Button },
     setup() {
       return { args };
     },
@@ -190,6 +194,7 @@ export const IconOnly: Story = {
     ...ArgsIconOnly,
   },
   render: (args) => ({
+    components: { Button },
     data() {
       return {
         folderIcon,
@@ -223,6 +228,7 @@ export const IconAndLabel: Story = {
     ...ArgsIconOnly,
   },
   render: (args) => ({
+    components: { Button },
     data() {
       return {
         folderIcon,

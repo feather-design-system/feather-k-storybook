@@ -54,6 +54,7 @@ export const Default: Story = {
     value: "info",
   },
   render: (args) => ({
+    components: { Chip },
     setup() {
       return { args };
     },

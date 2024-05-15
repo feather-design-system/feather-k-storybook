@@ -1,11 +1,7 @@
 import { Meta, StoryObj } from "@storybook/vue3";
 import { FloatingActionButton } from "@progress/kendo-vue-buttons";
 
-import {
-  menuIcon,
-  plusIcon,
-  shareIcon,
-} from "@progress/kendo-svg-icons";
+import { menuIcon, plusIcon, shareIcon } from "@progress/kendo-svg-icons";
 
 const meta: Meta<typeof FloatingActionButton> = {
   title: "Feather K/FloatingActionButton",
@@ -83,7 +79,6 @@ export const Default: Story = {
         "end-top": { horizontal: "end", vertical: "top" },
         "end-middle": { horizontal: "end", vertical: "middle" },
         "end-bottom": { horizontal: "end", vertical: "bottom" },
-      
       },
     },
   },
@@ -114,6 +109,7 @@ export const Default: Story = {
         :fillMode="args.fillMode"
         :align="args.align"
         :disabled="args.disabled"
+        :items="[{ text: 'My Profile' },{ text: 'Settings' },{ text: 'Help' }].map((item, index) => ({ text: item.text }))"
       />
     </div>
     `,

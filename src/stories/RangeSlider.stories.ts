@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/vue3";
-import { RangeSlider, SliderLabel } from "@progress/kendo-vue-inputs";
+import { NumericTextBox, RangeSlider, SliderLabel } from "@progress/kendo-vue-inputs";
 
 import "./slider.css";
 
@@ -58,7 +58,7 @@ export const Default: Story = {
     defaultValue: { start: 25, end: 80 },
   },
   render: (args) => ({
-    components: { RangeSlider, SliderLabel },
+    components: { RangeSlider, SliderLabel, NumericTextBox },
     computed: {
       sliderValue() {
         return this.value;

@@ -66,7 +66,7 @@ export const Default: Story = {
     disabled: false,
     fillMode: "outline",
     label: "Phone #",
-    placeholder: "(mobile preferred)",
+    placeholder: "",
     rounded: "large",
   },
 };
@@ -78,6 +78,6 @@ export const SSN: Story = {
     disabled: false,
     fillMode: "outline",
     label: "Social Security #",
-    placeholder: "Enter SSN",
+    placeholder: "",
   },
 };

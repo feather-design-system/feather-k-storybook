@@ -66,6 +66,7 @@ export const Default: Story = {
     items: items,
   },
   render: (args) => ({
+    components: { DropDownButton },
     data() {
       return {
         items,
