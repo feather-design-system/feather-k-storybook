@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { Button } from "@progress/kendo-vue-buttons";
-
-import "../src/assets/css/feather-ui.css";
-
+import "./assets/css/feather-ks.css";
+import "./assets/css/feather-k-override.css";
 </script>
 
 <template>
   <div>
-    <Button :theme-color="'primary'" :fill-mode="'solid'">Primary</Button>
-    <Button :theme-color="'primary'" :fill-mode="'outline'">Secondary</Button>
-    <Button :theme-color="'primary'" :fill-mode="'flat'">Text</Button>
+    <Button :theme-color="'primary'" :fill-mode="'solid'" :rounded="'medium'">Primary</Button>
+    <Button :theme-color="'primary'" :fill-mode="'outline'" :rounded="'medium'">Secondary</Button>
+    <Button :theme-color="'primary'" :fill-mode="'flat'" :rounded="'medium'">Text</Button>
     <p class="instruction">To run storybook enter "npm run storybook" from the terminal inside VS Code.</p>
 
   </div>
