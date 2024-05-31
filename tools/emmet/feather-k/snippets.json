@@ -62,7 +62,10 @@
       "fk-hint": "<Hint>${1:Hint}</Hint>",
 
       "fk-routerlink": "<RouterLink to=\"/${1:path}\">${2:Home}</RouterLink>",
-      "fk-routerview": "<RouterView name=\"${1:default}\"/>"
+      "fk-routerview": "<RouterView name=\"${1:default}\"/>",
+
+      "fk-container:page-title": "<header class=\"fk-container-page-title\">\n\t<h1>${1:Page Title}</h1>\n</header>",
+      "fk-container:standard": "<div class=\"fk-container-standard\">\n\t${1:content}\n</div>"
       
     }
   },
