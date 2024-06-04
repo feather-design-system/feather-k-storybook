@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import { Button } from "@progress/kendo-vue-buttons";
 import { ComboBox } from "@progress/kendo-vue-dropdowns";
-import { Dialog } from "@progress/kendo-vue-dialogs";
+import { Dialog, DialogActionsBar } from "@progress/kendo-vue-dialogs";
 import {
   Card,
   CardHeader,
@@ -15,54 +16,87 @@ import { TextBox } from "@progress/kendo-vue-inputs";
 import "./assets/css/feather-ks.css";
 // import "./assets/css/feather-ks-v18-migration-test.css"
 import "./assets/css/feather-k-override.css";
+
+let dialogIsVisible = ref(false);
+
+const toggleDialog = () => {
+  dialogIsVisible.value = !dialogIsVisible.value;
+};
 </script>
 
 <template>
-
-  
-  <header class="feather-k-container-page-title">
+  <header class="fk-container-page-title">
     <h3>Page Title</h3>
     <span>Some Text</span>
   </header>
 
-  
-  <div class="feather-k-container-standard">
-    <Dialog
-      >
+  <div class="fk-container-standard">content</div>
 
+  <div class="fk-container-standard">
+    <Button
+      @click="toggleDialog"
+      type="button"
+      fillMode="outline"
+      themeColor="primary"
+      rounded="medium"
+      >Dialog
+    </Button>
+    <Dialog v-if="dialogIsVisible" @close="toggleDialog" title="Dialog Title">
+      Dialog Content
+      <DialogActionsBar>
+        <Button 
+          type="button" 
+          fillMode="solid" 
+          themeColor="primary" 
+          rounded="medium"
+          @click="toggleDialog">
+          Ok
+        </Button>
+        <Button 
+          @click="toggleDialog" 
+          type="button" 
+          fillMode="outline" 
+          themeColor="primary" 
+          rounded="medium"
+          >Cancel
+        </Button>
+      </DialogActionsBar>
     </Dialog>
-    <ComboBox 
-      :dataItems="['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']" 
-      label="Favorite sport" 
-      fillMode="outline" 
-      rounded="medium" 
-      size="medium" 
+  </div>
+
+  <div class="fk-container-standard">
+    <ComboBox
+      :dataItems="['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']"
+      label="Favorite sport"
+      fillMode="outline"
+      rounded="medium"
+      size="medium"
     />
-    <TextBox 
+    <TextBox
       class="patient-search"
       label="Patient Search"
-      placeholder="Enter patient name" 
-      fillMode="outline" 
-      rounded="medium" 
-      size="medium" 
+      placeholder="Enter patient name"
+      fillMode="outline"
+      rounded="medium"
+      size="medium"
     />
   </div>
-  <div class="feather-k-container-standard">
+  <div class="fk-container-standard">
     <div class="buttons">
-      <TextBox 
-      label="Patient Search"
-      placeholder="Search for patient" 
-      fillMode="outline" 
-      rounded="medium" 
-      size="medium" 
-    />
+      <TextBox
+        label="Patient Search"
+        placeholder="Search for patient"
+        fillMode="outline"
+        rounded="medium"
+        size="medium"
+      />
 
-      <ComboBox 
-        :dataItems="['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']" 
+      <ComboBox
+        :dataItems="['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']"
         label="Favorite Sport"
-        fillMode="outline" 
-        rounded="medium" 
-        size="medium" 
+        fillMode="outline"
+        rounded="medium"
+        size="medium"
       />
       <Button
         type="submit"
@@ -132,16 +166,15 @@ body {
   padding: 0px;
 }
 
-.feather-k-container-page-title {
+/* .fk-container-page-title {
   margin: 48px 24px 24px;
   max-width: fit-content;
   border: 1px dashed green;
-}
-.feather-k-container-standard {
-  margin: 24px ;
+} */
+/* .fk-container-standard {
+  margin: 24px;
   padding: 8px 0 8px;
-  /* border: 1px dashed navy; */
-}
+} */
 </style>
 <style scoped>
 /* button {
@@ -151,7 +184,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 1em;
-  justify-content: flex-start
+  justify-content: flex-start;
 }
 .instruction {
   font-size: 1.5em;
