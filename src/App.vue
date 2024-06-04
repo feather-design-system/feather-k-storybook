@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { Button } from "@progress/kendo-vue-buttons";
 import { ComboBox } from "@progress/kendo-vue-dropdowns";
+import { Dialog } from "@progress/kendo-vue-dialogs";
 import {
   Card,
   CardHeader,
@@ -12,6 +13,7 @@ import {
 } from "@progress/kendo-vue-layout";
 import { TextBox } from "@progress/kendo-vue-inputs";
 import "./assets/css/feather-ks.css";
+// import "./assets/css/feather-ks-v18-migration-test.css"
 import "./assets/css/feather-k-override.css";
 </script>
 
@@ -25,6 +27,17 @@ import "./assets/css/feather-k-override.css";
 
   
   <div class="feather-k-container-standard">
+    <Dialog
+      >
+
+    </Dialog>
+    <ComboBox 
+      :dataItems="['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']" 
+      label="Favorite sport" 
+      fillMode="outline" 
+      rounded="medium" 
+      size="medium" 
+    />
     <TextBox 
       class="patient-search"
       label="Patient Search"
