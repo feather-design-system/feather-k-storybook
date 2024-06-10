@@ -31,9 +31,7 @@
       "fk-colorpicker": "<ColorPicker palette=\"${1:basic}\" :tileSize=\"${2:40}\" />",
       "fk-combobox": "<ComboBox \n\t:dataItems=\"${1:['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']}\" \n\tlabel=\"${2:Favorite sport}\" \n\tfillMode=\"outline\" \n\trounded=\"medium\" \n\tsize=\"medium\" \n/>",
       "fk-datepicker": "<DatePicker \n\tlabel=\"${1:Select a date}\" \n\t:defaultValue=\"new Date()\" \n\t:defaultShow=\"${2:false}\"\n\t:style=\"{ width: '258px' }\" \n\tfillMode=\"outline\" \n\trounded=\"medium\" \n\tsize=\"medium\" \n/>",
-
       "fk-dialog":"<Dialog v-if=\"dialogIsVisible\" @close=\"toggleDialog\" title=\"${1:Dialog Title}\">\n\t${2:Dialog Content}\n</Dialog>",
-
       "fk-datepicker:weeknum": "<DatePicker \n\tlabel=\"${1:Select a date}\" \n\t:defaultValue=\"new Date()\" \n\t:defaultShow=\"${2:false}\"\n\t:weekNumber=\"true\" \n\t:style=\"{ width: '285px' }\" \n\tfillMode=\"outline\" \n\trounded=\"medium\" \n\tsize=\"medium\" \n/>",
       "fk-drawer": "<Drawer \n\tposition=\"${1:end}\" \n\tmode=\"${2:overlay}\" \n\t:animation=\"true\" \n\t:expanded=\"true\" \n\t:width=\"${4:300}\" \n\t:items=\"[{ text: 'My Profile' },{ text: 'Settings' },{ text: 'Help' }].map((item, index) => ({ text: item.text })) \"\n />",
       "fk-drawer:routerview": "<Drawer \n\tposition=\"${1:end}\" \n\tmode=\"overlay\" \n\t:animation=\"true\" \n\t:expanded=\"true\" \n\t:width=\"${4:300}\">\n\t<RouterView />\n</Drawer>",
@@ -67,8 +65,15 @@
       "fk-routerlink": "<RouterLink to=\"/${1:path}\">${2:Home}</RouterLink>",
       "fk-routerview": "<RouterView name=\"${1:default}\"/>",
 
-      "fk-container:page-title": "<header class=\"fk-container-page-title\">\n\t<h1>${1:Page Title}</h1>\n</header>",
-      "fk-container:standard": "<div class=\"fk-container-standard\">\n\t${1:content}\n</div>"
+      "fk-padding:page-title": "<div class=\"feather-ks-page-title\">${1:content}</div>",
+      "fk-padding:section-title": "<div class=\"feather-ks-section-title\">${1:content}</div>",
+      "fk-padding:min": "<div class=\"feather-ks-padding-min\">${1:content}</div>",
+      "fk-padding:s": "<div class=\"feather-ks-padding-s\">${1:content}</div>",
+      "fk-padding:m": "<div class=\"feather-ks-padding-m\">${1:content}</div>",
+      "fk-padding:l": "<div class=\"feather-ks-padding-l\">${1:content}</div>",
+      "fk-padding:xl": "<div class=\"feather-ks-padding-xl\">${1:content}</div>",
+      "fk-padding:xxl": "<div class=\"feather-ks-padding-xxl\">${1:content}</div>",
+      "fk-padding:max": "<div class=\"feather-ks-padding-max\">${1:content}</div>"
       
     }
   },
