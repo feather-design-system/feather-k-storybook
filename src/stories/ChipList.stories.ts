@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/vue3";
 import { ChipList } from "@progress/kendo-vue-buttons";
 import { mapMarkerTargetIcon } from "@progress/kendo-svg-icons";
+import { expect, userEvent, within } from "@storybook/test";
 
 const meta: Meta<typeof ChipList> = {
   title: "Feather K/ChipList",
@@ -99,7 +100,10 @@ const cities = [
 
 export const Default: Story = {
   argTypes: {
-    selection: { control: "select", options: [undefined, "single", "multiple"] },
+    selection: {
+      control: "select",
+      options: [undefined, "single", "multiple"],
+    },
     size: { control: "select", options: ["small", "medium", "large"] },
     rounded: {
       control: "select",
@@ -115,35 +119,55 @@ export const Default: Story = {
   },
 };
 
-// export const WithIcons: Story = {
-//   // ...Default,
-//   argTypes: {
-//     selection: { control: "select", options: [undefined, "single", "multiple"] },
-//   },
-//   render: (args) => ({
-//     components: { Chip, ChipList, SvgIcon },
-//     data() {  
-//       return {
-//         cities: cities,
-//         mapMarkerTargetIcon: mapMarkerTargetIcon
-//       };
-//     },
-//     setup() {
-//       return { args };
-//     },
-//     template: `
-//       <template v-for="city in cities">
-//         <Chip
-//           :rounded="'full'"
-//           :text="city.text"
-//           :value="city.value"
-//           :disabled="city.disabled"
-//           >
-//           <template #icon>
-//             <SvgIcon :icon="city.icon" />
-//           </template>
-//         </Chip>
-//       </template>
-//     `,
-//   }),
-// };
+// #region interactions
+export const SingleSelection: Story = {
+  argTypes: { ...Default.argTypes },
+  args: { ...Default.args, selection: "single" },
+};
+
+SingleSelection.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  let chipList = await canvas.findAllByRole("option");
+
+  await userEvent.click(chipList[1]);
+  await expect (chipList[1].getAttribute("aria-selected")).toBe("true");
+
+  await userEvent.click(chipList[2]);
+  await expect (chipList[1].getAttribute("aria-selected")).toBe("false");
+  await expect (chipList[2].getAttribute("aria-selected")).toBe("true");
+
+  await userEvent.click(chipList[3]);
+  await expect (chipList[1].getAttribute("aria-selected")).toBe("false");
+  await expect (chipList[2].getAttribute("aria-selected")).toBe("false");
+  await expect (chipList[3].getAttribute("aria-selected")).toBe("true");
+
+};
+
+export const MultiSelection: Story = {
+  argTypes: { ...Default.argTypes },
+  args: { ...Default.args, selection: "multiple" },
+};
+
+MultiSelection.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  let chipList = await canvas.findAllByRole("option");
+
+  await userEvent.click(chipList[1]);
+  await expect (chipList[1].getAttribute("aria-selected")).toBe("true");
+
+  await userEvent.click(chipList[2]);
+  await expect (chipList[1].getAttribute("aria-selected")).toBe("true");
+  await expect (chipList[2].getAttribute("aria-selected")).toBe("true");
+
+  await userEvent.click(chipList[4]);
+  await expect (chipList[1].getAttribute("aria-selected")).toBe("true");
+  await expect (chipList[2].getAttribute("aria-selected")).toBe("true");
+  await expect (chipList[4].getAttribute("aria-selected")).toBe("true");
+
+  await userEvent.click(chipList[2]);
+  await expect (chipList[1].getAttribute("aria-selected")).toBe("true");
+  await expect (chipList[2].getAttribute("aria-selected")).toBe("false");
+  await expect (chipList[4].getAttribute("aria-selected")).toBe("true");
+
+}
+//#endregion interactions

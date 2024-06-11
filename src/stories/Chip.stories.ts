@@ -9,9 +9,10 @@ const meta: Meta<typeof Chip> = {
   parameters: {
     docs: {
       description: {
-        component: `<p>Chip is a component that allows users to enter information, make selections, filter content, or trigger actions.</p>` +
-        `<h3>Links</h3>` + 
-         `<ul>
+        component:
+          `<p>Chip is a component that allows users to enter information, make selections, filter content, or trigger actions.</p>` +
+          `<h3>Links</h3>` +
+          `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/ChipProps/" target="_blank">Chip API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/chip/" target="_blank">Chip Documentation</a></li>
           </ul>` +
@@ -28,9 +29,9 @@ const meta: Meta<typeof Chip> = {
                 /&gt;
               </pre>
             </fieldset>
-          </div>`,        
+          </div>`,
       },
-    },    
+    },
   },
   // #endregion autodocs
 };
@@ -42,9 +43,15 @@ export const Default: Story = {
   argTypes: {
     disabled: { control: "boolean" },
     text: { control: "text" },
-    rounded: { control: "select", options: [ "full", "small", "medium", "large"]},
+    rounded: {
+      control: "select",
+      options: ["full", "small", "medium", "large"],
+    },
     removable: { control: "boolean" },
-    value: { control: "select", options: ["base", "info", "success", "warning", "error"] },
+    value: {
+      control: "select",
+      options: ["base", "info", "success", "warning", "error"],
+    },
   },
   args: {
     disabled: false,
@@ -55,11 +62,16 @@ export const Default: Story = {
   },
   render: (args) => ({
     components: { Chip },
+    data() {
+      return { visible : true };
+    },
     setup() {
       return { args };
     },
     template: `
     <Chip 
+      v-if="visible"
+      @remove="visible = false"
       :text="args.text"
       :rounded="args.rounded"
       :removable="args.removable"
@@ -67,5 +79,6 @@ export const Default: Story = {
       :disabled="args.disabled" 
     />
     `,
-  }),    
+  }),
 };
+

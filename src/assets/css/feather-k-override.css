@@ -78,13 +78,3 @@ a{
 .k-appbar .k-appbar-section .k-button.k-button-flat .k-button-icon.k-icon.k-svg-icon>svg {
   color: white;
 }
-
-/* CONTAINERS */
-
-.fk-container-page-title {
-  margin: 48px 24px 24px 24px;
-}
-
-.fk-container-standard {
-  margin: 24px;
-}

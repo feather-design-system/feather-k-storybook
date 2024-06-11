@@ -1,10 +1,12 @@
 import { Meta, StoryObj } from "@storybook/vue3";
 import { Dialog, DialogActionsBar } from "@progress/kendo-vue-dialogs";
 import { Button } from "@progress/kendo-vue-buttons";
+import { within, expect, userEvent } from "@storybook/test";
 
 const meta: Meta<typeof Dialog> = {
   title: "Feather K/Dialog",
   component: Dialog,
+  // #region autodocs
   parameters: {
     docs: {
       description: {
@@ -19,15 +21,22 @@ const meta: Meta<typeof Dialog> = {
           <fieldset>
             <legend>fk-dialog</legend>
             <pre>
-              &lt;Dialog 
-                title="Dialog Title" 
-                visible="true" 
-                width="300px" 
-                height="200px" 
-                :closable="true" 
-                :modal="true" 
-              &gt;
-                Dialog content
+              &lt;Dialog v-if="dialogIsVisible"
+                title="Dialog Title"
+                class="my-dialog"
+                @close="toggleDialog" 
+                &gt;
+                lorem
+                &lt;DialogActionsBar&gt;
+                  &lt;Button 
+                  type="button"
+                  fillMode="solid"
+                  themeColor="primary"
+                  rounded="medium" 
+                  @click="toggleDialog"
+                  &gt;Ok
+                  &lt;/Button&gt;
+                &lt;/DialogActionsBar&gt;
               &lt;/Dialog&gt;
             </pre>
           </fieldset>
@@ -35,6 +44,7 @@ const meta: Meta<typeof Dialog> = {
       },
     },
   },
+  // #endregion autodocs
 };
 
 export default meta;
@@ -54,15 +64,27 @@ export const Default: Story = {
   },
   render: (args) => ({
     components: { Dialog, DialogActionsBar, Button },
+    data() {
+      return {
+        dialogIsVisible: false,
+      };
+    },
+    methods: {
+      toggleDialog() {
+        this.args.visible = !this.args.visible;
+      },
+    },
     setup() {
       return { args };
     },
     template: `
       <Dialog
-        v-bind="args"
+        :title="args.title"
+        :width="args.width"
+        :height="args.height"
+        :contentStyle="args.contentStyle"
       >
-        <p>Ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        Ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 
         <DialogActionsBar>
           <Button
@@ -71,15 +93,17 @@ export const Default: Story = {
             themeColor="primary"
             rounded="medium"
             :style="{'max-width': 'fit-content'}" 
-            >
-            Ok
+            @click="dialogIsVisible = false"
+            >Ok
           </Button>
           <Button
             type="button"
             fillMode="outline"
             themeColor="primary"
             rounded="medium"
-            :style="{'max-width': 'fit-content'}"             >Cancel
+            :style="{'max-width': 'fit-content'}"
+            @click="dialogIsVisible = false"
+            >Cancel
           </Button>
   
         </DialogActionsBar>
@@ -87,3 +111,93 @@ export const Default: Story = {
     `,
   }),
 };
+
+export const FunctionalDialog: Story = {
+  argTypes: {
+    title: { control: "text" },
+    width: { control: "text" },
+    height: { control: "text" },
+    contentStyle: { control: "object" },
+  },
+  args: {
+    title: "Dialog Title",
+    height: "fit-content",
+    width: "400px",
+  },
+  render: (args) => ({
+    components: { Dialog, DialogActionsBar, Button },
+    data() {
+      return {
+        dialogIsVisible: false,
+      };
+    },
+    methods: {
+      toggleDialog() {
+        this.args.visible = !this.args.visible;
+      },
+    },
+    setup() {
+      return { args };
+    },
+    template: `
+      <Button 
+        @click="dialogIsVisible = !dialogIsVisible"
+        type="button"
+        fillMode="outline"
+        themeColor="primary"
+        rounded="medium"        
+        >Open Dialog</Button>
+      <Dialog
+        data-testid="dialog-title"
+        v-if="dialogIsVisible"
+        v-model=dialogIsVisible
+        @close="dialogIsVisible = false"
+        :title="args.title"
+        :width="args.width"
+        :height="args.height"
+        :contentStyle="args.contentStyle"
+      >
+        Ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+        <DialogActionsBar>
+          <Button
+            type="submit"
+            fillMode="solid"
+            themeColor="primary"
+            rounded="medium"
+            :style="{'max-width': 'fit-content'}" 
+            @click="dialogIsVisible = false"
+            >Ok
+          </Button>
+          <Button
+            type="button"
+            fillMode="outline"
+            themeColor="primary"
+            rounded="medium"
+            :style="{'max-width': 'fit-content'}"
+            @click="dialogIsVisible = false"
+            >Cancel
+          </Button>
+  
+        </DialogActionsBar>
+      </Dialog>
+    `,
+  }),
+};
+// #region interactions
+FunctionalDialog.play = async ({
+  canvasElement,
+}: {
+  canvasElement: HTMLElement;
+}) => {
+  const canvas = within(canvasElement);
+
+  await userEvent.click(canvas.getByText("Open Dialog"));
+  await expect(canvas.getByText("Dialog Title")).toBeInTheDocument();
+
+  await userEvent.click(canvas.getAllByRole("button")[0]);
+  await expect(canvas.queryByText("Dialog Title")).toBeNull();
+
+  await userEvent.click(canvas.getByText("Open Dialog"));
+};
+// #endregion interactions
