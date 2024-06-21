@@ -2,16 +2,18 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import { Dialog, DialogActionsBar } from "@progress/kendo-vue-dialogs";
 import { Button } from "@progress/kendo-vue-buttons";
 import { within, expect, userEvent } from "@storybook/test";
+import pause from "./utils/pause";
 
 const meta: Meta<typeof Dialog> = {
   title: "Feather K/Dialog",
   component: Dialog,
-  // #region autodocs
   parameters: {
+    // #region autodocs
     docs: {
       description: {
         component:
           `<p>Dialog is a component that displays a modal dialog.</p>` +
+          `<h3>Installation</h3><pre><small>npm install @progress/kendo-vue-dialog</small></pre>` +
           `<h3>Links</h3>` +
           `<ul>
           <li><a href="https://www.telerik.com/kendo-vue-ui/components/dialogs/api/DialogProps/" target="_blank">Dialog API</a></li>
@@ -43,8 +45,8 @@ const meta: Meta<typeof Dialog> = {
         </div>`,
       },
     },
+    // #endregion autodocs
   },
-  // #endregion autodocs
 };
 
 export default meta;
@@ -112,18 +114,9 @@ export const Default: Story = {
   }),
 };
 
-export const FunctionalDialog: Story = {
-  argTypes: {
-    title: { control: "text" },
-    width: { control: "text" },
-    height: { control: "text" },
-    contentStyle: { control: "object" },
-  },
-  args: {
-    title: "Dialog Title",
-    height: "fit-content",
-    width: "400px",
-  },
+export const Interaction: Story = {
+  argTypes: { ...Default.argTypes },
+  args: { ...Default.args },
   render: (args) => ({
     components: { Dialog, DialogActionsBar, Button },
     data() {
@@ -185,19 +178,20 @@ export const FunctionalDialog: Story = {
   }),
 };
 // #region interactions
-FunctionalDialog.play = async ({
-  canvasElement,
-}: {
-  canvasElement: HTMLElement;
-}) => {
+Interaction.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
 
+  await pause(500);
   await userEvent.click(canvas.getByText("Open Dialog"));
   await expect(canvas.getByText("Dialog Title")).toBeInTheDocument();
 
+  await pause(500);
   await userEvent.click(canvas.getAllByRole("button")[0]);
   await expect(canvas.queryByText("Dialog Title")).toBeNull();
 
+  await pause(500);
   await userEvent.click(canvas.getByText("Open Dialog"));
+
+  await pause(2000);
 };
 // #endregion interactions
