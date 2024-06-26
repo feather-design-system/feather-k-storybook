@@ -78,3 +78,7 @@ a{
 .k-appbar .k-appbar-section .k-button.k-button-flat .k-button-icon.k-icon.k-svg-icon>svg {
   color: white;
 }
+
+.k-grid .k-table-row {
+  cursor: pointer;
+}
