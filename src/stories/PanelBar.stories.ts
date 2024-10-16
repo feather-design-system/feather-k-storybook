@@ -40,7 +40,12 @@ const meta: Meta<typeof PanelBar> = {
             <fieldset>
               <legend>fk-panelbar</legend>
               <pre>
-                &lt;PanelBar&gt;
+                &lt;PanelBar
+                  :expandMode=&quot;&apos;single&apos;&quot;
+                  :items=&quot;[{ title: &apos;Item 1&apos;, expanded: true, content: &apos;content-1&apos; },{ title: &apos;Item 2&apos;, content: &apos;content-2&apos; },{ title: &apos;Item 3&apos;, content: &apos;content-3&apos; }]&quot;&gt;
+                  &lt;template #content-1&gt;&lt;h2&gt;Content 1&lt;/h2&gt;&lt;/template&gt;
+                  &lt;template #content-2&gt;&lt;h2&gt;Content 2&lt;/h2&gt;&lt;/template&gt;
+                  &lt;template #content-3&gt;&lt;h2&gt;Content 3&lt;/h2&gt;&lt;/template&gt;
                 &lt;/PanelBar&gt;
               </pre>
             </fieldset>

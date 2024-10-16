@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { Button } from "@progress/kendo-vue-buttons";
 import { ComboBox } from "@progress/kendo-vue-dropdowns";
 import { Dialog, DialogActionsBar } from "@progress/kendo-vue-dialogs";
+import { PanelBar } from "@progress/kendo-vue-layout";
 import {
   Card,
   CardHeader,
@@ -34,14 +35,14 @@ const toggleDialog = () => {
     <Dialog v-if="dialogIsVisible"
       title="Dialog Title"
       class="my-dialog"
-      @close="toggleDialog" 
+      @close="toggleDialog"
       >lorem
       <DialogActionsBar>
-        <Button 
+        <Button
         type="button"
         fillMode="solid"
         themeColor="primary"
-        rounded="medium" 
+        rounded="medium"
         @click="toggleDialog"
         >Ok
         </Button>
@@ -80,28 +81,6 @@ const toggleDialog = () => {
         rounded="medium"
         >Dialog
       </Button>
-      <!-- <Dialog v-if="dialogIsVisible" @close="toggleDialog" title="Dialog Title">
-      Dialog Content
-      <DialogActionsBar>
-        <Button
-          type="button"
-          fillMode="solid"
-          themeColor="primary"
-          rounded="medium"
-          @click="toggleDialog"
-        >
-          Ok
-        </Button>
-        <Button
-          @click="toggleDialog"
-          type="button"
-          fillMode="outline"
-          themeColor="primary"
-          rounded="medium"
-          >Cancel
-        </Button>
-      </DialogActionsBar>
-    </Dialog> -->
     </div>
 
     <div class="feather-ks-padding-l">
@@ -193,7 +172,17 @@ const toggleDialog = () => {
         </CardActions>
       </Card>
     </div>
+
   </main>
+  <div>
+    <PanelBar
+      :expandMode="'single'"
+      :items="[{ title: 'Item 1', expanded: true, content: 'content-1' },{ title: 'Item 2', content: 'content-2' },{ title: 'Item 3', content: 'content-3' }]">
+      <template #content-1><h2>Content 1</h2></template>
+      <template #content-2><h2>Content 2</h2></template>
+      <template #content-3><h2>Content 3</h2> This is content for Item 3</template>
+    </PanelBar>
+  </div>
 </template>
 
 <style>

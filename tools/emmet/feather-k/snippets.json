@@ -45,6 +45,7 @@
       "fk-multiselect": "<MultiSelect \n\tlabel=\"${1:Pizza Toppings (component label)}\" \n\ttextField=\"${2:text}\" \n\tvalueField=\"${3:value}\" \n\tplaceholder=\"\" \n\tfillMode=\"outline\" \n\trounded=\"medium\" \n\t:dataItems=\"Array('Garlic', 'Cheese', 'Pepperoni', 'Onions', 'Peppers').map((item, index) => ({ text: item, value: index }))\" \n\t:style=\"{ width: '40em' }\"\n />",
       "fk-multiselect:ext": "<Label>${1:Label}</Label>\n<MultiSelect \n\ttextField='${2:text}' \n\tvalueField='${3:value}' \n\tplaceholder=\"\" \n\tfillMode=\"outline\" \n\trounded=\"medium\" \n\t:dataItems=\"Array('Apples', 'Bananas', 'Oranges', 'Pears', 'Pineapples').map((item, index) => ({ text: item, value: index }))\"\n />\n<Hint>${4:Hint}</Hint>",
       "fk-numerictextbox": "<NumericTextBox \n\tlabel=\"${1:Years of service}\" \n\tplaceholder=\"${2:Enter a number}\" \n\tfillMode=\"outline\" \n\trounded=\"medium\" \n\tformat=\"n0\" \n/>",
+      "fk-panelbar": "<PanelBar \n\t:expandMode=\"'single'\" \n\t:items=\"[{ title: 'Item 1', expanded: true, content: 'content-1' },{ title: 'Item 2', content: 'content-2' },{ title: 'Item 3', content: 'content-3' }]\"> \n\t<template #content-1><h2>Content 1</h2></template>\n\t<template #content-2><h2>Content 2</h2></template>\n\t<template #content-3><h2>Content 3</h2></template>\n</PanelBar>",
       "fk-radiogroup": "<RadioGroup\n\tlabelPlacement=\"after\" \n\tlayout=\"horizontal\" \n\t:dataItems=\"['Option 1', 'Option 2', 'Option 3'].map((item, index) => ({ label: item, value: index }))\" \n/>",
       "fk-rangeslider": "<RangeSlider \n\t:min=\"${1:0}\" \n\t:max=\"${2:100}\" \n\t:step=\"${3:10}\" \n\t:defaultValue=\"{start: 30, end: 60}\" >\n\t<SliderLabel slot=\"label\" :position=\"0\">0</SliderLabel>\n\t<SliderLabel slot=\"label\" :position=\"50\">50</SliderLabel>\n\t<SliderLabel slot=\"label\" :position=\"100\">100</SliderLabel>\n</RangeSlider>",
       "fk-signature": "<Signature \n\tbackgroundColor=\"${2:#fff}\" \n\tcolor=\"#000\" \n\tfillMode=\"solid\" \n/>",
@@ -74,7 +75,7 @@
       "fk-padding:xl": "<div class=\"feather-ks-padding-xl\">${1:content}</div>",
       "fk-padding:xxl": "<div class=\"feather-ks-padding-xxl\">${1:content}</div>",
       "fk-padding:max": "<div class=\"feather-ks-padding-max\">${1:content}</div>"
-      
+
     }
   },
   "css": {
