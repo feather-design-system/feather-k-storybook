@@ -7,8 +7,8 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "storybook:dev": "storybook dev -p 6006",
+    "storybook:build": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_42cf1166636e71c"
   },
   "dependencies": {

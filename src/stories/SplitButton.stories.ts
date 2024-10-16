@@ -20,12 +20,12 @@ const meta: Meta<typeof SplitButton> = {
             <fieldset>
               <legend>fk-splitbutton</legend>
               <pre>
-                &lt;SplitButton 
+                &lt;SplitButton
                   text="Send"
                   themeColor="primary"
                   fillMode="outline"
                   rounded="medium"
-                  :items="['Save Draft', 'Forward to...', 'Delete']" 
+                  :items="['Save Draft', 'Forward to...', 'Delete']"
                 /&gt;
               </pre>
             </fieldset>
@@ -34,12 +34,12 @@ const meta: Meta<typeof SplitButton> = {
             <fieldset>
               <legend>fk-splitbutton:primary</legend>
               <pre>
-                &lt;SplitButton 
+                &lt;SplitButton
                   text="Send"
                   themeColor="primary"
                   fillMode="solid"
                   rounded="medium"
-                  :items="['Save Draft', 'Forward to...', 'Delete']" 
+                  :items="['Save Draft', 'Forward to...', 'Delete']"
                 /&gt;
               </pre>
             </fieldset>
@@ -61,6 +61,10 @@ const buttons = [
 
 export const Default: Story = {
   argTypes: {
+    themeColor: {
+      control: "select",
+      options: ["", "primary"],
+    },
     fillMode: {
       control: "select",
       options: ["primary", "secondary", "text"],
@@ -76,6 +80,7 @@ export const Default: Story = {
     disabled: { control: "boolean" },
   },
   args: {
+    themeColor: "primary",
     fillMode: "primary",
     rounded: "medium",
     items: buttons,
@@ -91,6 +96,7 @@ export const Default: Story = {
     },
     template: `
     <SplitButton
+      :themeColor="args.themeColor"
       :fillMode="args.fillMode"
       :rounded="args.rounded"
       :disabled="args.disabled"
