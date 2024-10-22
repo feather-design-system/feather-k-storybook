@@ -14,6 +14,7 @@ const meta: Meta<typeof Skeleton> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/indicators/api/SkeletonProps/" target="_blank">Skeleton API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/indicators/skeleton/" target="_blank">Skeleton Documentation</a></li>
+            <li><strong>Pulse animation is currently only visible with a dark background.  May need to revisit this in ThemeBuilder.</strong></li>
           </ul>
         `,
       },
@@ -32,17 +33,22 @@ export const Default: Story = {
       options: ["circle", "rectangle", "text"],
     },
     animation: {
-      boolean: "boolean",
+      control: "select",
+      options: ["pulse", "wave"],
+      mapping: {
+        pulse: { type: "pulse" },
+        wave: { type: "wave" },
+      },
     },
   },
   args: {
-    shape: "text",
-    animation: true,
+    shape: "rectangle",
+    animation: {"type":"wave"},
   },
   render: (args) => ({
     components: { Skeleton },
     computed: {
-      style() {
+      skeletonStyle() {
         let style = {};
 
         switch (args.shape) {
@@ -68,8 +74,87 @@ export const Default: Story = {
     },
     template: `
       <div>
-        <Skeleton :class="'wave'" :style="style" :shape="args.shape" :animation="args.animation" />
+        <Skeleton  :style="skeletonStyle" :shape="args.shape" :animation="args.animation" />
       </div>
+    `,
+  }),
+};
+
+export const Page: Story = {
+  argTypes: {
+    animation: {
+      control: "select",
+      options: ["pulse", "wave"],
+      mapping: {
+        pulse: { type: "pulse" },
+        wave: { type: "wave" },
+      },
+    },
+  },
+  args: {
+    animation: { type: "wave" },
+  },
+  render: (args) => ({
+    components: { Skeleton },
+    data() {
+      return {};
+    },
+    setup() {
+      return { args };
+    },
+    template: `
+    <div :style="{backgroundColor: 'rgba(255,255,255,.4)', outline: '1px dashed #eee'}">
+      <div :style="{marginBottom: '4em'}">
+        <Skeleton
+          :style="{ width: '100px', height: '100px' }"
+          :shape="'circle'"
+          :animation="args.animation"
+          />
+      </div>
+      <div class="wrapper"
+        :style="{
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                gap: '2em',
+                alignItems: 'flex-start',
+                }">
+        <div>
+          <Skeleton
+            :style="{ width: '300px', height: '300px' }"
+            :shape="'rectangle'"
+            :animation="args.animation"
+            />
+        </div>
+        <div>
+          <Skeleton
+            :style="{ height: '40px', width: '20em' }"
+            :shape="'text'"
+            :animation="args.animation"
+            />
+          <Skeleton
+            :style="{ height: '40px', width: '20em' }"
+            :shape="'text'"
+            :animation="args.animation"
+            />
+          <Skeleton
+            :style="{ height: '40px', width: '20em' }"
+            :shape="'text'"
+            :animation="args.animation"
+            />
+          <Skeleton
+            :style="{ height: '40px', width: '20em' }"
+            :shape="'text'"
+            :animation="args.animation"
+            />
+          <Skeleton
+            :style="{ height: '40px', width: '20em' }"
+            :shape="'text'"
+            :animation="args.animation"
+            />
+        </div>
+      </div>
+    </div>
     `,
   }),
 };

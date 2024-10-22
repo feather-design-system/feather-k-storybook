@@ -52,19 +52,19 @@ export const Default: Story = {
     closable: true,
     message: "",
     showIcon: true,
-    durationMs: 500,
+    transitionMs: 500,
     animation: true,
     notificationGroupStyle: {
-      right: "2em",
-      bottom: "2em",
-      alignItems: "flex-end",
-      flexWrap: "wrap-reverse",
+      "right": "2em",
+      "top": "2em",
+      "alignItems": "flex-end",
+      "flexWrap": "wrap-reverse"
     },
   },
   parameters: {
     message: `text`,
     showIcon: `boolean`,
-    durationMs: `number`,
+    transitionMs: `number`,
     animation: "boolean",
     NotificationGroupStyle: `object`,
   },
@@ -142,17 +142,14 @@ export const Default: Story = {
       return { args, close, msg, showNotification, timer };
     },
     template: `
-    <div><span>Timer ID: {{ timer }}</span></div>
-    <div><span>Notification Type: {{ msg }}</span></div>
-    <div><span>Closable {{ args.closable }}</span></div>
     <NotificationGroup
       :style="args.notificationGroupStyle">
       <Fade
         :appear="showNotification"
         :enter="args.animation"
         :exit="args.animation"
-        :transition-enter-duration="args.durationMs"
-        :transition-exit-duration="args.durationMs">
+        :transition-enter-duration="args.transitionMs"
+        :transition-exit-duration="args.transitionMs">
         <Notification
           v-if="showNotification"
           :type="{style: args.type.style, icon: args.showIcon}"
@@ -160,6 +157,7 @@ export const Default: Story = {
           :closable="args.closable"
           :show="showNotification"
           @close="close"
+          @click="close"
         >
           <span v-if="args.message.length > 0">{{args.message}}</span>
           <span v-else>{{msg ? 'This is ' + msg + ' message.' : 'A new message'}}</span>
