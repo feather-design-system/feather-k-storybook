@@ -53,6 +53,7 @@ export const Default: Story = {
     message: "",
     showIcon: true,
     durationMs: 500,
+    animation: true,
     notificationGroupStyle: {
       right: "2em",
       bottom: "2em",
@@ -64,6 +65,7 @@ export const Default: Story = {
     message: `text`,
     showIcon: `boolean`,
     durationMs: `number`,
+    animation: "boolean",
     NotificationGroupStyle: `object`,
   },
   render: (args) => ({
@@ -78,10 +80,8 @@ export const Default: Story = {
 
       const clearTimer = () => {
         if (timer.value) {
-          console.log("Clearing timer: ", timer.value);
           clearTimeout(timer.value);
           timer.value = null;
-          console.log("Timer ID: ", timer.value);
         }
       };
 
@@ -90,7 +90,6 @@ export const Default: Story = {
         if (timer.value) {
           clearTimer();
         }
-        console.log("Notification closed", timer.value);
       };
 
       const msg = computed(() => {
@@ -148,10 +147,10 @@ export const Default: Story = {
     <div><span>Closable {{ args.closable }}</span></div>
     <NotificationGroup
       :style="args.notificationGroupStyle">
-
-
       <Fade
         :appear="showNotification"
+        :enter="args.animation"
+        :exit="args.animation"
         :transition-enter-duration="args.durationMs"
         :transition-exit-duration="args.durationMs">
         <Notification
