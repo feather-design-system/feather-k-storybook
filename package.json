@@ -20,10 +20,12 @@
     "@progress/kendo-vue-dateinputs": "^4.3.2",
     "@progress/kendo-vue-dropdowns": "^4.3.2",
     "@progress/kendo-vue-grid": "^4.3.2",
+    "@progress/kendo-vue-indicators": "^4.3.2",
     "@progress/kendo-vue-inputs": "^4.3.2",
     "@progress/kendo-vue-labels": "^4.3.2",
     "@progress/kendo-vue-layout": "^4.3.2",
     "@progress/kendo-vue-listview": "^4.3.2",
+    "@progress/kendo-vue-notification": "^4.3.2",
     "vue": "^3.4.21"
   },
   "devDependencies": {
