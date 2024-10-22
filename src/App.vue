@@ -5,6 +5,11 @@ import { ComboBox } from "@progress/kendo-vue-dropdowns";
 import { Dialog, DialogActionsBar } from "@progress/kendo-vue-dialogs";
 import { PanelBar } from "@progress/kendo-vue-layout";
 import {
+  Notification,
+  NotificationGroup,
+} from "@progress/kendo-vue-notification";
+import { Fade } from "@progress/kendo-vue-animation";
+import {
   Card,
   CardHeader,
   CardBody,
@@ -23,31 +28,60 @@ let dialogIsVisible = ref(false);
 const toggleDialog = () => {
   dialogIsVisible.value = !dialogIsVisible.value;
 };
+
+let showSuccess = ref(true);
+let showError = ref(true);
+const close = (style: string) => {
+  switch (style) {
+    case "success":
+      showSuccess.value = false;
+      break;
+    case "error":
+      showError.value = false;
+      break;
+  }
+};
 </script>
 
 <template>
   <main>
+    <NotificationGroup
+      :style="{
+        right: 0,
+        bottom: 0,
+        'align-items': 'flex-start',
+        flexWrap: 'wrap-reverse',
+      }"
+    >
+      <Fade :appear="showSuccess" :transition-enter-duration="3000" :transition-exit-duration="1000">
+        <Notification
+          :type="{ style: 'success', icon: true }"
+          :closable="true"
+          @close="close('success')"
+          >This demo was successfully loaded.</Notification
+        >
+      </Fade>
+      <Fade :appear="showError" :transition-enter-duration="3000" :transition-exit-duration="1000">
+        <Notification
+          :type="{ style: 'error', icon: true }"
+          :closable="true"
+          @close="close('error')"
+          >This is just a demo error.</Notification
+        >
+      </Fade>
+    </NotificationGroup>
+
+    <p class="instruction">
+      To run storybook enter "npm run storybook:dev" from the terminal inside VS
+      Code.
+    </p>
+
+    <div class="feather-k-page-title"></div>
+
     <div class="feather-ks-page-title">
       <h2>Page Title</h2>
       <span>Some Text</span>
     </div>
-
-    <Dialog v-if="dialogIsVisible"
-      title="Dialog Title"
-      class="my-dialog"
-      @close="toggleDialog"
-      >lorem
-      <DialogActionsBar>
-        <Button
-        type="button"
-        fillMode="solid"
-        themeColor="primary"
-        rounded="medium"
-        @click="toggleDialog"
-        >Ok
-        </Button>
-      </DialogActionsBar>
-    </Dialog>
 
     <Dialog
       v-if="dialogIsVisible"
@@ -117,6 +151,8 @@ const toggleDialog = () => {
           rounded="medium"
           size="medium"
         />
+      </div>
+      <div class="feather-ks-padding-l">
         <Button
           type="submit"
           fillMode="solid"
@@ -142,47 +178,54 @@ const toggleDialog = () => {
           >Text
         </Button>
       </div>
-      <p class="instruction">
-        To run storybook enter "npm run storybook" from the terminal inside VS
-        Code.
-      </p>
 
-      <Card
-        type="default"
-        orientation="vertical"
-        :style="{ 'max-width': '50em' }"
-      >
-        <CardHeader>
-          <CardTitle>A new Card</CardTitle>
-          <CardSubtitle>This is the subtitle.</CardSubtitle>
-        </CardHeader>
-        <CardBody>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione,
-            dolorem rerum nesciunt quos dolores tempore doloribus placeat,
-            voluptate commodi qui error perferendis quidem reprehenderit aperiam
-            consequatur minima porro voluptatum blanditiis?
-          </p>
-        </CardBody>
-        <CardFooter>Footer</CardFooter>
-        <CardActions>
-          <Button themeColor="primary" fillMode="solid" rounded="medium"
-            >Ok
-          </Button>
-        </CardActions>
-      </Card>
+      <div class="feather-ks-padding-l">
+        <Card
+          type="default"
+          orientation="vertical"
+          :style="{ 'max-width': '50em' }"
+        >
+          <CardHeader>
+            <CardTitle>A new Card</CardTitle>
+            <CardSubtitle>This is the subtitle.</CardSubtitle>
+          </CardHeader>
+          <CardBody>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione,
+              dolorem rerum nesciunt quos dolores tempore doloribus placeat,
+              voluptate commodi qui error perferendis quidem reprehenderit
+              aperiam consequatur minima porro voluptatum blanditiis?
+            </p>
+          </CardBody>
+          <CardFooter>Footer</CardFooter>
+          <CardActions>
+            <Button themeColor="primary" fillMode="solid" rounded="medium"
+              >Ok
+            </Button>
+          </CardActions>
+        </Card>
+      </div>
     </div>
-
+    <div>
+      <div class="feather-ks-padding-l">
+        <PanelBar
+          :expandMode="'single'"
+          :items="[
+            { title: 'Item 1', expanded: true, content: 'content-1' },
+            { title: 'Item 2', content: 'content-2' },
+            { title: 'Item 3', content: 'content-3' },
+          ]"
+        >
+          <template #content-1><h2>Content 1</h2></template>
+          <template #content-2><h2>Content 2</h2></template>
+          <template #content-3
+            ><h2>Content 3</h2>
+            This is content for Item 3</template
+          >
+        </PanelBar>
+      </div>
+    </div>
   </main>
-  <div>
-    <PanelBar
-      :expandMode="'single'"
-      :items="[{ title: 'Item 1', expanded: true, content: 'content-1' },{ title: 'Item 2', content: 'content-2' },{ title: 'Item 3', content: 'content-3' }]">
-      <template #content-1><h2>Content 1</h2></template>
-      <template #content-2><h2>Content 2</h2></template>
-      <template #content-3><h2>Content 3</h2> This is content for Item 3</template>
-    </PanelBar>
-  </div>
 </template>
 
 <style>
@@ -197,17 +240,15 @@ body {
   main {
     width: 1128px;
     margin: 0 auto;
+    button {
+      margin: 0 0.5em;
+    }
     .my-dialog {
       .k-dialog {
         max-width: 20rem;
       }
     }
   }
-  /* .k-actions.k-dialog-actions {
-    .k-button.k-button-solid-primary {
-      background-color: green;
-    }
-  } */
 }
 </style>
 <style scoped>
@@ -218,7 +259,8 @@ body {
   justify-content: flex-start;
 }
 .instruction {
-  font-size: 1.5em;
+  font-size: 2em;
+  color: #444ffe;
 }
 .patient-search {
   width: 30em;
