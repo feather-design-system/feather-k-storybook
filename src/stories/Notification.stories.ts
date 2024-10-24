@@ -111,7 +111,6 @@ export const Default: Story = {
 
       watchEffect(() => {
         if (args!.type!.style != undefined) {
-          console.log("Notification type: ", args!.type!.style);
           showNotification.value = true;
         }
       });
@@ -124,7 +123,6 @@ export const Default: Story = {
           timer.value = setTimeout(() => {
             if (!args.closable) showNotification.value = false;
           }, autoCloseAfter.value);
-          console.log("New Timer ID: ", timer.value);
         }
       });
 
@@ -134,10 +132,7 @@ export const Default: Story = {
         }
       });
 
-      onMounted(() => {
-        console.log("parameter check: ", args);
-        console.log("msg: ", msg.value);
-      });
+      onMounted(() => {});
 
       return { args, close, msg, showNotification, timer };
     },
