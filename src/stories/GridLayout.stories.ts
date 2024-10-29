@@ -4,7 +4,6 @@ import Tip from "../components/Tip.vue";
 
 const meta: Meta<typeof GridLayout> = {
   title: "Feather K/GridLayout",
-  // title: "Feather K/Layout/GridLayout",
   component: GridLayout,
   // #region autodocs
   parameters: {
@@ -14,8 +13,8 @@ const meta: Meta<typeof GridLayout> = {
           `<p>GridLayout is a component that allows you to create a grid layout.</p>` +
           `<h3>Links</h3>` +
           `<ul>
-            <li><a href="https://www.telerik.com/kendo-vue-ui/components/layouts/api/GridLayoutProps/" target="_blank">GridLayout API</a></li>
-            <li><a href="https://www.telerik.com/kendo-vue-ui/components/layouts/gridlayout/" target="_blank">GridLayout Documentation</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/layout/api/GridLayoutProps/" target="_blank">GridLayout API</a></li>
+            <li><a href="https://www.telerik.com/kendo-vue-ui/components/layout/gridlayout/" target="_blank">GridLayout Documentation</a></li>
           </ul>` +
           `<div className="fk-emmet">
             <fieldset>

@@ -50,25 +50,25 @@ export const RightArrow = () => (
 <div className="sb-container">
   <div className="sb-section">
     <div className="sb-section-item">
-      <h4 className="sb-section-item-heading">Collaborate</h4>
-      <p className="sb-section-item-paragraph">
+      <h3 className="sb-section-item-heading">Collaborate</h3>
+      <span className="sb-section-item-paragraph">
         With Storybook, Engineering, UX and Design teams can work from a
         consistent set of components.
-      </p>
+      </span>
     </div>
     <div className="sb-section-item">
-      <h4 className="sb-section-item-heading">Collaborate</h4>
-      <p className="sb-section-item-paragraph">
+      <h3 className="sb-section-item-heading">Collaborate</h3>
+      <span className="sb-section-item-paragraph">
         With Storybook, Engineering, UX and Design teams can work from a
         consistent set of components.
-      </p>
+      </span>
     </div>
     <div className="sb-section-item">
-      <h4 className="sb-section-item-heading">Collaborate</h4>
-      <p className="sb-section-item-paragraph">
+      <h3 className="sb-section-item-heading">Collaborate</h3>
+      <span className="sb-section-item-paragraph">
         With Storybook, Engineering, UX and Design teams can work from a
         consistent set of components.
-      </p>
+      </span>
     </div>
   </div>
 </div>
@@ -86,7 +86,7 @@ export const RightArrow = () => (
         alt="A wall of logos representing different styling technologies"
       />
       <h4 className="sb-section-item-heading">Add styling and CSS</h4>
-      <p className="sb-section-item-paragraph">Like with web applications, there are many ways to include CSS within Storybook. Learn more about setting up styling within Storybook.</p>
+      <div className="sb-section-item-paragraph">Like with web applications, there are many ways to include CSS within Storybook. Learn more about setting up styling within Storybook.</div>
       <a
         href="https://storybook.js.org/docs/vue3/configure/styling-and-css"
         target="_blank"
@@ -98,7 +98,7 @@ export const RightArrow = () => (
         alt="An abstraction representing the composition of data for a component"
       />
       <h4 className="sb-section-item-heading">Provide context and mocking</h4>
-      <p className="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context (like a theme provider) to be available.</p>
+      <div className="sb-section-item-paragraph">Often when a story doesn't render, it's because your component is expecting a specific environment or context (like a theme provider) to be available.</div>
       <a
         href="https://storybook.js.org/docs/vue3/writing-stories/decorators#context-for-mocking"
         target="_blank"
@@ -108,9 +108,9 @@ export const RightArrow = () => (
       <img src={Assets} alt="A representation of typography and image assets" />
       <div>
         <h4 className="sb-section-item-heading">Load assets and resources</h4>
-        <p className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
+        <div className="sb-section-item-paragraph">To link static files (like fonts) to your projects and stories, use the
         `staticDirs` configuration option to specify folders to load when
-        starting Storybook.</p>
+        starting Storybook.</div>
         <a
           href="https://storybook.js.org/docs/vue3/configure/images-and-assets"
           target="_blank"
@@ -132,8 +132,8 @@ export const RightArrow = () => (
       <div className="sb-grid-item">
         <img src={Docs} alt="A screenshot showing the autodocs tag being set, pointing a docs page being generated" />
         <h4 className="sb-section-item-heading">Autodocs</h4>
-        <p className="sb-section-item-paragraph">Auto-generate living,
-          interactive reference documentation from your components and stories.</p>
+        <div className="sb-section-item-paragraph">Auto-generate living,
+          interactive reference documentation from your components and stories.</div>
         <a
           href="https://storybook.js.org/docs/vue3/writing-docs/autodocs"
           target="_blank"
@@ -142,7 +142,7 @@ export const RightArrow = () => (
       <div className="sb-grid-item">
         <img src={Share} alt="A browser window showing a Storybook being published to a chromatic.com URL" />
         <h4 className="sb-section-item-heading">Publish to Chromatic</h4>
-        <p className="sb-section-item-paragraph">Publish your Storybook to review and collaborate with your entire team.</p>
+        <div className="sb-section-item-paragraph">Publish your Storybook to review and collaborate with your entire team.</div>
         <a
           href="https://storybook.js.org/docs/vue3/sharing/publish-storybook#publish-storybook-with-chromatic"
           target="_blank"
@@ -151,8 +151,8 @@ export const RightArrow = () => (
       <div className="sb-grid-item">
         <img src={FigmaPlugin} alt="Windows showing the Storybook plugin in Figma" />
         <h4 className="sb-section-item-heading">Figma Plugin</h4>
-        <p className="sb-section-item-paragraph">Embed your stories into Figma to cross-reference the design and live
-          implementation in one place.</p>
+        <div className="sb-section-item-paragraph">Embed your stories into Figma to cross-reference the design and live
+          implementation in one place.</div>
         <a
           href="https://storybook.js.org/docs/vue3/sharing/design-integrations#embed-storybook-in-figma-with-the-plugin"
           target="_blank"
@@ -161,8 +161,8 @@ export const RightArrow = () => (
       <div className="sb-grid-item">
         <img src={Testing} alt="Screenshot of tests passing and failing" />
         <h4 className="sb-section-item-heading">Testing</h4>
-        <p className="sb-section-item-paragraph">Use stories to test a component in all its variations, no matter how
-          complex.</p>
+        <div className="sb-section-item-paragraph">Use stories to test a component in all its variations, no matter how
+          complex.</div>
         <a
           href="https://storybook.js.org/docs/vue3/writing-tests"
           target="_blank"
@@ -171,7 +171,7 @@ export const RightArrow = () => (
       <div className="sb-grid-item">
         <img src={Accessibility} alt="Screenshot of accessibility tests passing and failing" />
         <h4 className="sb-section-item-heading">Accessibility</h4>
-        <p className="sb-section-item-paragraph">Automatically test your components for a11y issues as you develop.</p>
+        <div className="sb-section-item-paragraph">Automatically test your components for a11y issues as you develop.</div>
         <a
           href="https://storybook.js.org/docs/vue3/writing-tests/accessibility-testing"
           target="_blank"
@@ -180,7 +180,7 @@ export const RightArrow = () => (
       <div className="sb-grid-item">
         <img src={Theming} alt="Screenshot of Storybook in light and dark mode" />
         <h4 className="sb-section-item-heading">Theming</h4>
-        <p className="sb-section-item-paragraph">Theme Storybook's UI to personalize it to your project.</p>
+        <div className="sb-section-item-paragraph">Theme Storybook's UI to personalize it to your project.</div>
         <a
           href="https://storybook.js.org/docs/vue3/configure/theming"
           target="_blank"
@@ -192,7 +192,7 @@ export const RightArrow = () => (
 <div className='sb-addon'>
   <div className='sb-addon-text'>
     <h4>Addons</h4>
-    <p className="sb-section-item-paragraph">Integrate your tools with Storybook to connect workflows.</p>
+    <div className="sb-section-item-paragraph">Integrate your tools with Storybook to connect workflows.</div>
     <a
         href="https://storybook.js.org/integrations/"
         target="_blank"

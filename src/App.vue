@@ -3,7 +3,12 @@ import { reactive, ref } from "vue";
 import { Button } from "@progress/kendo-vue-buttons";
 import { ComboBox } from "@progress/kendo-vue-dropdowns";
 import { Dialog, DialogActionsBar } from "@progress/kendo-vue-dialogs";
-import { GridLayout, PanelBar, StackLayout } from "@progress/kendo-vue-layout";
+import {
+  GridLayout,
+  PanelBar,
+  StackLayout,
+  Stepper,
+} from "@progress/kendo-vue-layout";
 import {
   Notification,
   NotificationGroup,
@@ -19,6 +24,13 @@ import {
   CardTitle,
 } from "@progress/kendo-vue-layout";
 import { TextBox } from "@progress/kendo-vue-inputs";
+import {
+  cartIcon,
+  dollarIcon,
+  eyeIcon,
+  mapMarkerIcon,
+  trackChangesAcceptIcon,
+} from "@progress/kendo-svg-icons";
 
 import Tip from "./components/Tip.vue";
 import "./assets/css/feather-ks.css";
@@ -26,6 +38,21 @@ import "./assets/css/feather-ks.css";
 import "./assets/css/feather-k-override.css";
 
 let dialogIsVisible = ref(false);
+
+// #region Stepper
+const stepperValue = ref(0);
+const stepperItems = [
+  { id: "1", label: "Cart", svgIcon: cartIcon },
+  { id: "2", label: "Delivery Address", svgIcon: mapMarkerIcon },
+  { id: "3", label: "Payment Method", svgIcon: dollarIcon },
+  { id: "4", label: "Order Summary", svgIcon: eyeIcon },
+  { id: "5", label: "Confirmation", svgIcon: trackChangesAcceptIcon },
+];
+const handleStepperChange = (e: any) => {
+  stepperValue.value = e.newValue;
+};
+
+// #endregion Stepper
 
 // #region Grid
 
@@ -94,10 +121,6 @@ const tips = [
 
 // #endregion Grid
 
-// #region StackLayout
-
-
-// #endregion StackLayout
 const toggleDialog = () => {
   dialogIsVisible.value = !dialogIsVisible.value;
 };
@@ -157,15 +180,27 @@ const close = (style: string) => {
       </Fade>
     </NotificationGroup>
 
-    <StackLayout
-      :gap="16"
-      :orientation="'vertical'"
+    <div class="stepper-demo-wrapper">
+      <Button
+        type="button"
+        fillMode="solid"
+        themeColor="primary"
+        rounded="medium"
+        @click="(stepperValue < stepperItems.length - 1) ? stepperValue++ : stepperValue = 0"
       >
+        {{ stepperValue === stepperItems.length - 1 ? "Continue Shopping" : "Next Step" }}
+      </Button>
+      <Stepper
+        :value="stepperValue"
+        :items="stepperItems"
+        @change="handleStepperChange"
+      />
+    </div>
+
+    <StackLayout :gap="16" :orientation="'vertical'">
       <div>Content 1</div>
       <div>Content 2</div>
       <div>Content 3</div>
-
-
     </StackLayout>
 
     <GridLayout
@@ -395,5 +430,11 @@ body {
     height: auto;
     object-fit: contain;
   }
+}
+.stepper-demo-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: flex-start;
 }
 </style>
