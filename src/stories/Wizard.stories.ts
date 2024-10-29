@@ -9,7 +9,6 @@ import Registered from "./content/wizard/Registered.vue";
 import UserInfo from "./content/wizard/UserInfo.vue";
 import LoginInfo from "./content/wizard/LoginInfo.vue";
 
-
 const meta: Meta<typeof Stepper> = {
   title: "Feather K/Wizard",
   component: Stepper,
@@ -67,27 +66,32 @@ export const Default: Story = {
     setup() {
       const step = ref(args.value);
       const steps = reactive(args.items);
-      const registered = ref(false);
 
+      const registered = ref(false);
       provide("registered", registered);
 
       const handleSubmit = (data: any) => {
-        // event.preventDefault();
         alert(JSON.stringify(data, null, 2));
-      }
+      };
 
       const handleStepperChange = () => {
         console.log(step.value, steps.length);
-        if (step.value === steps.length-1) {
+        if (step.value === steps.length - 1) {
           registered.value = true;
-          console.log("REGISTERED", registered.value);
         }
         if (step.value < steps.length - 1) {
           step.value++;
         }
       };
 
-      return { args, handleStepperChange, handleSubmit, registered, step, steps };
+      return {
+        args,
+        handleStepperChange,
+        handleSubmit,
+        registered,
+        step,
+        steps,
+      };
     },
     template: `
     <div>
