@@ -15,13 +15,10 @@
           <template #myTemplate="{ props }">
             <FormInput
               v-bind="props"
-              :value="firstName"
               @change="props.onChange"
               @focus="props.onFocus"
               @blur="props.onBlur"
-            >
-              {{ "First Name" }}
-            </FormInput>
+            />
           </template>
         </Field>
         <Field
@@ -35,13 +32,10 @@
           <template #myTemplate="{ props }">
             <FormInput
               v-bind="props"
-              :value="lastName"
               @change="props.onChange"
               @focus="props.onFocus"
               @blur="props.onBlur"
-            >
-              {{ "Last Name" }}
-            </FormInput>
+            />
           </template>
         </Field>
       </fieldset>
@@ -50,26 +44,17 @@
 </template>
 
 <script lang="ts" setup>
-import { inject, ref } from "vue";
+import { ref } from "vue";
 import { Field, FormElement } from "@progress/kendo-vue-form";
 import FormInput from "../../form/FormInput.vue";
-// import { Button } from "@progress/kendo-vue-buttons";
 import { requiredValidator } from "./validator.ts";
 
-defineProps({
-  firstName: String,
-  lastName: String,
-});
-
 const requiredValidatorRef = ref(requiredValidator);
-
-// @ts-ignore
-const kendoForm = inject("kendoForm");
 
 </script>
 
 <style scoped>
-  fieldset {
-    border: none;
-  }
+fieldset {
+  border: none;
+}
 </style>

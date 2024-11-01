@@ -14,10 +14,11 @@
         <Input
           :valid="valid"
           :id="id"
-          :value="value"
           :disabled="disabled"
           :placeholder="placeholder"
           :type="type"
+          :value="value"
+          @input="handleInput"
           @change="handleChange"
           @blur="handleBlur"
           @focus="handleFocus"
@@ -45,13 +46,13 @@ const props = defineProps({
   label: String,
   validationMessage: String,
   hint: String,
-  id: String,
+  id: { type: String, required: true },
   valid: Boolean,
-  value: String,
-  type: String,
+  value: {type: String, default: ""},
+  type: { type: String, default: "text" },
 });
 
-const emit = defineEmits(["change", "focus", "blur"]);
+const emit = defineEmits(["input", "change", "focus", "blur"]);
 
 const showValidationMessage = computed(() => {
   return props.touched && props.validationMessage;
@@ -68,6 +69,10 @@ const hintId = computed(() => {
 const errorId = computed(() => {
   return showValidationMessage.value ? `${props.id}-error` : "";
 });
+
+const handleInput = (e: Event) => {
+  emit("input", e);
+};
 
 const handleChange = (e: Event) => {
   emit("change", e);

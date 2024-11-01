@@ -5,7 +5,7 @@ import { Form } from "@progress/kendo-vue-form";
 import { Button } from "@progress/kendo-vue-buttons";
 // import { checkCircleIcon } from "@progress/kendo-svg-icons";
 
-import Registered from "./content/wizard/Registered.vue";
+import Register from "./content/wizard/Register.vue";
 import UserInfo from "./content/wizard/UserInfo.vue";
 import LoginInfo from "./content/wizard/LoginInfo.vue";
 
@@ -62,20 +62,19 @@ export const Default: Story = {
     ],
   },
   render: (args) => ({
-    components: { Stepper, Button, Form, LoginInfo, Registered, UserInfo },
+    components: { Stepper, Button, Form, LoginInfo, Register, UserInfo },
     setup() {
       const step = ref(args.value);
       const steps = reactive(args.items);
 
       const registered = ref(false);
-      provide("registered", registered);
+      provide('registered', registered);
 
       const handleSubmit = (data: any) => {
         alert(JSON.stringify(data, null, 2));
       };
 
       const handleStepperChange = () => {
-        console.log(step.value, steps.length);
         if (step.value === steps.length - 1) {
           registered.value = true;
         }
@@ -103,7 +102,7 @@ export const Default: Story = {
       <Form @submit="handleSubmit">
         <UserInfo v-show="step === 0" />
         <LoginInfo v-show="step === 1" />
-        <Registered v-show="step === 2" :register="registered" />
+        <Register v-show="step === 2" :register="registered" />
       </Form>
       <div v-if="!registered">
         Step {{ step + 1 }} of {{ steps.length }}
