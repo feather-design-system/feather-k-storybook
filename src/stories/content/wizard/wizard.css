@@ -1,0 +1,45 @@
+.wizard-story {
+  width: 80%;
+  .stepper {
+    /* position: fixed; */
+    /* top: 8%; */
+    /* width: 80%; */
+    margin: 0 auto;
+  }
+
+  .content {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;*/
+    /* height: 100vh;  */
+    margin: 0 auto;
+    width: 72%;
+
+    .form {
+      /* width: 80%; */
+      /* margin: 10em; */
+
+      .app-form-input {
+        /* margin: 1em; */
+        /* width: 20em; */
+      }
+    }
+    .progress {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1em 0;
+    }
+    .actions {
+      height: auto;
+      display: flex;
+      justify-content: flex-end;
+      align-items: bottom;
+
+      .wizard-button {
+        margin: 0.5em;
+      }
+    }
+  }
+}

@@ -9,6 +9,8 @@ import Register from "./content/wizard/Register.vue";
 import UserInfo from "./content/wizard/UserInfo.vue";
 import LoginInfo from "./content/wizard/LoginInfo.vue";
 
+import "./content/wizard/wizard.css";
+
 const meta: Meta<typeof Stepper> = {
   title: "Feather K/Wizard",
   component: Stepper,
@@ -68,18 +70,25 @@ export const Default: Story = {
       const steps = reactive(args.items);
 
       const registered = ref(false);
-      provide('registered', registered);
+      provide("registered", registered);
 
       const handleSubmit = (data: any) => {
         alert(JSON.stringify(data, null, 2));
       };
 
-      const handleStepperChange = () => {
-        if (step.value === steps.length - 1) {
+      const handleStepperChange = (delta: 1 | -1) => {
+        if (step.value === steps.length - 1 && delta === 1) {
           registered.value = true;
+          return
         }
-        if (step.value < steps.length - 1) {
-          step.value++;
+        if (step.value === 0 && delta === -1) {
+          return;
+        }
+        // if (step.value === steps.length - 1 && delta === 1) {
+        //   return;
+        // }
+        if (step.value < steps.length) {
+          step.value += delta;
         }
       };
 
@@ -93,31 +102,46 @@ export const Default: Story = {
       };
     },
     template: `
-    <div>
+    <div class="wizard-story">
       <Stepper
         :value="step"
         :items="steps"
+        class="stepper"
         >
       </Stepper>
-      <Form @submit="handleSubmit">
-        <UserInfo v-show="step === 0" />
-        <LoginInfo v-show="step === 1" />
-        <Register v-show="step === 2" :register="registered" />
-      </Form>
-      <div v-if="!registered">
-        Step {{ step + 1 }} of {{ steps.length }}
-      </div>
-      <div :style="{padding: '2em', textAlign: 'right'}">
-        <Button
-          type="button"
-          fillMode="solid"
-          themeColor="primary"
-          rounded="medium"
-          :disabled="registered"
-          @click="handleStepperChange"
-          >
-            {{ step === steps.length - 1 ? "Register" : "Next" }}
-        </Button>
+      <div class="content">
+        <Form @submit="handleSubmit">
+          <UserInfo v-show="step === 0" />
+          <LoginInfo v-show="step === 1" />
+          <Register v-show="step === 2" :register="registered" />
+        </Form>
+        <div v-if="!registered" class="progress">
+          Step {{ step + 1 }} of {{ steps.length }}
+        </div>
+        <div class="actions">
+          <Button
+            class="wizard-button"
+            type="button"
+            fillMode="outline"
+            themeColor="primary"
+            rounded="medium"
+            :disabled="registered || step === 0"
+            @click="handleStepperChange(-1)"
+            >
+              Previous
+          </Button>
+          <Button
+            class="wizard-button"
+            type="button"
+            fillMode="outline"
+            themeColor="primary"
+            rounded="medium"
+            :disabled="registered"
+            @click="handleStepperChange(1)"
+            >
+              {{ step === steps.length - 1 ? "Register" : "Next" }}
+          </Button>
+        </div>
       </div>
     </div>
     `,

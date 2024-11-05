@@ -1,10 +1,12 @@
 <template>
   <div>
     <h1>Register</h1>
-    <p>{{ val("firstName") }}</p>
-    <p>{{ val("lastName") }}</p>
-    <p></p>
-    <p v-if="registered">You are now registered</p>
+    <div>
+      <p>{{ val("firstName") }} {{ val("lastName") }}</p>
+      <p>{{ val("email") }}</p>
+      <p></p>
+    </div>
+    <p v-if="registered">You are now registered as {{ val("username") }}</p>
   </div>
 </template>
 

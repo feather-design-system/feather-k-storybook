@@ -11,6 +11,7 @@
           :placeholder="'Enter your first name'"
           :component="'myTemplate'"
           :validator="requiredValidatorRef"
+          class="app-form-input"
         >
           <template #myTemplate="{ props }">
             <FormInput
@@ -28,6 +29,7 @@
           :placeholder="'Enter your last name'"
           :component="'myTemplate'"
           :validator="requiredValidatorRef"
+          class="app-form-input"
         >
           <template #myTemplate="{ props }">
             <FormInput
@@ -50,7 +52,6 @@ import FormInput from "../../form/FormInput.vue";
 import { requiredValidator } from "./validator.ts";
 
 const requiredValidatorRef = ref(requiredValidator);
-
 </script>
 
 <style scoped>
