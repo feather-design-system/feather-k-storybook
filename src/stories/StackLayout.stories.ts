@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/vue3";
 import { StackLayout } from "@progress/kendo-vue-layout";
 import Tip from "../components/Tip.vue";
+import "./content/stacklayout/stacklayout.css";
 
 const meta: Meta<typeof StackLayout> = {
   title: "Feather K/StackLayout",
@@ -84,7 +85,7 @@ export const Default: Story = {
           title: "The 'stackStyle' Attribute",
           content:
             "The stackStyle attribute is not part of the StackLayout.  It is used to style the children inside StackLayout for Storybook demonstration purposes.",
-        }
+        },
       ];
       return { args, stackTips };
     },
@@ -92,7 +93,11 @@ export const Default: Story = {
       <div>
         <h1 style="width: 80%; margin: auto;">StackLayout</h1>
         <div style="margin: auto; width: 80%;">
-          <StackLayout :gap="args.gap" :orientation="args.orientation">
+          <StackLayout
+            :gap="args.gap"
+            :orientation="args.orientation"
+            class="my-stack-layout"
+            >
             <div :style="args.stackStyle">
               <Tip :item="stackTips[0]" />
             </div>
