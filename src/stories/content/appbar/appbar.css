@@ -1,21 +1,25 @@
 .storybook-demo {
+
   .k-appbar {
+
     height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: start;
+    justify-content: space-between;
     gap: 1em;
 
     div {
-      nav {
-        font-size: 14px;
-        list-style-type: none;
+      nav.flex-list {
+
         display: flex;
         flex-direction: row;
         flex: 1 1 auto;
         flex-wrap: wrap;
         gap: 1em;
+        font-size: 14px;
+        list-style-type: none;
+        margin: 0 1em;
       }
     }
   }

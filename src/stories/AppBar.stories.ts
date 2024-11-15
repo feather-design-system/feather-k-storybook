@@ -7,7 +7,7 @@ import {
 } from "@progress/kendo-vue-layout";
 import { menuIcon } from "@progress/kendo-svg-icons";
 
-import "./app-bar.css";
+import "./content/appbar/appbar.css";
 
 const meta: Meta<typeof AppBar> = {
   title: "Feather K/AppBar",
@@ -28,8 +28,8 @@ const meta: Meta<typeof AppBar> = {
             `<fieldset>` +
               `<legend>fk-appbar</legend>` +
               `<pre>
-                &lt;AppBar 
-                  position="top" 
+                &lt;AppBar
+                  position="top"
                   positionMode="fixed"
                   &gt;
                 &lt;/AppBar&gt;
@@ -40,8 +40,8 @@ const meta: Meta<typeof AppBar> = {
             `<fieldset>` +
               `<legend>fk-appbar:title</legend>` +
               `<pre>
-                &lt;AppBar 
-                  position="top" 
+                &lt;AppBar
+                  position="top"
                   positionMode="fixed"
                   &gt;
                   &lt;AppBarSection&gt;&lt;h1&gt;App Name&lt;/h1&gt;&lt;/AppBarSection&gt;
@@ -65,7 +65,7 @@ const meta: Meta<typeof AppBar> = {
                 &lt;nav&gt;
                 &lt;RouterLink to="/"&gt;Home&lt;/RouterLink&gt;
                 &lt;/nav&gt;
-              &lt;/AppBarSection&gt;       
+              &lt;/AppBarSection&gt;
             </pre>
           </fieldset>
         </div>`,
@@ -100,10 +100,10 @@ export const Default: Story = {
     setup() {
       return { args };
     },
-    template: ` 
+    template: `
     <div class="storybook-demo">
-      <AppBar 
-        :position="args.position" 
+      <AppBar
+        :position="args.position"
         :positionMode="args.positionMode"
         >
         <AppBarSection>

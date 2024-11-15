@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/vue3";
 import { NumericTextBox, RangeSlider, SliderLabel } from "@progress/kendo-vue-inputs";
 
-import "./slider.css";
+import "./content/slider/slider.css";
 
 const meta: Meta<typeof RangeSlider> = {
   title: "Feather K/RangeSlider",
@@ -21,10 +21,10 @@ const meta: Meta<typeof RangeSlider> = {
           <fieldset>
             <legend>fk-rangeslider</legend>
             <pre>
-              &lt;RangeSlider 
-                :min="0" 
-                :max="100" 
-                :step="10" 
+              &lt;RangeSlider
+                :min="0"
+                :max="100"
+                :step="10"
                 :defaultValue="{start: 30, end: 60}" &gt;
                 &lt;SliderLabel slot="label" :position="0"&gt;0&lt;/SliderLabel&gt;
                 &lt;SliderLabel slot="label" :position="50"&gt;50&lt;/SliderLabel&gt;

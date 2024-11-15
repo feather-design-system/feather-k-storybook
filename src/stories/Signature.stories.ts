@@ -1,7 +1,7 @@
 import { Meta, StoryObj} from "@storybook/vue3"
 import { Signature, TextArea } from "@progress/kendo-vue-inputs"
 
-import "./signature.css";
+import "./content/signature/signature.css";
 
 const meta: Meta<typeof Signature> = {
   title: "Feather K/Signature",
@@ -23,10 +23,10 @@ const meta: Meta<typeof Signature> = {
             <fieldset>
               <legend>fk-signature</legend>
               <pre>
-                &lt;Signature 
-                  backgroundColor="#fff" 
-                  color="#000" 
-                  fillMode="solid" 
+                &lt;Signature
+                  backgroundColor="#fff"
+                  color="#000"
+                  fillMode="solid"
                 /&gt;
               </pre>
             </fieldset>
@@ -75,12 +75,12 @@ export const Default: Story = {
         />
 
         <div>
-          <TextArea 
-            class="storybook-demo-textarea" 
+          <TextArea
+            class="storybook-demo-textarea"
             :rows="10"
             :placeholder="'Signature value'"
             fillMode="solid"
-            :value="value" 
+            :value="value"
             >
           </TextArea>
 
