@@ -20,7 +20,20 @@ const meta: Meta<typeof GridLayout> = {
             <fieldset>
               <legend>fk-gridlayout</legend>
               <pre>
-                &lt;fk-gridlayout&gt;
+              &lt;GridLayout
+                class=&quot;my-grid-layout&quot;
+                :gap=&quot;{ rows: 8, cols: 8}&quot;
+                :rows=&quot;[{ height: &apos;1fr&apos;},{ height: &apos;1fr&apos;}]&quot;
+                :cols=&quot;[{ width: &apos;1fr&apos;},{ width: &apos;1fr&apos;}]&quot;
+                :items=&quot;[
+                { row: 1, col: 1, colSpan: 2, content: &apos;content1&apos;},
+                { row: 2, col: 1, colSpan: 1, content: &apos;content2&apos;},
+                { row: 2, col: 2, colSpan: 1, content: &apos;content3&apos;}]&quot;
+              &gt;
+                &lt;template #content1&gt;Content for &apos;content1&apos; goes here.&lt;/template&gt;
+                &lt;template #content2&gt;Content for &apos;content2&apos; goes here.&lt;/template&gt;
+                &lt;template #content3&gt;Content for &apos;content3&apos; goes here.&lt;/template&gt;
+              &lt;/GridLayout&gt;
               </pre>
             </fieldset>
           </div>`,
@@ -50,14 +63,14 @@ export const Default: Story = {
   },
   args: {
     gap: { cols: 8, rows: 8 },
-    rows: [{ height: "30%" }, { height: "30%" }, { height: "30%" }],
+    rows: [{ height: "1fr" }, { height: "1fr" }, { height: "1fr" }],
     cols: [
-      { width: "16%" },
-      { width: "16%" },
-      { width: "16%" },
-      { width: "16%" },
-      { width: "16%" },
-      { width: "16%" },
+      { width: "1fr" },
+      { width: "1fr" },
+      { width: "1fr" },
+      { width: "1fr" },
+      { width: "1fr" },
+      { width: "1fr" },
     ],
     items: [
       { row: 1, col: 1, colSpan: 3, content: "content1" },

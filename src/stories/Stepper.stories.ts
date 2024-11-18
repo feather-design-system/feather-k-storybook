@@ -27,7 +27,17 @@ const meta: Meta<typeof Stepper> = {
             <fieldset>
               <legend>fk-stepper</legend>
               <pre>
-                &lt;fk-stepper&gt;
+              &lt;Stepper
+                :value=&quot;0&quot;
+                :items=&quot;[
+                  { id: 1, label: &apos;Start&apos; },
+                  { id: 2, label: &apos;Processing&apos; },
+                  { id: 3, label: &apos;Complete&apos; }
+                ]&quot;
+                orientation=&quot;horizontal&quot;
+                :animationDuration=&quot;500&quot;
+                @change=&quot;console.log(&apos;change&apos;)&quot;
+              /&gt;
               </pre>
             </fieldset>
           </div>`,

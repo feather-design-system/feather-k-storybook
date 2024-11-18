@@ -19,7 +19,7 @@ const meta: Meta<typeof Stepper> = {
     docs: {
       description: {
         component:
-          `<p>The Kendo UI for Vue Wizard is not a separate component that can provide the Wizard functionality out of the box. However, using the combination of the Native Form and Stepper components, we can effortlessly achieve the functionality of a virtual Wizard component.</p>` +
+          `<p>The Kendo UI for Vue Wizard is not a separate component that can provide the Wizard functionality out of the box. However, using the combination of the Native Form and Stepper components, you can achieve the functionality of a virtual Wizard component.</p>` +
           `<p>NOTE:  There is no separate Wizard component; A Wizard can be achieved using a combination of the Stepper component and Forms.</p>` +
           `<h3>Links</h3>` +
           `<ul>
@@ -33,7 +33,19 @@ const meta: Meta<typeof Stepper> = {
             <fieldset>
               <legend>fk-wizard</legend>
               <pre>
-                &lt;fk-wizard&gt;
+              &lt;Stepper
+                :value=&quot;0&quot;
+                :items=&quot;[
+                  { id: 1, label: &apos;Step 1&apos; },
+                  { id: 2, label: &apos;Step 2&apos; }
+                ]&quot;
+                orientation=&quot;horizontal&quot;
+                :animationDuration=&quot;500&quot;
+                @change=&quot;console.log(&apos;change&apos;)&quot;
+              /&gt;
+              &lt;Form @submit=&quot;console.log(&apos;submitted&apos;)&quot;&gt;
+                &lt;div class=&quot;wizard-content&quot;&gt;Components for steps here...&lt;/div&gt;
+              &lt;/Form&gt;
               </pre>
             </fieldset>
           </div>`,

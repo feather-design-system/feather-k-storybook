@@ -22,8 +22,103 @@ const meta: Meta<typeof Animation> = {
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/animation/api/AnimationProps/" target="_blank">Animation API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/animation/" target="_blank">Animation Documentation</a></li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-animation-expand</legend>
+              <pre>
+                &lt;Expand
+                  :appear=&quot;true&quot;
+                  :transition-enter-duration=&quot;1000&quot;
+                  :transition-exit-duration=&quot;1000&quot;
+                  :enter=&quot;true&quot;
+                  :exit=&quot;true&quot;
+                &gt;
+                  content
+                &lt;/Expand&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-animation-fade</legend>
+              <pre>
+                &lt;Fade
+                  :appear=&quot;true&quot;
+                  :transition-enter-duration=&quot;1000&quot;
+                  :transition-exit-duration=&quot;1000&quot;
+                  :enter=&quot;true&quot;
+                  :exit=&quot;true&quot;
+                &gt;
+                  content
+                &lt;/Fade&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-animation-push</legend>
+              <pre>
+                &lt;Push
+                  :appear=&quot;true&quot;
+                  :transition-enter-duration=&quot;1000&quot;
+                  :transition-exit-duration=&quot;1000&quot;
+                  :enter=&quot;true&quot;
+                  :exit=&quot;true&quot;
+                &gt;
+                  content
+                &lt;/Push&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-animation-reveal</legend>
+              <pre>
+                &lt;Reveal
+                  :appear=&quot;true&quot;
+                  :transition-enter-duration=&quot;1000&quot;
+                  :transition-exit-duration=&quot;1000&quot;
+                  :enter=&quot;true&quot;
+                  :exit=&quot;true&quot;
+                &gt;
+                  content
+                &lt;/Reveal&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-animation-slide</legend>
+              <pre>
+                &lt;Slide
+                  :appear=&quot;true&quot;
+                  :transition-enter-duration=&quot;1000&quot;
+                  :transition-exit-duration=&quot;1000&quot;
+                  :enter=&quot;true&quot;
+                  :exit=&quot;true&quot;
+                &gt;
+                  content
+                &lt;/Slide&gt;
+              </pre>
+            </fieldset>
+          </div>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-animation-zoom</legend>
+              <pre>
+                &lt;Zoom
+                  :appear=&quot;true&quot;
+                  :transition-enter-duration=&quot;1000&quot;
+                  :transition-exit-duration=&quot;1000&quot;
+                  :enter=&quot;true&quot;
+                  :exit=&quot;true&quot;
+                &gt;
+                  content
+                &lt;/Zoom&gt;
+              </pre>
+            </fieldset>
+          </div>`,
       },
     },
   },

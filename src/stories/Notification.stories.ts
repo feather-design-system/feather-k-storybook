@@ -20,8 +20,22 @@ const meta: Meta<typeof Notification> = {
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/notification/api/NotificationProps/" target="_blank">Notification API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/notification/" target="_blank">Notification Documentation</a></li>
             <li>Dark, Light and Inverse types are not supported in TypeScript.</li>
-          </ul>
-        `,
+          </ul>` +
+          `<div className="fk-emmet">
+            <fieldset>
+              <legend>fk-notification</legend>
+              <pre>
+                &lt;Notification
+                  :style=&quot;{width: &apos;fit-content&apos;}&quot;
+                  :type=&quot;{ style: &apos;info&apos;, icon: true }&quot;
+                  :closable=&quot;true&quot;
+                  @close=&quot;console.log(&apos;closed&apos;)&quot;
+                &gt;
+                  Notification message goes here. Style can be: error, info, warning, success or none.
+                &lt;/Notification&gt;
+              </pre>
+            </fieldset>
+          </div>`
       },
     },
   },

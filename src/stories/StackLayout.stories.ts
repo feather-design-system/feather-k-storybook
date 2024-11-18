@@ -21,7 +21,15 @@ const meta: Meta<typeof StackLayout> = {
             <fieldset>
               <legend>fk-stacklayout</legend>
               <pre>
-                &lt;fk-stacklayout&gt;
+              &lt;StackLayout
+                class=&quot;my-stack-layout&quot;
+                orientation=&quot;vertical&quot;
+                :gap=&quot;8&quot;
+              &gt;
+                &lt;div&gt;Content 1&lt;/div&gt;
+                &lt;div&gt;Content 2&lt;/div&gt;
+                &lt;div&gt;Content 3&lt;/div&gt;
+              &lt;/StackLayout&gt;
               </pre>
             </fieldset>
           </div>`,

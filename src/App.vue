@@ -3,6 +3,7 @@ import { reactive, ref } from "vue";
 import { Button } from "@progress/kendo-vue-buttons";
 import { ComboBox } from "@progress/kendo-vue-dropdowns";
 import { Dialog, DialogActionsBar } from "@progress/kendo-vue-dialogs";
+import { Form } from "@progress/kendo-vue-form";
 import {
   GridLayout,
   PanelBar,
@@ -13,7 +14,14 @@ import {
   Notification,
   NotificationGroup,
 } from "@progress/kendo-vue-notification";
-import { Fade } from "@progress/kendo-vue-animation";
+import {
+  Expand,
+  Fade,
+  Push,
+  Reveal,
+  Slide,
+  Zoom,
+} from "@progress/kendo-vue-animation";
 import {
   Card,
   CardHeader,
@@ -36,6 +44,13 @@ import Tip from "./components/Tip.vue";
 import "./assets/css/feather-ks.css";
 // import "./assets/css/feather-ks-v18-migration-test.css"
 import "./assets/css/feather-k-override.css";
+
+let expandVisible = ref(true);
+let fadeVisible = ref(true);
+let pushVisible = ref(true);
+let revealVisible = ref(true);
+let slideVisible = ref(true);
+let zoomVisible = ref(true);
 
 let dialogIsVisible = ref(false);
 
@@ -146,6 +161,236 @@ const close = (style: string) => {
       Code.
     </p>
 
+    <div class="wizard-demo">
+      <Stepper
+        :value="0"
+        :items="[
+          { id: 1, label: 'Step 1' },
+          { id: 2, label: 'Step 2' }
+        ]"
+        orientation="horizontal"
+        :animationDuration="500"
+        @change="console.log('change')"
+      />
+      <Form @submit="console.log('submitted')">
+        <div class="wizard-content">Components for steps here...</div>
+      </Form>
+    </div>
+
+    <div class="feather-ks-padding-max"></div>
+
+    <div class="stepper-demo">
+      <Stepper
+        :value="0"
+        :items="[
+          { id: 1, label: 'Start' },
+          { id: 2, label: 'Processing' },
+          { id: 3, label: 'Complete' }
+        ]"
+        orientation="horizontal"
+        :animationDuration="500"
+        @change="console.log('change')"
+      />
+    </div>
+
+    <div class="feather-ks-padding-max"/>
+
+    <div class="stacklayout-demo">
+      <StackLayout
+        class="my-stack-layout"
+        orientation="vertical"
+        :gap="8"
+      >
+        <div>Content 1</div>
+        <div>Content 2</div>
+        <div>Content 3</div>
+      </StackLayout>
+    </div>
+    <div class="feather-ks-padding-max"></div>
+    <div class="gridlayout-demo">
+      <GridLayout
+        class="my-grid-layout"
+        :gap="{ rows: 8, cols: 8}"
+        :rows="[{ height: '1fr'},{ height: '1fr'}]"
+        :cols="[{ width: '1fr'},{ width: '1fr'}]"
+        :items="[
+        { row: 1, col: 1, colSpan: 2, content: 'content1'},
+        { row: 2, col: 1, colSpan: 1, content: 'content2'},
+        { row: 2, col: 2, colSpan: 1, content: 'content3'}]"
+      >
+        <template #content1>Content for 'content1' goes here.</template>
+        <template #content2>Content for 'content2' goes here.</template>
+        <template #content3>Content for 'content3' goes here.</template>
+      </GridLayout>
+    </div>
+
+    <div class="feather-ks-padding-max"></div>
+    <div class="animation-demo">
+
+      <Expand
+        :appear="expandVisible"
+        :transition-enter-duration="1000"
+        :transition-exit-duration="1000"
+        :enter="true"
+        :exit="true"
+      >
+        <Notification
+          :type="{ style: 'success', icon: true }"
+          :closable="true"
+          @close="expandVisible = !expandVisible"
+          >This is an EXPAND demo notification.</Notification
+        >
+      </Expand>
+
+      <Fade
+        :appear="fadeVisible"
+        :transition-enter-duration="3000"
+        :transition-exit-duration="1000"
+        :enter="true"
+        :exit="true"
+      >
+        <Notification
+          :type="{ style: 'warning', icon: true }"
+          :closable="true"
+          @close="fadeVisible = !fadeVisible"
+          >This is a FADE demo notification.</Notification
+        >
+      </Fade>
+      <Push
+        :appear="pushVisible"
+        :transition-enter-duration="1000"
+        :transition-exit-duration="1000"
+        :enter="true"
+        :exit="true"
+      >
+        <Notification
+          :type="{ style: 'error', icon: true }"
+          :closable="true"
+          @close="pushVisible = !pushVisible"
+          >This is a PUSH demo notification.</Notification
+        >
+      </Push>
+
+      <Reveal
+        :appear="revealVisible"
+        :transition-enter-duration="1000"
+        :transition-exit-duration="1000"
+        :enter="true"
+        :exit="true"
+      >
+        <Notification
+          :type="{ style: 'none', icon: true }"
+          :closable="true"
+          @close="revealVisible = !revealVisible"
+          >This is a REVEAL demo notification.</Notification
+        >
+      </Reveal>
+
+      <Slide
+        :appear="slideVisible"
+        :transition-enter-duration="2000"
+        :transition-exit-duration="1000"
+        :enter="true"
+        :exit="true"
+      >
+        <Notification
+          :type="{ style: 'none', icon: true }"
+          :closable="true"
+          @close="slideVisible = !slideVisible"
+          >This is a SLIDE demo notification.</Notification
+        >
+      </Slide>
+
+      <Zoom
+        :appear="zoomVisible"
+        :transition-enter-duration="2000"
+        :transition-exit-duration="2000"
+        :enter="true"
+        :exit="true"
+      >
+        <Notification
+          :type="{ style: 'info', icon: true }"
+          :closable="true"
+          @close="zoomVisible = !zoomVisible"
+          >This is a ZOOM demo notification.</Notification
+        >
+      </Zoom>
+    </div>
+
+    <div class="feather-ks-padding-max"></div>
+
+    <Zoom
+      :appear="true"
+      :transition-enter-duration="500"
+      :transition-exit-duration="500"
+      :enter="true"
+      :exit="true"
+    >
+      <GridLayout
+        class="grid-layout-demo"
+        :gap="{ rows: 8, cols: 8 }"
+        :rows="[{ height: '1fr' }, { height: '1fr' }, { height: '1fr' }]"
+        :cols="[{ width: '1fr' }, { width: '1fr' }, { width: '1fr' }]"
+        :items="[
+          { row: 1, col: 1, colSpan: 3, content: 'content1' },
+          { row: 2, col: 1, colSpan: 2, content: 'content2' },
+          { row: 2, col: 3, rowSpan: 1, content: 'content3' },
+          { row: 3, col: 1, colSpan: 1, content: 'imgLeft' },
+          { row: 3, col: 2, colSpan: 1, content: 'content4' },
+          { row: 3, col: 3, colSpan: 1, content: 'content5' },
+        ]"
+      >
+        <template #content1
+          >Etiam consectetur felis sed mauris porta, quis convallis neque
+          consectetur. Duis ornare sed sapien non elementum. Phasellus elementum
+          ut quam in maximus. Curabitur porttitor elementum tellus vel pharetra.
+          Sed pulvinar mi augue, vel auctor neque rutrum non. Proin iaculis,
+          quam eget facilisis consectetur, felis lectus tincidunt metus, ut
+          aliquam libero tellus sit amet justo. Etiam mollis erat quis consequat
+          imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et
+          ultrices posuere cubilia curae; Suspendisse at auctor nulla. Sed ut
+          sollicitudin dolor. Sed tempor nunc a arcu volutpat, ut maximus arcu
+          molestie. Nunc tellus magna, venenatis sed dapibus nec, egestas quis
+          lectus.
+        </template>
+        <template #content2
+          >In hac habitasse platea dictumst. Proin condimentum eget massa non
+          hendrerit. Sed eget lectus blandit, venenatis ex quis, lacinia leo.
+          Morbi pharetra in felis non tincidunt. Duis sit amet eleifend nunc.
+          Cras libero massa, tincidunt a mauris vel, cursus facilisis velit.
+          Morbi accumsan non quam ut ultrices.</template
+        >
+        <template #content3
+          >Pellentesque condimentum, mi nec scelerisque rutrum, diam nunc
+          volutpat ipsum, nec auctor metus magna vitae nisi. Vivamus mattis, sem
+          quis aliquet ultricies, odio risus hendrerit odio, nec condimentum ex
+          massa ornare magna.</template
+        >
+        <template #content4
+          >Sed eget lectus blandit, venenatis ex quis, lacinia leo. Morbi
+          pharetra in felis non tincidunt. Duis sit amet eleifend
+          nunc.</template
+        >
+        <template #imgLeft>
+          <div class="image-container">
+            <img
+              src="/vite.svg"
+              alt="Vite"
+              :style="{ height: '8em', width: 'auto' }"
+            />
+          </div>
+        </template>
+        <template #content5
+          >Nunc quis lectus nunc. Nunc sodales tortor ac nisl dictum, in blandit
+          lorem faucibus. Sed posuere ipsum et ipsum consectetur vestibulum.
+          Aliquam ornare tincidunt leo, eget vehicula turpis vulputate quis.
+          Integer porta hendrerit odio sed euismod.</template
+        >
+      </GridLayout>
+    </Zoom>
+
+    <div class="feather-ks-padding-max"></div>
+
     <NotificationGroup
       :style="{
         right: 0,
@@ -186,9 +431,17 @@ const close = (style: string) => {
         fillMode="solid"
         themeColor="primary"
         rounded="medium"
-        @click="(stepperValue < stepperItems.length - 1) ? stepperValue++ : stepperValue = 0"
+        @click="
+          stepperValue < stepperItems.length - 1
+            ? stepperValue++
+            : (stepperValue = 0)
+        "
       >
-        {{ stepperValue === stepperItems.length - 1 ? "Continue Shopping" : "Next Step" }}
+        {{
+          stepperValue === stepperItems.length - 1
+            ? "Continue Shopping"
+            : "Next Step"
+        }}
       </Button>
       <Stepper
         :value="stepperValue"
@@ -197,7 +450,7 @@ const close = (style: string) => {
       />
     </div>
 
-    <StackLayout :gap="16" :orientation="'vertical'">
+    <StackLayout :gap="16" :orientation="'horizontal'">
       <div>Content 1</div>
       <div>Content 2</div>
       <div>Content 3</div>
@@ -403,6 +656,21 @@ body {
 }
 </style>
 <style scoped>
+div.grid-layout-demo {
+  color: purple;
+}
+.animation-demo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  width: fit-content;
+  justify-content: flex-start;
+}
+.fade-demo {
+  position: absolute;
+  top: 5em;
+  left: 5em;
+}
 .buttons {
   display: flex;
   flex-direction: row;
