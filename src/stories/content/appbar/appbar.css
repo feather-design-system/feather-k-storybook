@@ -2,24 +2,30 @@
 
   .k-appbar {
 
-    height: auto;
+    /* height: auto; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 1em;
 
     div {
       nav.flex-list {
-
         display: flex;
         flex-direction: row;
         flex: 1 1 auto;
         flex-wrap: wrap;
         gap: 1em;
         font-size: 14px;
-        list-style-type: none;
+        /* list-style-type: none; */
+        text-decoration: none;
         margin: 0 1em;
+        li {
+          cursor: pointer;
+          a {
+            text-decoration: none;
+          }
+        }
       }
     }
   }
