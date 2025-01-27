@@ -19,6 +19,7 @@
     "@progress/kendo-vue-buttons": "^5.2.0",
     "@progress/kendo-vue-common": "^5.2.0",
     "@progress/kendo-vue-dateinputs": "^5.2.0",
+    "@progress/kendo-vue-dialogs": "^5.2.0",
     "@progress/kendo-vue-dropdowns": "^5.2.0",
     "@progress/kendo-vue-form": "^5.2.0",
     "@progress/kendo-vue-grid": "^5.2.0",

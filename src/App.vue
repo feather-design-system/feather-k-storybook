@@ -3,6 +3,7 @@ import { reactive, ref } from "vue";
 import { Button } from "@progress/kendo-vue-buttons";
 import { ComboBox } from "@progress/kendo-vue-dropdowns";
 import { Dialog, DialogActionsBar } from "@progress/kendo-vue-dialogs";
+import { Drawer } from "@progress/kendo-vue-layout";
 import { Form } from "@progress/kendo-vue-form";
 import {
   GridLayout,
@@ -36,6 +37,7 @@ import {
   cartIcon,
   dollarIcon,
   eyeIcon,
+  // homeIcon,
   mapMarkerIcon,
   trackChangesAcceptIcon,
 } from "@progress/kendo-svg-icons";
@@ -44,6 +46,9 @@ import Tip from "./components/Tip.vue";
 import "./assets/css/feather-ks.css";
 // import "./assets/css/feather-ks-v18-migration-test.css"
 import "./assets/css/feather-k-override.css";
+
+let drawerIsVisible = ref(false);
+// let drawerWidth = ref(300);
 
 let expandVisible = ref(true);
 let fadeVisible = ref(true);
@@ -152,6 +157,13 @@ const close = (style: string) => {
       break;
   }
 };
+
+// const bodyWidth = computed(() => {
+//   return document.body.clientWidth;
+// });
+// const drawerLeftValue = computed(() => {
+//   return bodyWidth.value - drawerWidth.value;
+// });
 </script>
 
 <template>
@@ -161,12 +173,47 @@ const close = (style: string) => {
       Code.
     </p>
 
+    <div class="drawer-focus-trap-demo">
+      <Button
+        @click="drawerIsVisible = !drawerIsVisible"
+        type="button"
+        fillMode="outline"
+        themeColor="primary"
+        rounded="medium"
+        >Open Drawer
+      </Button>
+      <!-- <Window
+        v-if="drawerIsVisible"
+        :title="'Drawer Window'"
+        :minimize-button="false"
+        :maximize-button="false"
+        :close-button="true"
+        :modal="drawerIsVisible"
+        :width="drawerWidth"
+        :left="drawerLeftValue"
+        :top="0"
+        @close="drawerIsVisible = false"
+      > -->
+        <!-- :title="'Drawer Title'" -->
+        <Drawer
+          :position="'end'"
+          :mode="'push'"
+          :expanded="drawerIsVisible"
+          :items="[
+            { text: 'Item 1', icon: 'homeIcon' },
+            { text: 'Item 2', icon: 'settings' },
+            { text: 'Item 3', icon: 'user' },
+          ]"
+        />
+      <!-- </Window> -->
+    </div>
+
     <div class="wizard-demo">
       <Stepper
         :value="0"
         :items="[
           { id: 1, label: 'Step 1' },
-          { id: 2, label: 'Step 2' }
+          { id: 2, label: 'Step 2' },
         ]"
         orientation="horizontal"
         :animationDuration="500"
@@ -185,7 +232,7 @@ const close = (style: string) => {
         :items="[
           { id: 1, label: 'Start' },
           { id: 2, label: 'Processing' },
-          { id: 3, label: 'Complete' }
+          { id: 3, label: 'Complete' },
         ]"
         orientation="horizontal"
         :animationDuration="500"
@@ -193,14 +240,10 @@ const close = (style: string) => {
       />
     </div>
 
-    <div class="feather-ks-padding-max"/>
+    <div class="feather-ks-padding-max" />
 
     <div class="stacklayout-demo">
-      <StackLayout
-        class="my-stack-layout"
-        orientation="vertical"
-        :gap="8"
-      >
+      <StackLayout class="my-stack-layout" orientation="vertical" :gap="8">
         <div>Content 1</div>
         <div>Content 2</div>
         <div>Content 3</div>
@@ -210,13 +253,14 @@ const close = (style: string) => {
     <div class="gridlayout-demo">
       <GridLayout
         class="my-grid-layout"
-        :gap="{ rows: 8, cols: 8}"
-        :rows="[{ height: '1fr'},{ height: '1fr'}]"
-        :cols="[{ width: '1fr'},{ width: '1fr'}]"
+        :gap="{ rows: 8, cols: 8 }"
+        :rows="[{ height: '1fr' }, { height: '1fr' }]"
+        :cols="[{ width: '1fr' }, { width: '1fr' }]"
         :items="[
-        { row: 1, col: 1, colSpan: 2, content: 'content1'},
-        { row: 2, col: 1, colSpan: 1, content: 'content2'},
-        { row: 2, col: 2, colSpan: 1, content: 'content3'}]"
+          { row: 1, col: 1, colSpan: 2, content: 'content1' },
+          { row: 2, col: 1, colSpan: 1, content: 'content2' },
+          { row: 2, col: 2, colSpan: 1, content: 'content3' },
+        ]"
       >
         <template #content1>Content for 'content1' goes here.</template>
         <template #content2>Content for 'content2' goes here.</template>
@@ -226,7 +270,6 @@ const close = (style: string) => {
 
     <div class="feather-ks-padding-max"></div>
     <div class="animation-demo">
-
       <Expand
         :appear="expandVisible"
         :transition-enter-duration="1000"
@@ -491,6 +534,7 @@ const close = (style: string) => {
       v-if="dialogIsVisible"
       title="One more dialog"
       class="my-dialog"
+      :modal="true"
       @close="toggleDialog"
       >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nisi
       officiis esse illum animi quo sunt repudiandae asperiores perferendis

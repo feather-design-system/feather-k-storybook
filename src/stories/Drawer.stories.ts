@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/vue3";
 import { Drawer, DrawerContent, DrawerItem } from "@progress/kendo-vue-layout";
 import { Button } from "@progress/kendo-vue-buttons";
+import { Window } from "@progress/kendo-vue-dialogs";
 
 const drawerItems = [
   {
@@ -52,12 +53,12 @@ const meta: Meta<typeof Drawer> = {
 					  <fieldset>
 						<legend>fk-drawer</legend>
 						<pre>
-							&lt;Drawer 
-								position="end" 
-								mode="overlay" 
-								:animation="true" 
-								:expanded="true" 
-								:width="300" 
+							&lt;Drawer
+								position="end"
+								mode="overlay"
+								:animation="true"
+								:expanded="true"
+								:width="300"
 								:items="[{ text: 'My Profile' },{ text: 'Settings' },{ text: 'Help' }].map((item, index) => ({ text: item.text })) "
 							/&gt;
 						</pre>
@@ -67,14 +68,14 @@ const meta: Meta<typeof Drawer> = {
 					  <fieldset>
 						<legend>fk-drawer:routerview</legend>
 						<pre>
-							&lt;Drawer 
-								position="end" 
-								mode="overlay" 
-								:animation="true" 
-								:expanded="true" 
+							&lt;Drawer
+								position="end"
+								mode="overlay"
+								:animation="true"
+								:expanded="true"
 								:width="300"&gt;
 								&lt;RouterView /&gt;
-							&lt;/Drawer&gt;						
+							&lt;/Drawer&gt;
 						</pre>
 					  </fieldset>
 					</div>`,
@@ -116,13 +117,13 @@ export const Default: Story = {
 				:mode="args.mode"
 				:items="args.items"
 				>
-					<div>
-						<h2>App Content</h2>
-						<p>This is some content for some app.  The drawer will display when "expanded" is set to true.</p>
-						<p>There is an "overlay" mode which darkens the App Content behind the Drawer and a "push" mode which moves the content to make room for the Drawer.</p>
-					</div>
 				</Drawer>
-			</div>
+				<div>
+					<h2>App Content</h2>
+					<p>This is some content for some app.  The drawer will display when "expanded" is set to true.</p>
+					<p>There is an "overlay" mode which darkens the App Content behind the Drawer and a "push" mode which moves the content to make room for the Drawer.</p>
+				</div>
+		</div>
 		`,
   }),
 };
@@ -131,7 +132,7 @@ export const DrawerInteraction: Story = {
   argTypes: { ...Default.argTypes },
   args: { ...Default.args, expanded: false },
   render: (args) => ({
-    components: { Drawer, DrawerContent, DrawerItem, Button },
+    components: { Drawer, DrawerContent, DrawerItem, Button, Window },
     setup() {
       return { args };
     },
@@ -140,21 +141,23 @@ export const DrawerInteraction: Story = {
 				<div>
 					<Button @click="args.expanded = !args.expanded">Toggle Drawer</Button>
 				</div>
-				<Drawer
-					:expanded="args.expanded"
-					:animation="args.animation"
-					:position="args.position"
-					mode="overlay"
-					:items="args.items"
-					@overlayclick="args.expanded = false"
-					
-					>
+
+						<Drawer
+							:expanded="args.expanded"
+							:animation="args.animation"
+							:position="args.position"
+							mode="overlay"
+							:items="args.items"
+							@overlayclick="args.expanded = false"
+
+							>
+
+							</Drawer>
 						<div>
 							<h2>App Content</h2>
 							<p>This is some content for some app.  The drawer will display when "expanded" is set to true.</p>
 							<p>There is an "overlay" mode which darkens the App Content behind the Drawer and a "push" mode which moves the content to make room for the Drawer.</p>
 						</div>
-					</Drawer>
 				</div>
 			`,
   }),
