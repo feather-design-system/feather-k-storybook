@@ -29,7 +29,7 @@
     "@progress/kendo-vue-layout": "^6.4.1",
     "@progress/kendo-vue-listview": "^6.4.1",
     "@progress/kendo-vue-notification": "^6.4.1",
-    "vue": "^3.5.12"
+    "vue": "^3.5.18"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
@@ -41,10 +41,10 @@
     "@storybook/vue3": "^8.4.4",
     "@storybook/vue3-vite": "^8.4.4",
     "@vitejs/plugin-vue": "^5.0.4",
-    "chromatic": "^11.12.5",
+    "chromatic": "^13.1.2",
     "storybook": "^8.4.4",
     "typescript": "^5.6.3",
-    "vite": "^5.4.9",
-    "vue-tsc": "^2.1.6"
+    "vite": "^6.3.5",
+    "vue-tsc": "^3.0.4"
   }
 }
