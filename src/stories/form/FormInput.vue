@@ -70,20 +70,20 @@ const errorId = computed(() => {
   return showValidationMessage.value ? `${props.id}-error` : "";
 });
 
-const handleInput = (e: Event) => {
-  emit("input", e);
+const handleInput = (...args: unknown[]) => {
+  emit("input", ...args);
 };
 
-const handleChange = (e: Event) => {
-  emit("change", e);
+const handleChange = (...args: unknown[]) => {
+  emit("change", ...args);
 };
 
-const handleFocus = (e: Event) => {
-  emit("focus", e);
+const handleFocus = (...args: unknown[]) => {
+  emit("focus", ...args);
 };
 
-const handleBlur = (e: Event) => {
-  emit("blur", e);
+const handleBlur = (...args: unknown[]) => {
+  emit("blur", ...args);
 };
 </script>
 

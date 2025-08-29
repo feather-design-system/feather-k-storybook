@@ -79,7 +79,7 @@ export const Default: Story = {
     components: { Stepper, Button, Form, LoginInfo, Register, UserInfo },
     setup() {
       const step = ref(args.value);
-      const steps = reactive(args.items);
+      const steps = reactive(args.items ?? []);
 
       const registered = ref(false);
       provide("registered", registered);
@@ -89,18 +89,16 @@ export const Default: Story = {
       };
 
       const handleStepperChange = (delta: 1 | -1) => {
-        if (step.value === steps.length - 1 && delta === 1) {
+        const current = step.value ?? 0;
+        if (current === steps.length - 1 && delta === 1) {
           registered.value = true;
-          return
-        }
-        if (step.value === 0 && delta === -1) {
           return;
         }
-        // if (step.value === steps.length - 1 && delta === 1) {
-        //   return;
-        // }
-        if (step.value < steps.length) {
-          step.value += delta;
+        if (current === 0 && delta === -1) {
+          return;
+        }
+        if (current < steps.length) {
+          step.value = current + delta;
         }
       };
 

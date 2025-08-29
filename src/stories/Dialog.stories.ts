@@ -26,15 +26,15 @@ const meta: Meta<typeof Dialog> = {
               &lt;Dialog v-if="dialogIsVisible"
                 title="Dialog Title"
                 class="my-dialog"
-                @close="toggleDialog" 
+                @close="toggleDialog"
                 &gt;
                 lorem
                 &lt;DialogActionsBar&gt;
-                  &lt;Button 
+                  &lt;Button
                   type="button"
                   fillMode="solid"
                   themeColor="primary"
-                  rounded="medium" 
+                  rounded="medium"
                   @click="toggleDialog"
                   &gt;Ok
                   &lt;/Button&gt;
@@ -57,7 +57,6 @@ export const Default: Story = {
     title: { control: "text" },
     width: { control: "text" },
     height: { control: "text" },
-    contentStyle: { control: "object" },
   },
   args: {
     title: "Dialog Title",
@@ -84,7 +83,6 @@ export const Default: Story = {
         :title="args.title"
         :width="args.width"
         :height="args.height"
-        :contentStyle="args.contentStyle"
       >
         Ipsum dolor sit amet, consectetur adipiscing elit. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 
@@ -94,7 +92,7 @@ export const Default: Story = {
             fillMode="solid"
             themeColor="primary"
             rounded="medium"
-            :style="{'max-width': 'fit-content'}" 
+            :style="{'max-width': 'fit-content'}"
             @click="dialogIsVisible = false"
             >Ok
           </Button>
@@ -107,7 +105,7 @@ export const Default: Story = {
             @click="dialogIsVisible = false"
             >Cancel
           </Button>
-  
+
         </DialogActionsBar>
       </Dialog>
     `,
@@ -133,12 +131,12 @@ export const Interaction: Story = {
       return { args };
     },
     template: `
-      <Button 
+      <Button
         @click="dialogIsVisible = !dialogIsVisible"
         type="button"
         fillMode="outline"
         themeColor="primary"
-        rounded="medium"        
+        rounded="medium"
         >Open Dialog</Button>
       <Dialog
         data-testid="dialog-title"
@@ -158,7 +156,7 @@ export const Interaction: Story = {
             fillMode="solid"
             themeColor="primary"
             rounded="medium"
-            :style="{'max-width': 'fit-content'}" 
+            :style="{'max-width': 'fit-content'}"
             @click="dialogIsVisible = false"
             >Ok
           </Button>
@@ -171,7 +169,7 @@ export const Interaction: Story = {
             @click="dialogIsVisible = false"
             >Cancel
           </Button>
-  
+
         </DialogActionsBar>
       </Dialog>
     `,

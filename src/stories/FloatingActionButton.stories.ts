@@ -29,7 +29,7 @@ const meta: Meta<typeof FloatingActionButton> = {
                   fillMode="solid"
                   themeColor="primary"
                   @click="console.log('clicked')"
-                  :items="[{ text: 'Profile' }, { text: 'Settings' }, { text: 'Sign Out' }]" 
+                  :items="[{ text: 'Profile' }, { text: 'Settings' }, { text: 'Sign Out' }]"
                 /&gt;
               </pre>
             </fieldset>
@@ -83,9 +83,9 @@ export const Default: Story = {
     },
   },
   args: {
-    svgIcon: "menu",
+    svgIcon: menuIcon,
     fillMode: "solid",
-    align: "end-bottom",
+    align: { horizontal: "end", vertical: "bottom" },
     disabled: false,
   },
   render: (args) => ({
