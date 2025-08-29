@@ -43,7 +43,8 @@ import {
 } from "@progress/kendo-svg-icons";
 
 import Tip from "./components/Tip.vue";
-import "./assets/css/feather-ks.css";
+import "./assets/css/featherk-q1-2025.css";
+// import "./assets/css/feather-ks.css";
 // import "./assets/css/feather-ks-v18-migration-test.css"
 // import "./assets/css/feather-k-override.css";
 

@@ -138,10 +138,10 @@ export const Default: Story = {
   },
   args: {
     appear: true,
-    enter: false,
-    exit: false,
-    transitionEnterDuration: 2000,
-    transitionExitDuration: 2000,
+    enter: true,
+    exit: true,
+    transitionEnterDuration: 300,
+    transitionExitDuration: 300,
   },
   render: (args) => ({
     components: { Animation, Slide, Push, Expand, Fade, Zoom, Reveal },
