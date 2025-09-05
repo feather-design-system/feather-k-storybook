@@ -1,4 +1,4 @@
-import{ Meta, StoryObj } from "@storybook/vue3";
+import{ Meta, StoryObj } from "@storybook/vue3-vite";
 import{ ComboBox } from "@progress/kendo-vue-dropdowns";
 
 const items = [

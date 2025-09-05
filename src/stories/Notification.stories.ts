@@ -1,5 +1,5 @@
 import { computed, onMounted, onUnmounted, ref, watchEffect } from "vue";
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import {
   Notification,
   NotificationGroup,

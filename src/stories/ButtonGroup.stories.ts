@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/vue3';
+import { Meta, StoryObj } from '@storybook/vue3-vite';
 import { ButtonGroup, Button } from '@progress/kendo-vue-buttons';
 
 const meta: Meta<typeof ButtonGroup> = {

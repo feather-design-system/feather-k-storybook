@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { StackLayout } from "@progress/kendo-vue-layout";
 import Tip from "../components/Tip.vue";
 import "./content/stacklayout/stacklayout.css";

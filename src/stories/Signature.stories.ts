@@ -1,4 +1,4 @@
-import { Meta, StoryObj} from "@storybook/vue3"
+import { Meta, StoryObj} from "@storybook/vue3-vite"
 import { Signature, TextArea } from "@progress/kendo-vue-inputs"
 
 import "./content/signature/signature.css";

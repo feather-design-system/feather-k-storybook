@@ -1,4 +1,4 @@
-import type { ArgTypes, Args, Meta, StoryObj } from "@storybook/vue3";
+import type { ArgTypes, Args, Meta, StoryObj } from "@storybook/vue3-vite";
 import { Button } from "@progress/kendo-vue-buttons";
 import { folderIcon, calendarIcon } from "@progress/kendo-svg-icons";
 

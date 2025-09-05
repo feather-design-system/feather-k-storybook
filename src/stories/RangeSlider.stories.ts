@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { NumericTextBox, RangeSlider, SliderLabel } from "@progress/kendo-vue-inputs";
 
 import "./content/slider/slider.css";

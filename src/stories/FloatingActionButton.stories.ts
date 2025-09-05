@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { FloatingActionButton } from "@progress/kendo-vue-buttons";
 
 import { menuIcon, plusIcon, shareIcon } from "@progress/kendo-svg-icons";

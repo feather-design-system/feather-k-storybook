@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { FontIcon } from "@progress/kendo-vue-common";
 
 const meta: Meta<typeof FontIcon> = {

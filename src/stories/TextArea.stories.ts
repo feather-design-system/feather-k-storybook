@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { TextArea } from "@progress/kendo-vue-inputs";
 import { Hint, Label } from "@progress/kendo-vue-labels";
 

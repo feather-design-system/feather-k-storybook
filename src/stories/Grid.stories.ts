@@ -1,4 +1,4 @@
-import { ArgTypes, Args, Meta, StoryObj } from "@storybook/vue3";
+import { ArgTypes, Args, Meta, StoryObj } from "@storybook/vue3-vite";
 import { Grid } from "@progress/kendo-vue-grid";
 import { filterBy, orderBy } from "@progress/kendo-data-query";
 

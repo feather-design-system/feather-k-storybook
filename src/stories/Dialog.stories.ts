@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { Dialog, DialogActionsBar } from "@progress/kendo-vue-dialogs";
 import { Button } from "@progress/kendo-vue-buttons";
-import { within, expect, userEvent } from "@storybook/test";
+import { within, expect, userEvent } from "storybook/test";
 import pause from "./utils/pause";
 
 const meta: Meta<typeof Dialog> = {

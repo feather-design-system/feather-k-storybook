@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { Chip } from "@progress/kendo-vue-buttons";
 
 const meta: Meta<typeof Chip> = {

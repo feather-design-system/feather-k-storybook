@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { DropDownButton } from "@progress/kendo-vue-buttons";
 
 import { gearIcon, globeLinkIcon } from "@progress/kendo-svg-icons";

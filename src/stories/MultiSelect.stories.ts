@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { MultiSelect } from "@progress/kendo-vue-dropdowns";
 import { Label, Hint } from "@progress/kendo-vue-labels";
 

@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { ChipList } from "@progress/kendo-vue-buttons";
 import { mapMarkerTargetIcon } from "@progress/kendo-svg-icons";
-import { expect, userEvent, within } from "@storybook/test";
+import { expect, userEvent, within } from "storybook/test";
 
 const meta: Meta<typeof ChipList> = {
   title: "Feather K/ChipList",

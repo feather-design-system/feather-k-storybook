@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from '@storybook/vue3';
+import { Meta, StoryObj } from '@storybook/vue3-vite';
 import { Menu } from '@progress/kendo-vue-layout';
 
 const meta: Meta<typeof Menu> = {
