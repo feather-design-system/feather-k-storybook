@@ -56,11 +56,9 @@ const meta: Meta<typeof RadioGroup> = {
             The class rendered is always <code>.k-radio-md</code> regardless of the size passed.  If medium is what we
             want to follow for our design system, then we should be good to go.  If we want to use small or large, 
             we may need to create a ticket for Telerik.  See RadioButton.stories.ts for small, medium and large examples.
-          </p>`
-        ,
+          </p>`,
       },
     },
-  
   },
   // #endregion autodocs
 };
@@ -72,7 +70,7 @@ export const Default: Story = {
   argTypes: {
     layout: { control: "select", options: ["horizontal", "vertical"] },
     labelPlacement: { control: "select", options: ["before", "after"] },
-    
+
     dataItems: { control: "object" },
     disabled: { control: "boolean" },
   },

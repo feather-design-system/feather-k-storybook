@@ -53,7 +53,6 @@ export const Default: Story = {
     thumbRounded: { control: "select", options: ["full", "circle", "small", "medium", "large"] },
     trackRounded: { control: "select", options: ["full", "circle", "small", "medium", "large"] },
     disabled: { control: "boolean" },
-
   },
   args: {
     size: "medium",

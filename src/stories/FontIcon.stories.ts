@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3-vite";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { FontIcon } from "@progress/kendo-vue-common";
 
 const meta: Meta<typeof FontIcon> = {
@@ -59,7 +59,7 @@ export const ViaRender: Story = {
     template: `
     <p>Not working see SvgIcon instead</p>
     <p>Icon: {{args.size}} {{args.name}}</p>
-    <p> 
+    <p>
       <FontIcon v-bind="args" />
       <FontIcon :name="name" :size="size" />
     </p>

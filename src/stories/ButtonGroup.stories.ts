@@ -1,24 +1,25 @@
-import { Meta, StoryObj } from '@storybook/vue3-vite';
-import { ButtonGroup, Button } from '@progress/kendo-vue-buttons';
+import { Meta, StoryObj } from "@storybook/vue3-vite";
+import { ButtonGroup, Button } from "@progress/kendo-vue-buttons";
 
 const meta: Meta<typeof ButtonGroup> = {
-  title: 'Feather K/ButtonGroup',
+  title: "Feather K/ButtonGroup",
   // title: 'Feather K/Buttons/ButtonGroup',
   component: ButtonGroup,
   // #region autodocs
   parameters: {
     docs: {
       description: {
-        component: `<p>ButtonGroup is a container for buttons that can be grouped together.</p>` +
+        component:
+          `<p>ButtonGroup is a container for buttons that can be grouped together.</p>` +
           `<h3>Links</h3>` +
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/api/ButtonGroupProps/" target="_blank">ButtonGroup API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/buttons/buttongroup/" target="_blank">ButtonGroup Documentation</a></li>
           </ul>` +
           `<div className="fk-emmet">` +
-            `<fieldset>` +
-              `<legend>fk-buttongroup</legend>` +
-              `<pre>
+          `<fieldset>` +
+          `<legend>fk-buttongroup</legend>` +
+          `<pre>
                 &lt;ButtonGroup&gt;
                   &lt;Button 
                     :togglable="true"
@@ -56,7 +57,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   argTypes: {
-    disabled: { control: 'boolean' },
+    disabled: { control: "boolean" },
   },
   args: {
     disabled: false,

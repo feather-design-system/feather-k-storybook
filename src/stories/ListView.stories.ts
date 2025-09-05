@@ -1,9 +1,5 @@
 import { Meta, StoryObj } from "@storybook/vue3-vite";
-import {
-  ListView,
-  ListViewHeader,
-  ListViewFooter,
-} from "@progress/kendo-vue-listview";
+import { ListView, ListViewHeader, ListViewFooter } from "@progress/kendo-vue-listview";
 
 const meta: Meta<typeof ListView> = {
   title: "Feather K/ListView",

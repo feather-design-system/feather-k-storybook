@@ -1,8 +1,8 @@
-import { Meta, StoryObj } from '@storybook/vue3-vite';
-import { Menu } from '@progress/kendo-vue-layout';
+import { Meta, StoryObj } from "@storybook/vue3-vite";
+import { Menu } from "@progress/kendo-vue-layout";
 
 const meta: Meta<typeof Menu> = {
-  title: 'Feather K/Menu',
+  title: "Feather K/Menu",
   component: Menu,
   // #region autodocs
   parameters: {
@@ -26,7 +26,7 @@ const meta: Meta<typeof Menu> = {
                 /&gt;
               </pre>
             </fieldset>
-          </div>`
+          </div>`,
       },
     },
   },
@@ -39,25 +39,25 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   argTypes: {
     items: {
-      control: 'object',
-      description: 'An array of menu items to display.'
+      control: "object",
+      description: "An array of menu items to display.",
     },
     vertical: {
-      control: 'boolean',
-      description: 'If true, the menu will be displayed vertically.'
+      control: "boolean",
+      description: "If true, the menu will be displayed vertically.",
     },
     style: {
-      control: 'object',
-      description: 'CSS styles to apply to the menu.'
-    }
+      control: "object",
+      description: "CSS styles to apply to the menu.",
+    },
   },
   args: {
     items: [
-      { id: 'home', text: 'Home' },
-      { id: 'about', text: 'About' },
-      { id: 'contact', text: 'Contact' }
+      { id: "home", text: "Home" },
+      { id: "about", text: "About" },
+      { id: "contact", text: "Contact" },
     ],
     vertical: true,
-    style: { width: '200px' }
+    style: { width: "200px" },
   },
 };

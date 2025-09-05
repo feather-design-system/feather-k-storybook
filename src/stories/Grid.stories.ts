@@ -48,16 +48,33 @@ const providers = [
 ];
 
 const columns = [
-  { field: "npi", title: "NPI", width: 100 },
-  { field: "name", title: "Name", width: 150 },
-  { field: "specialty", title: "Specialty", width: 100 },
-  { field: "location", title: "Location", width: 150 },
-  { field: "open", title: "New Patients?", width: 135 },
+  { field: "npi", title: "NPI", width: 100, sortable: true },
+  {
+    field: "name",
+    title: "Name",
+    width: 150,
+    sortable: true,
+    filterable: true,
+  },
+  { field: "specialty", title: "Specialty", width: 100, filterable: true },
+  {
+    field: "location",
+    title: "Location",
+    width: 150,
+    sortable: true,
+    filterable: true,
+  },
+  {
+    field: "open",
+    title: "New Patients?",
+    width: 135,
+    sortable: true,
+    filterable: true,
+  },
 ];
 
 const meta: Meta<typeof Grid> = {
   title: "Feather K/Grid",
-  // title: "Feather K/Grid/Grid",
   component: Grid,
   // #region autodocs
   parameters: {
@@ -156,16 +173,18 @@ export const Default: Story = {
     },
     template: `
       <div>
-        <Grid 
-          ref="grid"
-          :dataItems="sortedResult"
+      <Grid
+        ref="grid"
+        :dataItems="sortedResult"
+        :column-menu="true"
+        :columns="columns"
           :resizable="args.resizable"
           :reorderable="args.reorderable"
           @columnreorder="columnReorder"
           :sortable="args.sortable"
           :sort="sort"
           @sortchange="sortChangeHandler"
-          :columns="columns">
+          >
         </Grid>
       </div>
     `,
@@ -205,7 +224,6 @@ export const ColumnFiltering: Story = {
   },
   args: {
     filterable: true,
-  
   },
   render: (args) => ({
     components: { Grid },
@@ -221,13 +239,12 @@ export const ColumnFiltering: Story = {
       members() {
         return filterBy(members, this.filter);
       },
-      columns() { 
-        return memberColumns
+      columns() {
+        return memberColumns;
       },
     },
     methods: {
       filterChange(e: any) {
-        
         this.filter = e.filter;
         return filterBy(members, e.filter);
       },

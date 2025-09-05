@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3-vite";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { Loader } from "@progress/kendo-vue-indicators";
 
 const meta: Meta<typeof Loader> = {
@@ -33,11 +33,7 @@ export const Default: Story = {
     },
     type: {
       control: "select",
-      options: [
-        "pulsing",
-        "infinite-spinner",
-        "converging-spinner",
-      ],
+      options: ["pulsing", "infinite-spinner", "converging-spinner"],
     },
     themeColor: {
       control: "select",

@@ -1,0 +1,12 @@
+node_modules
+dist
+storybook-static
+build
+public
+*.min.js
+package-lock.json
+.eslintcache
+
+# skip CSS files (we don't want Prettier to reformat them)
+**/*.css
+**/*.d.ts

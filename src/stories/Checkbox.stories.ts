@@ -9,41 +9,42 @@ const meta: Meta<typeof Checkbox> = {
   parameters: {
     docs: {
       description: {
-        component: `<p>Checkbox is a component that allows the user to select a boolean value.</p>` +
+        component:
+          `<p>Checkbox is a component that allows the user to select a boolean value.</p>` +
           `<h3>Links</h3>` +
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/CheckboxProps/" target="_blank">Checkbox API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/checkbox/" target="_blank">Checkbox Documentation</a></li>
-          </ul>` + 
+          </ul>` +
           `<h3>Notes on Checkbox</h3>` +
           `<ul>
             <li>There is a bug with labelPlacement="before".  Punctuation pushed to beginning of label.  Very odd.</li>
             <li>This has been reproduced outside of Storybook.  It is a 🪳 in the Kendo UI Vue Checkbox component.</li>
           </ul>` +
           `<p>
-            <strong>NOTE</strong>:  "defaultChecked" should only used in "uncontrolled" 
-            mode.  
+            <strong>NOTE</strong>:  "defaultChecked" should only used in "uncontrolled"
+            mode.
           </p>` +
           `<p>
-            Please read the 
-            <a 
+            Please read the
+            <a
               href="https://www.telerik.com/kendo-vue-ui/components/inputs/checkbox/controlled/"
               target="_blank"
-              >Kendo UI Checkbox Controlled mode</a> 
-            to understand the difference between "controlled" mode and 
-            "uncontrolled" mode.  Essentially "controlled" mode is defined by 
+              >Kendo UI Checkbox Controlled mode</a>
+            to understand the difference between "controlled" mode and
+            "uncontrolled" mode.  Essentially "controlled" mode is defined by
             binding a variable to the value property of the checkbox
           </p>` +
           `<p>
-            Also see 
-              <a 
+            Also see
+              <a
               href="https://www.telerik.com/kendo-vue-ui/components/inputs/checkbox/default-state/"
               target="_blank">
               Kendo UI Checkbox Default State
               </a>
           </p>` +
           `<p>
-            In Summary, The value prop (controlled) and the defaultChecked prop 
+            In Summary, The value prop (controlled) and the defaultChecked prop
             (uncontrolled) should not be used together.
           </p>` +
           `<div className="fk-emmet">
@@ -78,18 +79,18 @@ export const Default: Story = {
   render: (args) => ({
     components: { Checkbox },
     methods: {
-      handleChange(e:any) {
-        console.log(e);
+      handleChange(e: any) {
+        console.warn("Checkbox change event: ", e);
       },
     },
     setup() {
       return { args };
     },
     template: `
-      <Checkbox 
+      <Checkbox
         :labelPlacement="args.labelPlacement"
         :label="args.label"
-        :disabled="args.disabled" 
+        :disabled="args.disabled"
        />
     `,
   }),
@@ -112,7 +113,7 @@ export const DefaultChecked: Story = {
       return { args };
     },
     template: `
-      <Checkbox 
+      <Checkbox
         :value="args.value"
         :label="args.label"
         :defaultChecked="args.defaultChecked">
@@ -146,11 +147,11 @@ export const CheckboxGroup: Story = {
       </a>
       <p>Below is just a rendering of multiple checkboxes.</p>
       <p>Forced inline style for spacing (i.e. style="margin-right: 1rem;") 😔</p>
-      <Checkbox 
+      <Checkbox
         style="margin-right: 1rem;"
-        v-for="option in options" 
-        :key="option.id" 
-        :label="option.label" 
+        v-for="option in options"
+        :key="option.id"
+        :label="option.label"
         v-model="option.value"
         />
     </div>

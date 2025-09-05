@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3-vite";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { StackLayout } from "@progress/kendo-vue-layout";
 import Tip from "../components/Tip.vue";
 import "./content/stacklayout/stacklayout.css";
@@ -73,14 +73,12 @@ export const Default: Story = {
         {
           tip: 1,
           title: "The 'gap' Attribute",
-          content:
-            "The gap attribute specifies the padding between the elements.",
+          content: "The gap attribute specifies the padding between the elements.",
         },
         {
           tip: 2,
           title: "The 'orientation' Attribute",
-          content:
-            "The orientation attribute specifies the direction of the layout.",
+          content: "The orientation attribute specifies the direction of the layout.",
         },
         {
           tip: 3,

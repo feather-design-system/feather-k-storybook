@@ -6,10 +6,16 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
-  item: Object,
-});
+<script setup lang="ts">
+
+type TipItem = {
+  tip?: number;
+  title?: string;
+  content?: string;
+};
+
+const props = defineProps<{ item?: TipItem }>();
+const { item = { tip: 0, title: "", content: "" } } = props;
 </script>
 
 <style scoped></style>

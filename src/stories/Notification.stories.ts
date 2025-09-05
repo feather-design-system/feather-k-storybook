@@ -1,9 +1,6 @@
 import { computed, onMounted, onUnmounted, ref, watchEffect } from "vue";
 import { Meta, StoryObj } from "@storybook/vue3-vite";
-import {
-  Notification,
-  NotificationGroup,
-} from "@progress/kendo-vue-notification";
+import { Notification, NotificationGroup } from "@progress/kendo-vue-notification";
 import { Fade } from "@progress/kendo-vue-animation";
 
 const meta: Meta<typeof Notification> = {
@@ -35,7 +32,7 @@ const meta: Meta<typeof Notification> = {
                 &lt;/Notification&gt;
               </pre>
             </fieldset>
-          </div>`
+          </div>`,
       },
     },
   },
@@ -69,10 +66,10 @@ export const Default: Story = {
     transitionMs: 500,
     animation: true,
     notificationGroupStyle: {
-      "right": "2em",
-      "top": "2em",
-      "alignItems": "flex-end",
-      "flexWrap": "wrap-reverse"
+      right: "2em",
+      top: "2em",
+      alignItems: "flex-end",
+      flexWrap: "wrap-reverse",
     },
   },
   parameters: {

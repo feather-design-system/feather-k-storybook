@@ -1,12 +1,7 @@
 import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { DropDownList } from "@progress/kendo-vue-dropdowns";
 
-const items = [
-    "Basketball",
-    "Football",
-    "Tennis",
-    "Volleyball",
-];
+const items = ["Basketball", "Football", "Tennis", "Volleyball"];
 
 const meta: Meta<typeof DropDownList> = {
   title: "Feather K/DropDownList",

@@ -9,7 +9,8 @@ const meta: Meta<typeof MaskedTextBox> = {
   parameters: {
     docs: {
       description: {
-        component: `<p>MaskedTextBox is a component that allows the user to enter data in a secure format.</p>` +
+        component:
+          `<p>MaskedTextBox is a component that allows the user to enter data in a secure format.</p>` +
           `<h3>Links</h3>` +
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/MaskedTextBoxProps/" target="_blank">MaskedTextBox API</a></li>

@@ -63,7 +63,7 @@ export const Default: Story = {
   render: (args) => ({
     components: { Chip },
     data() {
-      return { visible : true };
+      return { visible: true };
     },
     setup() {
       return { args };
@@ -81,4 +81,3 @@ export const Default: Story = {
     `,
   }),
 };
-

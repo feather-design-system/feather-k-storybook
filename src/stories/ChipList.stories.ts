@@ -127,20 +127,19 @@ export const SingleSelection: Story = {
 
 SingleSelection.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  let chipList = await canvas.findAllByRole("option");
+  const chipList = await canvas.findAllByRole("option");
 
   await userEvent.click(chipList[1]);
-  await expect (chipList[1].getAttribute("aria-selected")).toBe("true");
+  await expect(chipList[1].getAttribute("aria-selected")).toBe("true");
 
   await userEvent.click(chipList[2]);
-  await expect (chipList[1].getAttribute("aria-selected")).toBe("false");
-  await expect (chipList[2].getAttribute("aria-selected")).toBe("true");
+  await expect(chipList[1].getAttribute("aria-selected")).toBe("false");
+  await expect(chipList[2].getAttribute("aria-selected")).toBe("true");
 
   await userEvent.click(chipList[3]);
-  await expect (chipList[1].getAttribute("aria-selected")).toBe("false");
-  await expect (chipList[2].getAttribute("aria-selected")).toBe("false");
-  await expect (chipList[3].getAttribute("aria-selected")).toBe("true");
-
+  await expect(chipList[1].getAttribute("aria-selected")).toBe("false");
+  await expect(chipList[2].getAttribute("aria-selected")).toBe("false");
+  await expect(chipList[3].getAttribute("aria-selected")).toBe("true");
 };
 
 export const MultiSelection: Story = {
@@ -150,24 +149,23 @@ export const MultiSelection: Story = {
 
 MultiSelection.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  let chipList = await canvas.findAllByRole("option");
+  const chipList = await canvas.findAllByRole("option");
 
   await userEvent.click(chipList[1]);
-  await expect (chipList[1].getAttribute("aria-selected")).toBe("true");
+  await expect(chipList[1].getAttribute("aria-selected")).toBe("true");
 
   await userEvent.click(chipList[2]);
-  await expect (chipList[1].getAttribute("aria-selected")).toBe("true");
-  await expect (chipList[2].getAttribute("aria-selected")).toBe("true");
+  await expect(chipList[1].getAttribute("aria-selected")).toBe("true");
+  await expect(chipList[2].getAttribute("aria-selected")).toBe("true");
 
   await userEvent.click(chipList[4]);
-  await expect (chipList[1].getAttribute("aria-selected")).toBe("true");
-  await expect (chipList[2].getAttribute("aria-selected")).toBe("true");
-  await expect (chipList[4].getAttribute("aria-selected")).toBe("true");
+  await expect(chipList[1].getAttribute("aria-selected")).toBe("true");
+  await expect(chipList[2].getAttribute("aria-selected")).toBe("true");
+  await expect(chipList[4].getAttribute("aria-selected")).toBe("true");
 
   await userEvent.click(chipList[2]);
-  await expect (chipList[1].getAttribute("aria-selected")).toBe("true");
-  await expect (chipList[2].getAttribute("aria-selected")).toBe("false");
-  await expect (chipList[4].getAttribute("aria-selected")).toBe("true");
-
-}
+  await expect(chipList[1].getAttribute("aria-selected")).toBe("true");
+  await expect(chipList[2].getAttribute("aria-selected")).toBe("false");
+  await expect(chipList[4].getAttribute("aria-selected")).toBe("true");
+};
 //#endregion interactions

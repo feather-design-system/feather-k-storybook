@@ -32,7 +32,6 @@ const meta: Meta<typeof TextBox> = {
           </div>`,
       },
     },
-  
   },
   // #endregion autodocs
 };

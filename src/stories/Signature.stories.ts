@@ -1,5 +1,5 @@
-import { Meta, StoryObj} from "@storybook/vue3-vite"
-import { Signature, TextArea } from "@progress/kendo-vue-inputs"
+import { Meta, StoryObj } from "@storybook/vue3-vite";
+import { Signature, TextArea } from "@progress/kendo-vue-inputs";
 
 import "./content/signature/signature.css";
 
@@ -89,5 +89,3 @@ export const Default: Story = {
     `,
   }),
 };
-
-

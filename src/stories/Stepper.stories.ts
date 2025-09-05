@@ -70,7 +70,7 @@ export const Default: Story = {
     ],
   },
   render: (args) => ({
-    components: { Button, Stepper},
+    components: { Button, Stepper },
 
     setup() {
       const handleStepperChange = (e: any) => {
