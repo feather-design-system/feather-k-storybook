@@ -13,6 +13,10 @@
     "preview": "vite preview",
     "storybook:dev": "storybook dev -p 6006",
     "storybook:build": "storybook build",
+    "lint": "eslint src src/stories --ext .js,.ts,.vue --max-warnings=0",
+    "lint:fix": "eslint src src/stories --ext .js,.ts,.vue --fix",
+  "format": "prettier --write \"src/**/*.{js,ts,vue,json,md}\"",
+  "format:check": "prettier --check \"src/**/*.{js,ts,vue,json,md}\"",
     "chromatic": "npx chromatic --build-script-name=storybook:build --exit-zero-on-changes --project-token=chpt_42cf1166636e71c"
   },
   "dependencies": {
@@ -40,13 +44,21 @@
     "@chromatic-com/storybook": "^4.1.1",
     "@storybook/addon-links": "^9.1.4",
     "@storybook/vue3-vite": "^9.1.4",
+    "@typescript-eslint/eslint-plugin": "^8.42.0",
+    "@typescript-eslint/parser": "^8.42.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "chromatic": "^13.1.2",
+    "eslint": "^9.35.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-storybook": "^9.1.4",
+    "eslint-plugin-vue": "^10.4.0",
+    "prettier": "^3.6.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "storybook": "^9.1.4",
     "typescript": "^5.6.3",
     "vite": "^6.3.5",
+    "vue-eslint-parser": "^10.2.0",
     "vue-tsc": "^3.0.4"
   }
 }

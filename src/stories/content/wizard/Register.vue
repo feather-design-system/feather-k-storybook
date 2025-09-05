@@ -4,7 +4,7 @@
     <div>
       <p>{{ val("firstName") }} {{ val("lastName") }}</p>
       <p>{{ val("email") }}</p>
-      <p></p>
+      <p />
     </div>
     <p v-if="registered">You are now registered as {{ val("username") }}</p>
   </div>

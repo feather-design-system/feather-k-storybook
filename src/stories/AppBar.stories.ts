@@ -1,10 +1,6 @@
 import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { Button } from "@progress/kendo-vue-buttons";
-import {
-  AppBar,
-  AppBarSection,
-  AppBarSpacer,
-} from "@progress/kendo-vue-layout";
+import { AppBar, AppBarSection, AppBarSpacer } from "@progress/kendo-vue-layout";
 import { menuIcon } from "@progress/kendo-svg-icons";
 
 import "./content/appbar/appbar.css";

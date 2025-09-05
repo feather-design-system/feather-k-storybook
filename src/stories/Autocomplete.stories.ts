@@ -10,7 +10,8 @@ const meta: Meta<typeof AutoComplete> = {
   parameters: {
     docs: {
       description: {
-        component: `<p>AutoComplete is a form component that provides suggestions depending on the typed text.</p>` +
+        component:
+          `<p>AutoComplete is a form component that provides suggestions depending on the typed text.</p>` +
           `<h3>Links</h3>` +
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dropdowns/api/AutoCompleteProps/" target="_blank">AutoComplete API</a></li>
@@ -20,9 +21,9 @@ const meta: Meta<typeof AutoComplete> = {
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/dataquery/api/FilterDescriptor/" target="_blank">FilterDescriptor</a></li>
           </ul>` +
           `<div className="fk-emmet">` +
-            `<fieldset>` +
-              `<legend>fk-autocomplete</legend>` +
-              `<pre>
+          `<fieldset>` +
+          `<legend>fk-autocomplete</legend>` +
+          `<pre>
                 &lt;AutoComplete 
                   placeholder="Search the veggies!" 
                   :dataItems="['Asparagus', 'Beets', 'Broccoli', 'Cauliflower', 'Carrots']" 
@@ -33,9 +34,9 @@ const meta: Meta<typeof AutoComplete> = {
             </fieldset>
           </div>` +
           `<div className="fk-emmet">` +
-            `<fieldset>` +
-              `<legend>fk-autocomplete:filter</legend>` +
-              `<pre>
+          `<fieldset>` +
+          `<legend>fk-autocomplete:filter</legend>` +
+          `<pre>
                 &lt;AutoComplete 
                   placeholder="Search the fruits!" 
                   :dataItems="['Apples', 'Bananas', 'Oranges', 'Pears', 'Pineapple']" 
@@ -68,8 +69,8 @@ export const Default: Story = {
   args: {
     dataItems: source,
     fillMode: "outline",
-  }
-}
+  },
+};
 
 export const Filtered: Story = {
   argTypes: {
@@ -83,7 +84,7 @@ export const Filtered: Story = {
   parameters: {
     filterOperator: {
       default: FilterOperator.Contains,
-    }
+    },
   },
   render: (args) => ({
     components: { AutoComplete },

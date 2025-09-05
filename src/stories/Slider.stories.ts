@@ -12,9 +12,10 @@ const meta: Meta<typeof Slider> = {
   parameters: {
     docs: {
       description: {
-        component: `<h5>Slider is a component that allows the user to select a numeric value from a predefined range.</h5>` +
-        `<h3>Links</h3>` +
-         `<ul>
+        component:
+          `<h5>Slider is a component that allows the user to select a numeric value from a predefined range.</h5>` +
+          `<h3>Links</h3>` +
+          `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/SliderProps/" target="_blank">Slider API</a></li>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/slider/" target="_blank">Slider Documentation</a></li>
           </ul>` +
@@ -67,8 +68,7 @@ export const Default: Story = {
       },
     },
     data() {
-      return {
-      };
+      return {};
     },
     setup() {
       return { args };

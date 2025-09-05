@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3-vite";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { FloatingActionButton } from "@progress/kendo-vue-buttons";
 
 import { menuIcon, plusIcon, shareIcon } from "@progress/kendo-svg-icons";
@@ -41,9 +41,8 @@ const meta: Meta<typeof FloatingActionButton> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Default: StoryObj<typeof meta> = {
   argTypes: {
     svgIcon: {
       control: "select",

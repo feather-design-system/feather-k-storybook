@@ -96,11 +96,10 @@ export const Default: Story = {
     },
     methods: {
       onChange(e: any) {
-        console.log(e);
         this.value = e.value;
       },
       onExpandChange(e: any) {
-        console.log(e);
+        console.warn("DropDownTree expand change event: ", e);
       },
     },
     setup() {
@@ -109,7 +108,7 @@ export const Default: Story = {
     template: `
       <DropDownTree
         :style="{width: '40vw'}"
-        v-model="value" 
+        v-model="value"
         :dataItems="args.dataItems"
         :textField="textField"
         :dataItemKey="'id'"

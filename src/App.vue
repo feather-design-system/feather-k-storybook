@@ -5,24 +5,9 @@ import { ComboBox } from "@progress/kendo-vue-dropdowns";
 import { Dialog, DialogActionsBar } from "@progress/kendo-vue-dialogs";
 import { Drawer } from "@progress/kendo-vue-layout";
 import { Form } from "@progress/kendo-vue-form";
-import {
-  GridLayout,
-  PanelBar,
-  StackLayout,
-  Stepper,
-} from "@progress/kendo-vue-layout";
-import {
-  Notification,
-  NotificationGroup,
-} from "@progress/kendo-vue-notification";
-import {
-  Expand,
-  Fade,
-  Push,
-  Reveal,
-  Slide,
-  Zoom,
-} from "@progress/kendo-vue-animation";
+import { GridLayout, PanelBar, StackLayout, Stepper } from "@progress/kendo-vue-layout";
+import { Notification, NotificationGroup } from "@progress/kendo-vue-notification";
+import { Expand, Fade, Push, Reveal, Slide, Zoom } from "@progress/kendo-vue-animation";
 import {
   Card,
   CardHeader,
@@ -70,7 +55,7 @@ const stepperItems = [
   { id: "4", label: "Order Summary", svgIcon: eyeIcon },
   { id: "5", label: "Confirmation", svgIcon: trackChangesAcceptIcon },
 ];
-const handleStepperChange = (e: any) => {
+const handleStepperChange = (e: { newValue: number }) => {
   stepperValue.value = e.newValue;
 };
 
@@ -88,11 +73,7 @@ const gridItems = [
   { row: 2, col: 1, content: "imgLeft" },
   { row: 2, col: 6, content: "imgRight" },
 ];
-const rows = reactive([
-  { height: "30%" },
-  { height: "30%" },
-  { height: "30%" },
-]);
+const rows = reactive([{ height: "30%" }, { height: "30%" }, { height: "30%" }]);
 const cols = reactive([
   { width: "16%" },
   { width: "16%" },
@@ -171,18 +152,18 @@ const close = (style: string) => {
 <template>
   <main>
     <p class="instruction">
-      To run storybook enter "npm run storybook:dev" from the terminal inside VS
-      Code.
+      To run storybook enter "npm run storybook:dev" from the terminal inside VS Code.
     </p>
 
     <div class="drawer-focus-trap-demo">
       <Button
-        @click="drawerIsVisible = !drawerIsVisible"
         type="button"
-        fillMode="outline"
-        themeColor="primary"
+        fill-mode="outline"
+        theme-color="primary"
         rounded="medium"
-        >Open Drawer
+        @click="drawerIsVisible = !drawerIsVisible"
+      >
+        Open Drawer
       </Button>
       <!-- <Window
         v-if="drawerIsVisible"
@@ -196,17 +177,17 @@ const close = (style: string) => {
         :top="0"
         @close="drawerIsVisible = false"
       > -->
-        <!-- :title="'Drawer Title'" -->
-        <Drawer
-          :position="'end'"
-          :mode="'push'"
-          :expanded="drawerIsVisible"
-          :items="[
-            { text: 'Item 1', icon: 'homeIcon' },
-            { text: 'Item 2', icon: 'settings' },
-            { text: 'Item 3', icon: 'user' },
-          ]"
-        />
+      <!-- :title="'Drawer Title'" -->
+      <Drawer
+        :position="'end'"
+        :mode="'push'"
+        :expanded="drawerIsVisible"
+        :items="[
+          { text: 'Item 1', icon: 'homeIcon' },
+          { text: 'Item 2', icon: 'settings' },
+          { text: 'Item 3', icon: 'user' },
+        ]"
+      />
       <!-- </Window> -->
     </div>
 
@@ -218,7 +199,7 @@ const close = (style: string) => {
           { id: 2, label: 'Step 2' },
         ]"
         orientation="horizontal"
-        :animationDuration="500"
+        :animation-duration="500"
         @change="console.log('change')"
       />
       <Form @submit="console.log('submitted')">
@@ -226,7 +207,7 @@ const close = (style: string) => {
       </Form>
     </div>
 
-    <div class="feather-ks-padding-max"></div>
+    <div class="feather-ks-padding-max" />
 
     <div class="stepper-demo">
       <Stepper
@@ -237,7 +218,7 @@ const close = (style: string) => {
           { id: 3, label: 'Complete' },
         ]"
         orientation="horizontal"
-        :animationDuration="500"
+        :animation-duration="500"
         @change="console.log('change')"
       />
     </div>
@@ -251,7 +232,7 @@ const close = (style: string) => {
         <div>Content 3</div>
       </StackLayout>
     </div>
-    <div class="feather-ks-padding-max"></div>
+    <div class="feather-ks-padding-max" />
     <div class="gridlayout-demo">
       <GridLayout
         class="my-grid-layout"
@@ -264,13 +245,13 @@ const close = (style: string) => {
           { row: 2, col: 2, colSpan: 1, content: 'content3' },
         ]"
       >
-        <template #content1>Content for 'content1' goes here.</template>
-        <template #content2>Content for 'content2' goes here.</template>
-        <template #content3>Content for 'content3' goes here.</template>
+        <template #content1> Content for 'content1' goes here. </template>
+        <template #content2> Content for 'content2' goes here. </template>
+        <template #content3> Content for 'content3' goes here. </template>
       </GridLayout>
     </div>
 
-    <div class="feather-ks-padding-max"></div>
+    <div class="feather-ks-padding-max" />
     <div class="animation-demo">
       <Expand
         :appear="expandVisible"
@@ -283,8 +264,9 @@ const close = (style: string) => {
           :type="{ style: 'success', icon: true }"
           :closable="true"
           @close="expandVisible = !expandVisible"
-          >This is an EXPAND demo notification.</Notification
         >
+          This is an EXPAND demo notification.
+        </Notification>
       </Expand>
 
       <Fade
@@ -298,8 +280,9 @@ const close = (style: string) => {
           :type="{ style: 'warning', icon: true }"
           :closable="true"
           @close="fadeVisible = !fadeVisible"
-          >This is a FADE demo notification.</Notification
         >
+          This is a FADE demo notification.
+        </Notification>
       </Fade>
       <Push
         :appear="pushVisible"
@@ -312,8 +295,9 @@ const close = (style: string) => {
           :type="{ style: 'error', icon: true }"
           :closable="true"
           @close="pushVisible = !pushVisible"
-          >This is a PUSH demo notification.</Notification
         >
+          This is a PUSH demo notification.
+        </Notification>
       </Push>
 
       <Reveal
@@ -327,8 +311,9 @@ const close = (style: string) => {
           :type="{ style: 'none', icon: true }"
           :closable="true"
           @close="revealVisible = !revealVisible"
-          >This is a REVEAL demo notification.</Notification
         >
+          This is a REVEAL demo notification.
+        </Notification>
       </Reveal>
 
       <Slide
@@ -342,8 +327,9 @@ const close = (style: string) => {
           :type="{ style: 'none', icon: true }"
           :closable="true"
           @close="slideVisible = !slideVisible"
-          >This is a SLIDE demo notification.</Notification
         >
+          This is a SLIDE demo notification.
+        </Notification>
       </Slide>
 
       <Zoom
@@ -357,12 +343,13 @@ const close = (style: string) => {
           :type="{ style: 'info', icon: true }"
           :closable="true"
           @close="zoomVisible = !zoomVisible"
-          >This is a ZOOM demo notification.</Notification
         >
+          This is a ZOOM demo notification.
+        </Notification>
       </Zoom>
     </div>
 
-    <div class="feather-ks-padding-max"></div>
+    <div class="feather-ks-padding-max" />
 
     <Zoom
       :appear="true"
@@ -385,56 +372,45 @@ const close = (style: string) => {
           { row: 3, col: 3, colSpan: 1, content: 'content5' },
         ]"
       >
-        <template #content1
-          >Etiam consectetur felis sed mauris porta, quis convallis neque
-          consectetur. Duis ornare sed sapien non elementum. Phasellus elementum
-          ut quam in maximus. Curabitur porttitor elementum tellus vel pharetra.
-          Sed pulvinar mi augue, vel auctor neque rutrum non. Proin iaculis,
-          quam eget facilisis consectetur, felis lectus tincidunt metus, ut
-          aliquam libero tellus sit amet justo. Etiam mollis erat quis consequat
-          imperdiet. Vestibulum ante ipsum primis in faucibus orci luctus et
-          ultrices posuere cubilia curae; Suspendisse at auctor nulla. Sed ut
-          sollicitudin dolor. Sed tempor nunc a arcu volutpat, ut maximus arcu
-          molestie. Nunc tellus magna, venenatis sed dapibus nec, egestas quis
-          lectus.
+        <template #content1>
+          Etiam consectetur felis sed mauris porta, quis convallis neque consectetur. Duis ornare
+          sed sapien non elementum. Phasellus elementum ut quam in maximus. Curabitur porttitor
+          elementum tellus vel pharetra. Sed pulvinar mi augue, vel auctor neque rutrum non. Proin
+          iaculis, quam eget facilisis consectetur, felis lectus tincidunt metus, ut aliquam libero
+          tellus sit amet justo. Etiam mollis erat quis consequat imperdiet. Vestibulum ante ipsum
+          primis in faucibus orci luctus et ultrices posuere cubilia curae; Suspendisse at auctor
+          nulla. Sed ut sollicitudin dolor. Sed tempor nunc a arcu volutpat, ut maximus arcu
+          molestie. Nunc tellus magna, venenatis sed dapibus nec, egestas quis lectus.
         </template>
-        <template #content2
-          >In hac habitasse platea dictumst. Proin condimentum eget massa non
-          hendrerit. Sed eget lectus blandit, venenatis ex quis, lacinia leo.
-          Morbi pharetra in felis non tincidunt. Duis sit amet eleifend nunc.
-          Cras libero massa, tincidunt a mauris vel, cursus facilisis velit.
-          Morbi accumsan non quam ut ultrices.</template
-        >
-        <template #content3
-          >Pellentesque condimentum, mi nec scelerisque rutrum, diam nunc
-          volutpat ipsum, nec auctor metus magna vitae nisi. Vivamus mattis, sem
-          quis aliquet ultricies, odio risus hendrerit odio, nec condimentum ex
-          massa ornare magna.</template
-        >
-        <template #content4
-          >Sed eget lectus blandit, venenatis ex quis, lacinia leo. Morbi
-          pharetra in felis non tincidunt. Duis sit amet eleifend
-          nunc.</template
-        >
+        <template #content2>
+          In hac habitasse platea dictumst. Proin condimentum eget massa non hendrerit. Sed eget
+          lectus blandit, venenatis ex quis, lacinia leo. Morbi pharetra in felis non tincidunt.
+          Duis sit amet eleifend nunc. Cras libero massa, tincidunt a mauris vel, cursus facilisis
+          velit. Morbi accumsan non quam ut ultrices.
+        </template>
+        <template #content3>
+          Pellentesque condimentum, mi nec scelerisque rutrum, diam nunc volutpat ipsum, nec auctor
+          metus magna vitae nisi. Vivamus mattis, sem quis aliquet ultricies, odio risus hendrerit
+          odio, nec condimentum ex massa ornare magna.
+        </template>
+        <template #content4>
+          Sed eget lectus blandit, venenatis ex quis, lacinia leo. Morbi pharetra in felis non
+          tincidunt. Duis sit amet eleifend nunc.
+        </template>
         <template #imgLeft>
           <div class="image-container">
-            <img
-              src="/vite.svg"
-              alt="Vite"
-              :style="{ height: '8em', width: 'auto' }"
-            />
+            <img src="/vite.svg" alt="Vite" :style="{ height: '8em', width: 'auto' }" />
           </div>
         </template>
-        <template #content5
-          >Nunc quis lectus nunc. Nunc sodales tortor ac nisl dictum, in blandit
-          lorem faucibus. Sed posuere ipsum et ipsum consectetur vestibulum.
-          Aliquam ornare tincidunt leo, eget vehicula turpis vulputate quis.
-          Integer porta hendrerit odio sed euismod.</template
-        >
+        <template #content5>
+          Nunc quis lectus nunc. Nunc sodales tortor ac nisl dictum, in blandit lorem faucibus. Sed
+          posuere ipsum et ipsum consectetur vestibulum. Aliquam ornare tincidunt leo, eget vehicula
+          turpis vulputate quis. Integer porta hendrerit odio sed euismod.
+        </template>
       </GridLayout>
     </Zoom>
 
-    <div class="feather-ks-padding-max"></div>
+    <div class="feather-ks-padding-max" />
 
     <NotificationGroup
       :style="{
@@ -453,46 +429,32 @@ const close = (style: string) => {
           :type="{ style: 'success', icon: true }"
           :closable="true"
           @close="close('success')"
-          >This demo was successfully loaded.</Notification
         >
+          This demo was successfully loaded.
+        </Notification>
       </Fade>
-      <Fade
-        :appear="showError"
-        :transition-enter-duration="3000"
-        :transition-exit-duration="1000"
-      >
+      <Fade :appear="showError" :transition-enter-duration="3000" :transition-exit-duration="1000">
         <Notification
           :type="{ style: 'error', icon: true }"
           :closable="true"
           @close="close('error')"
-          >This is just a demo error.</Notification
         >
+          This is just a demo error.
+        </Notification>
       </Fade>
     </NotificationGroup>
 
     <div class="stepper-demo-wrapper">
       <Button
         type="button"
-        fillMode="solid"
-        themeColor="primary"
+        fill-mode="solid"
+        theme-color="primary"
         rounded="medium"
-        @click="
-          stepperValue < stepperItems.length - 1
-            ? stepperValue++
-            : (stepperValue = 0)
-        "
+        @click="stepperValue < stepperItems.length - 1 ? stepperValue++ : (stepperValue = 0)"
       >
-        {{
-          stepperValue === stepperItems.length - 1
-            ? "Continue Shopping"
-            : "Next Step"
-        }}
+        {{ stepperValue === stepperItems.length - 1 ? "Continue Shopping" : "Next Step" }}
       </Button>
-      <Stepper
-        :value="stepperValue"
-        :items="stepperItems"
-        @change="handleStepperChange"
-      />
+      <Stepper :value="stepperValue" :items="stepperItems" @change="handleStepperChange" />
     </div>
 
     <StackLayout :gap="16" :orientation="'horizontal'">
@@ -501,18 +463,25 @@ const close = (style: string) => {
       <div>Content 3</div>
     </StackLayout>
 
-    <GridLayout
-      :gap="{ rows: 16, cols: 16 }"
-      :rows="rows"
-      :cols="cols"
-      :items="gridItems"
-    >
-      <template #content1><Tip :item="tips[0]"></Tip></template>
-      <template #content2><Tip :item="tips[1]" /></template>
-      <template #content3><Tip :item="tips[2]" /></template>
-      <template #content4><Tip :item="tips[3]" /></template>
-      <template #content5><Tip :item="tips[4]" /></template>
-      <template #content6><Tip :item="tips[5]" /></template>
+    <GridLayout :gap="{ rows: 16, cols: 16 }" :rows="rows" :cols="cols" :items="gridItems">
+      <template #content1>
+        <Tip :item="tips[0]" />
+      </template>
+      <template #content2>
+        <Tip :item="tips[1]" />
+      </template>
+      <template #content3>
+        <Tip :item="tips[2]" />
+      </template>
+      <template #content4>
+        <Tip :item="tips[3]" />
+      </template>
+      <template #content5>
+        <Tip :item="tips[4]" />
+      </template>
+      <template #content6>
+        <Tip :item="tips[5]" />
+      </template>
       <template #imgLeft>
         <div class="image-container">
           <img src="/vite.svg" alt="Vite" />
@@ -525,7 +494,7 @@ const close = (style: string) => {
       </template>
     </GridLayout>
 
-    <div class="feather-k-page-title"></div>
+    <div class="feather-k-page-title" />
 
     <div class="feather-ks-page-title">
       <h2>Page Title</h2>
@@ -538,18 +507,19 @@ const close = (style: string) => {
       class="my-dialog"
       :modal="true"
       @close="toggleDialog"
-      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nisi
-      officiis esse illum animi quo sunt repudiandae asperiores perferendis
-      accusamus distinctio, nemo aliquam cupiditate aliquid. Suscipit sint
-      sapiente optio voluptas?
+    >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum nisi officiis esse illum animi
+      quo sunt repudiandae asperiores perferendis accusamus distinctio, nemo aliquam cupiditate
+      aliquid. Suscipit sint sapiente optio voluptas?
       <DialogActionsBar>
         <Button
           type="button"
-          fillMode="solid"
-          themeColor="primary"
+          fill-mode="solid"
+          theme-color="primary"
           rounded="medium"
           @click="toggleDialog"
-          >Ok
+        >
+          Ok
         </Button>
       </DialogActionsBar>
     </Dialog>
@@ -558,20 +528,21 @@ const close = (style: string) => {
 
     <div class="feather-ks-padding-l">
       <Button
-        @click="toggleDialog"
         type="button"
-        fillMode="outline"
-        themeColor="primary"
+        fill-mode="outline"
+        theme-color="primary"
         rounded="medium"
-        >Dialog
+        @click="toggleDialog"
+      >
+        Dialog
       </Button>
     </div>
 
     <div class="feather-ks-padding-l">
       <ComboBox
-        :dataItems="['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']"
+        :data-items="['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']"
         label="Favorite sport"
-        fillMode="outline"
+        fill-mode="outline"
         rounded="medium"
         size="medium"
       />
@@ -579,7 +550,7 @@ const close = (style: string) => {
         class="patient-search"
         label="Patient Search"
         placeholder="Enter patient name"
-        fillMode="outline"
+        fill-mode="outline"
         rounded="medium"
         size="medium"
       />
@@ -589,69 +560,60 @@ const close = (style: string) => {
         <TextBox
           label="Patient Search"
           placeholder="Search for patient"
-          fillMode="outline"
+          fill-mode="outline"
           rounded="medium"
           size="medium"
         />
 
         <ComboBox
-          :dataItems="['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']"
+          :data-items="['Baseball', 'Basketball', 'Football', 'Golf', 'Tennis']"
           label="Favorite Sport"
-          fillMode="outline"
+          fill-mode="outline"
           rounded="medium"
           size="medium"
         />
       </div>
       <div class="feather-ks-padding-l">
-        <Button
-          type="submit"
-          fillMode="solid"
-          themeColor="primary"
-          rounded="medium"
-        >
+        <Button type="submit" fill-mode="solid" theme-color="primary" rounded="medium">
           Primary
         </Button>
         <Button
-          @click="console.log('clicked')"
           type="button"
-          fillMode="outline"
-          themeColor="primary"
+          fill-mode="outline"
+          theme-color="primary"
           rounded="medium"
-          >Secondary
+          @click="console.log('clicked')"
+        >
+          Secondary
         </Button>
         <Button
-          @click="console.log('clicked')"
           type="button"
-          fillMode="flat"
-          themeColor="primary"
+          fill-mode="flat"
+          theme-color="primary"
           rounded="medium"
-          >Text
+          @click="console.log('clicked')"
+        >
+          Text
         </Button>
       </div>
 
       <div class="feather-ks-padding-l">
-        <Card
-          type="default"
-          orientation="vertical"
-          :style="{ 'max-width': '50em' }"
-        >
+        <Card type="default" orientation="vertical" :style="{ 'max-width': '50em' }">
           <CardHeader>
             <CardTitle>A new Card</CardTitle>
             <CardSubtitle>This is the subtitle.</CardSubtitle>
           </CardHeader>
           <CardBody>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione,
-              dolorem rerum nesciunt quos dolores tempore doloribus placeat,
-              voluptate commodi qui error perferendis quidem reprehenderit
-              aperiam consequatur minima porro voluptatum blanditiis?
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione, dolorem rerum
+              nesciunt quos dolores tempore doloribus placeat, voluptate commodi qui error
+              perferendis quidem reprehenderit aperiam consequatur minima porro voluptatum
+              blanditiis?
             </p>
           </CardBody>
           <CardFooter>Footer</CardFooter>
           <CardActions>
-            <Button themeColor="primary" fillMode="solid" rounded="medium"
-              >Ok
-            </Button>
+            <Button theme-color="primary" fill-mode="solid" rounded="medium"> Ok </Button>
           </CardActions>
         </Card>
       </div>
@@ -659,19 +621,23 @@ const close = (style: string) => {
     <div>
       <div class="feather-ks-padding-l">
         <PanelBar
-          :expandMode="'single'"
+          :expand-mode="'single'"
           :items="[
             { title: 'Item 1', expanded: true, content: 'content-1' },
             { title: 'Item 2', content: 'content-2' },
             { title: 'Item 3', content: 'content-3' },
           ]"
         >
-          <template #content-1><h2>Content 1</h2></template>
-          <template #content-2><h2>Content 2</h2></template>
-          <template #content-3
-            ><h2>Content 3</h2>
-            This is content for Item 3</template
-          >
+          <template #content-1>
+            <h2>Content 1</h2>
+          </template>
+          <template #content-2>
+            <h2>Content 2</h2>
+          </template>
+          <template #content-3>
+            <h2>Content 3</h2>
+            This is content for Item 3
+          </template>
         </PanelBar>
       </div>
     </div>

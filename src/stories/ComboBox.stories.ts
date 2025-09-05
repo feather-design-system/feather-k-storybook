@@ -1,12 +1,7 @@
-import{ Meta, StoryObj } from "@storybook/vue3-vite";
-import{ ComboBox } from "@progress/kendo-vue-dropdowns";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
+import { ComboBox } from "@progress/kendo-vue-dropdowns";
 
-const items = [
-    "Basketball",
-    "Football",
-    "Tennis",
-    "Volleyball",
-];
+const items = ["Basketball", "Football", "Tennis", "Volleyball"];
 
 const meta: Meta<typeof ComboBox> = {
   title: "Feather K/ComboBox",

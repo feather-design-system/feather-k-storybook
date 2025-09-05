@@ -16,6 +16,7 @@
           <template #myTemplate="{ props }">
             <FormInput
               v-bind="props"
+              @input="props.onChange"
               @change="props.onChange"
               @focus="props.onFocus"
               @blur="props.onBlur"
@@ -35,6 +36,7 @@
           <template #myTemplate="{ props }">
             <FormInput
               v-bind="props"
+              @input="props.onChange"
               @change="props.onChange"
               @focus="props.onFocus"
               @blur="props.onBlur"
@@ -55,6 +57,7 @@
           <template #myTemplate="{ props }">
             <FormInput
               v-bind="props"
+              @input="props.onChange"
               @change="props.onChange"
               @focus="props.onFocus"
               @blur="props.onBlur"
@@ -70,11 +73,7 @@
 import { ref } from "vue";
 import { Field, FormElement } from "@progress/kendo-vue-form";
 import FormInput from "../../form/FormInput.vue";
-import {
-  emailValidator,
-  passwordValidator,
-  userNameValidator,
-} from "./validator.ts";
+import { emailValidator, passwordValidator, userNameValidator } from "./validator.ts";
 
 const userNameValidatorRef = ref(userNameValidator);
 const emailValidatorRef = ref(emailValidator);

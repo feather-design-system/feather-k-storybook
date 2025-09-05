@@ -122,15 +122,15 @@ export const CalendarDate: Story = {
     await pause(500);
     await userEvent.click(canvas.getByLabelText("Toggle calendar"));
     await expect(canvas.getByText("March 2020")).toBeInTheDocument();
-    
+
     await pause(500);
     await userEvent.click(canvas.getByText("20"));
     await expect(canvas.getByDisplayValue("03/20/2020")).toBeInTheDocument();
-    
+
     await pause(500);
     await userEvent.click(canvas.getByLabelText("Toggle calendar"));
     await expect(canvas.getByText("March 2020")).toBeInTheDocument();
-    
+
     await pause(500);
     await userEvent.click(canvas.getByText("27"));
     await expect(canvas.getByDisplayValue("03/27/2020")).toBeInTheDocument();

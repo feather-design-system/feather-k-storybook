@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3-vite";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { PanelBar } from "@progress/kendo-vue-layout";
 import { Input } from "@progress/kendo-vue-inputs";
 
@@ -70,11 +70,6 @@ export const Default: Story = {
   },
   render: (args) => ({
     components: { PanelBar, Input },
-    computed: {
-      sliderValue() {
-        return this.value;
-      },
-    },
     data() {
       return {};
     },

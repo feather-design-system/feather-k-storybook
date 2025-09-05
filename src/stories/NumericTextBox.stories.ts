@@ -9,7 +9,8 @@ const meta: Meta<typeof NumericTextBox> = {
   parameters: {
     docs: {
       description: {
-        component: `<p>NumericTextBox is a component that allows the user to input a numeric value.</p>` +
+        component:
+          `<p>NumericTextBox is a component that allows the user to input a numeric value.</p>` +
           `<h3>Links</h3>` +
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/NumericTextBoxProps/" target="_blank">NumericTextBox API</a></li>

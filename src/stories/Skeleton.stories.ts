@@ -43,7 +43,7 @@ export const Default: Story = {
   },
   args: {
     shape: "rectangle",
-    animation: {"type":"wave"},
+    animation: { type: "wave" },
   },
   render: (args) => ({
     components: { Skeleton },

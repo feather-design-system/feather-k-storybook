@@ -11,13 +11,14 @@ const meta: Meta<typeof RangeSlider> = {
   parameters: {
     docs: {
       description: {
-        component: `<h5>RangeSlider is a component that allows the user to select a numeric value from a predefined range.</h5>` +
-        `<h3>Links</h3>` +
-        `<ul>
+        component:
+          `<h5>RangeSlider is a component that allows the user to select a numeric value from a predefined range.</h5>` +
+          `<h3>Links</h3>` +
+          `<ul>
           <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/RangeSliderProps/" target="_blank">RangeSlider API</a></li>
           <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/rangeslider/" target="_blank">RangeSlider Documentation</a></li>
         </ul>` +
-        `<div className="fk-emmet">
+          `<div className="fk-emmet">
           <fieldset>
             <legend>fk-rangeslider</legend>
             <pre>

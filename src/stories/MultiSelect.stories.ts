@@ -120,7 +120,7 @@ export const Default: Story = {
     hint: {
       content: "Choose your favorite sports",
       default: true,
-    }
+    },
   },
   render: (args) => ({
     components: { MultiSelect, Label, Hint },

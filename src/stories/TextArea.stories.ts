@@ -10,7 +10,8 @@ const meta: Meta<typeof TextArea> = {
   parameters: {
     docs: {
       description: {
-        component: `<p>TextArea is a component that allows the user to enter multiple lines of text.</p>` +
+        component:
+          `<p>TextArea is a component that allows the user to enter multiple lines of text.</p>` +
           `<h3>Links</h3>` +
           `<ul>
             <li><a href="https://www.telerik.com/kendo-vue-ui/components/inputs/api/TextAreaProps/" target="_blank">TextArea API</a></li>
@@ -69,7 +70,7 @@ export const Default: Story = {
     methods: {
       handleChange(e: any) {
         this.value = e.value;
-      }
+      },
     },
     setup() {
       return { args };

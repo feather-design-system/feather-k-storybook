@@ -53,11 +53,7 @@ const meta: Meta<typeof SplitButton> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const buttons = [
-  { text: "Schedule for later" },
-  { text: "Save draft" },
-  { text: "Delete" },
-];
+const buttons = [{ text: "Schedule for later" }, { text: "Save draft" }, { text: "Delete" }];
 
 export const Default: Story = {
   argTypes: {

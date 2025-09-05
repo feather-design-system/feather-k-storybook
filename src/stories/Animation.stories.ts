@@ -1,13 +1,5 @@
 import { Meta, StoryObj } from "@storybook/vue3-vite";
-import {
-  Animation,
-  Slide,
-  Push,
-  Expand,
-  Fade,
-  Zoom,
-  Reveal,
-} from "@progress/kendo-vue-animation";
+import { Animation, Slide, Push, Expand, Fade, Zoom, Reveal } from "@progress/kendo-vue-animation";
 
 const meta: Meta<typeof Animation> = {
   title: "Feather K/Animation",

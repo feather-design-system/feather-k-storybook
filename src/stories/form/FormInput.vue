@@ -12,8 +12,8 @@
       </Label>
       <div class="k-form-field-wrap">
         <Input
-          :valid="valid"
           :id="id"
+          :valid="valid"
           :disabled="disabled"
           :placeholder="placeholder"
           :type="type"
@@ -23,10 +23,12 @@
           @blur="handleBlur"
           @focus="handleFocus"
         />
-        <Error v-if="showValidationMessage" :id="errorId">{{
-          validationMessage
-        }}</Error>
-        <Hint v-else :id="hintId">{{ hint }}</Hint>
+        <Error v-if="showValidationMessage" :id="errorId">
+          {{ validationMessage }}
+        </Error>
+        <Hint v-else :id="hintId">
+          {{ hint }}
+        </Hint>
       </div>
     </FieldWrapper>
   </div>
@@ -38,19 +40,25 @@ import { Error, Hint, Label } from "@progress/kendo-vue-labels";
 import { Input } from "@progress/kendo-vue-inputs";
 import { computed } from "vue";
 
-const props = defineProps({
-  optional: Boolean,
-  disabled: Boolean,
-  placeholder: String,
-  touched: Boolean,
-  label: String,
-  validationMessage: String,
-  hint: String,
-  id: { type: String, required: true },
-  valid: Boolean,
-  value: {type: String, default: ""},
-  type: { type: String, default: "text" },
-});
+const props = withDefaults(
+  defineProps<{
+    optional?: boolean;
+    disabled?: boolean;
+    placeholder?: string;
+    touched?: boolean;
+    label?: string;
+    validationMessage?: string;
+    hint?: string;
+    id: string;
+    valid?: boolean;
+    value?: string;
+    type?: string;
+  }>(),
+  {
+    value: "",
+    type: "text",
+  }
+);
 
 const emit = defineEmits(["input", "change", "focus", "blur"]);
 
