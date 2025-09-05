@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { Loader } from "@progress/kendo-vue-indicators";
 
 const meta: Meta<typeof Loader> = {

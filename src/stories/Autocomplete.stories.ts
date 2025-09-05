@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/vue3";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { AutoComplete } from "@progress/kendo-vue-dropdowns";
 import { FilterOperator, filterBy } from "@progress/kendo-data-query";
 

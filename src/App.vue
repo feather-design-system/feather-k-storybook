@@ -43,10 +43,11 @@ import {
 } from "@progress/kendo-svg-icons";
 
 import Tip from "./components/Tip.vue";
-import "./assets/css/featherk-q1-2025.css";
+import "./assets/css/featherk-q3-2024-v1.css";
+// import "./assets/css/featherk-q1-2025.css";
 // import "./assets/css/feather-ks.css";
 // import "./assets/css/feather-ks-v18-migration-test.css"
-// import "./assets/css/feather-k-override.css";
+import "./assets/css/feather-k-override.css";
 
 let drawerIsVisible = ref(false);
 // let drawerWidth = ref(300);

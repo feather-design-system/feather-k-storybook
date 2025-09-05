@@ -1,5 +1,5 @@
 import { provide, reactive, ref } from "vue";
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { Stepper } from "@progress/kendo-vue-layout";
 import { Form } from "@progress/kendo-vue-form";
 import { Button } from "@progress/kendo-vue-buttons";

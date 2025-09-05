@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { Drawer, DrawerContent, DrawerItem } from "@progress/kendo-vue-layout";
 import { Button } from "@progress/kendo-vue-buttons";
 import { Window } from "@progress/kendo-vue-dialogs";

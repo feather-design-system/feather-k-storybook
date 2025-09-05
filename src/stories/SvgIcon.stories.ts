@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { SvgIcon } from "@progress/kendo-vue-common";
 import { calendarIcon, globeIcon, mapMarkerIcon, pinIcon } from "@progress/kendo-svg-icons";
 

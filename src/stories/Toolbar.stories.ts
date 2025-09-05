@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { Toolbar, Button, ButtonGroup } from "@progress/kendo-vue-buttons";
 
 import { boldIcon, italicIcon, underlineIcon } from "@progress/kendo-svg-icons";

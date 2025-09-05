@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { MaskedTextBox } from "@progress/kendo-vue-inputs";
 
 const meta: Meta<typeof MaskedTextBox> = {

@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { DatePicker } from "@progress/kendo-vue-dateinputs";
-import { expect, userEvent, within } from "@storybook/test";
+import { expect, userEvent, within } from "storybook/test";
 import pause from "./utils/pause";
 
 const meta: Meta<typeof DatePicker> = {

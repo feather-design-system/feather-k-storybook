@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { PanelBar } from "@progress/kendo-vue-layout";
 import { Input } from "@progress/kendo-vue-inputs";
 
