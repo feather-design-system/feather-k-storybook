@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-
 type TipItem = {
   tip?: number;
   title?: string;

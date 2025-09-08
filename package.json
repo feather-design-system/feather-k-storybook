@@ -15,8 +15,8 @@
     "storybook:build": "storybook build",
     "lint": "eslint src src/stories --ext .js,.ts,.vue --max-warnings=0",
     "lint:fix": "eslint src src/stories --ext .js,.ts,.vue --fix",
-  "format": "prettier --write \"src/**/*.{js,ts,vue,json,md}\"",
-  "format:check": "prettier --check \"src/**/*.{js,ts,vue,json,md}\"",
+    "format": "prettier --write \"src/**/*.{js,ts,vue,json,md}\"",
+    "format:check": "prettier --check \"src/**/*.{js,ts,vue,json,md}\"",
     "chromatic": "npx chromatic --build-script-name=storybook:build --exit-zero-on-changes --project-token=chpt_42cf1166636e71c"
   },
   "dependencies": {
@@ -38,6 +38,7 @@
     "@progress/kendo-vue-listview": "^6.4.1",
     "@progress/kendo-vue-notification": "^6.4.1",
     "@progress/kendo-vue-popup": "^6.4.1",
+    "@storybook/addon-docs": "^9.1.4",
     "vue": "^3.5.18"
   },
   "devDependencies": {
