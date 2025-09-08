@@ -68,10 +68,7 @@
 
 import { ref, nextTick, onMounted, onBeforeUnmount, type Ref } from "vue";
 import type { SortDescriptor } from "@progress/kendo-data-query";
-import type {
-  GridColumnProps,
-  GridSortChangeEvent,
-} from "@progress/kendo-vue-grid";
+import type { GridColumnProps, GridSortChangeEvent } from "@progress/kendo-vue-grid";
 
 export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
   // Reference to the active filter button for focus management
@@ -151,17 +148,13 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
         if (focusableElements.length === 0) return;
 
         // Find the currently focused element
-        const focusedIndex = focusableElements.findIndex(
-          (el) => el === document.activeElement
-        );
+        const focusedIndex = focusableElements.findIndex((el) => el === document.activeElement);
         // Determine next (Tab) or previous (Shift+Tab)
         let targetIndex: number;
         if (focusedIndex === -1) {
           targetIndex = 0;
         } else if (event.shiftKey) {
-          targetIndex =
-            (focusedIndex - 1 + focusableElements.length) %
-            focusableElements.length;
+          targetIndex = (focusedIndex - 1 + focusableElements.length) % focusableElements.length;
         } else {
           targetIndex = (focusedIndex + 1) % focusableElements.length;
         }
@@ -179,17 +172,13 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
         event.stopPropagation();
 
         // Find the currently focused item
-        const focusedIndex = menuItems.findIndex(
-          (item) => item === document.activeElement
-        );
+        const focusedIndex = menuItems.findIndex((item) => item === document.activeElement);
 
         let targetIndex = focusedIndex;
         if (event.code === "ArrowUp") {
-          targetIndex =
-            focusedIndex > 0 ? focusedIndex - 1 : menuItems.length - 1;
+          targetIndex = focusedIndex > 0 ? focusedIndex - 1 : menuItems.length - 1;
         } else if (event.code === "ArrowDown") {
-          targetIndex =
-            focusedIndex < menuItems.length - 1 ? focusedIndex + 1 : 0;
+          targetIndex = focusedIndex < menuItems.length - 1 ? focusedIndex + 1 : 0;
         }
 
         // Focus the target item
@@ -203,9 +192,7 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
       event.stopPropagation();
 
       if (event.shiftKey) {
-        (
-          activeFilterButton.value?.previousElementSibling as HTMLElement
-        ).focus();
+        (activeFilterButton.value?.previousElementSibling as HTMLElement).focus();
       } else {
         (activeFilterButton.value?.nextElementSibling as HTMLElement).focus();
       }
@@ -229,13 +216,9 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
                 if (!sortable) {
                   // Remove sort menu items if column is not sortable
                   nextTick(() => {
-                    const wrappers = element.querySelectorAll(
-                      ".k-columnmenu-item-wrapper"
-                    );
+                    const wrappers = element.querySelectorAll(".k-columnmenu-item-wrapper");
                     wrappers.forEach((wrapper) => {
-                      const sortMenu = wrapper.textContent
-                        ?.toLowerCase()
-                        .includes("sort");
+                      const sortMenu = wrapper.textContent?.toLowerCase().includes("sort");
                       if (sortMenu) {
                         wrapper.remove();
                       }
@@ -244,10 +227,7 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
                 }
               }
               // Attach keyboard listener for the filter menu
-              element.addEventListener(
-                "keydown",
-                handleFilterMenuKeyboardListener
-              );
+              element.addEventListener("keydown", handleFilterMenuKeyboardListener);
               // Auto-focus and open click the menuitem
               // if there is only one menu item (the filter sub-menu)
               // (This will work for any scenario where there is only one menuitem)
@@ -281,9 +261,7 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
             }
 
             // Also check if any child elements are .k-animation-container
-            const animationContainers = element.querySelectorAll(
-              ".k-animation-container"
-            );
+            const animationContainers = element.querySelectorAll(".k-animation-container");
             animationContainers.forEach((container) => {
               (container as HTMLElement).addEventListener(
                 "keydown",
@@ -299,15 +277,10 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
             const element = node as HTMLElement;
 
             if (element.classList.contains("k-animation-container")) {
-              element.removeEventListener(
-                "keydown",
-                handleFilterMenuKeyboardListener
-              );
+              element.removeEventListener("keydown", handleFilterMenuKeyboardListener);
             }
 
-            const animationContainers = element.querySelectorAll(
-              ".k-animation-container"
-            );
+            const animationContainers = element.querySelectorAll(".k-animation-container");
             animationContainers.forEach((container) => {
               (container as HTMLElement).removeEventListener(
                 "keydown",
@@ -390,7 +363,9 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
   const setupTrNavigation = () => {
     try {
       // Set initial tabindex and role for "data" rows (exclude header)
-      const rows = Array.from(gridRef.value.$el.querySelectorAll(".k-table-row[data-grid-row-index]") as HTMLElement[]);
+      const rows = Array.from(
+        gridRef.value.$el.querySelectorAll(".k-table-row[data-grid-row-index]") as HTMLElement[]
+      );
       rows.forEach((row, index) => {
         row.setAttribute("tabindex", index === 0 ? "0" : "-1");
       });
@@ -404,17 +379,13 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
   // This is done after the component is mounted to ensure the DOM is ready
   const setupFilterButtonAccessibility = () => {
     nextTick(() => {
-      const filterSelector =
-        ".k-grid-header .k-grid-header-menu.k-grid-column-menu";
+      const filterSelector = ".k-grid-header .k-grid-header-menu.k-grid-column-menu";
       const filterButtons = document.querySelectorAll(filterSelector);
       if (filterButtons) {
         filterButtons.forEach((el) => {
           // el.setAttribute("tabindex", "0");
           el.setAttribute("role", "button");
-          (el as HTMLElement).addEventListener(
-            "keydown",
-            handleFilterButtonKeyboardListener
-          );
+          (el as HTMLElement).addEventListener("keydown", handleFilterButtonKeyboardListener);
         });
       }
 
@@ -429,15 +400,11 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
   // NOTE: Remove the keyboard listener from filter buttons
   // This is to prevent memory leaks and ensure clean-up when the component is destroyed
   const cleanupFilterButtonAccessibility = () => {
-    const filterSelector =
-      ".k-grid-header .k-grid-header-menu.k-grid-column-menu";
+    const filterSelector = ".k-grid-header .k-grid-header-menu.k-grid-column-menu";
     const filterButtons = document.querySelectorAll(filterSelector);
     if (filterButtons) {
       filterButtons.forEach((el) => {
-        (el as HTMLElement).removeEventListener(
-          "keydown",
-          handleFilterButtonKeyboardListener
-        );
+        (el as HTMLElement).removeEventListener("keydown", handleFilterButtonKeyboardListener);
       });
     }
 
@@ -454,14 +421,10 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
 
   // NOTE: Setup header <th> elements to trigger the hidden filter button
   const setupHeaderThTriggers = () => {
-    const headerCells = document.querySelectorAll(
-      ".k-grid-header .k-table-thead th"
-    );
+    const headerCells = document.querySelectorAll(".k-grid-header .k-table-thead th");
 
     headerCells.forEach((th, index) => {
-      const btn = th.querySelector(
-        ".k-grid-header-menu.k-grid-column-menu"
-      ) as HTMLElement | null;
+      const btn = th.querySelector(".k-grid-header-menu.k-grid-column-menu") as HTMLElement | null;
       if (!btn) return;
 
       const columns = getColumns();
@@ -490,8 +453,7 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
         }
       }
 
-      const filterable =
-        (th as HTMLElement).dataset.featherKFilterable !== "false";
+      const filterable = (th as HTMLElement).dataset.featherKFilterable !== "false";
       const sortable = (th as HTMLElement).dataset.featherKSortable !== "false";
 
       // Visually hide button but keep in DOM for Kendo anchoring
@@ -557,10 +519,7 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
       });
 
       const keyHandler = (e: KeyboardEvent) => {
-        if (
-          (e.code === "Enter" || e.code === "Space") &&
-          (filterable || sortable)
-        ) {
+        if ((e.code === "Enter" || e.code === "Space") && (filterable || sortable)) {
           activeFilterButton.value = th as HTMLElement;
           activeFilterButton.value.focus();
           if (filterable) {
@@ -607,11 +566,7 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
         true // NOTE: capture phase
       );
       headerThTeardownCallbacks.push(() => {
-        (thead as HTMLElement).removeEventListener(
-          "keydown",
-          theadKeyboardHandler,
-          true
-        );
+        (thead as HTMLElement).removeEventListener("keydown", theadKeyboardHandler, true);
       });
     }
   };
@@ -622,10 +577,7 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
   //  - when the user clicks a column header to open its menu and
   //  - when a menu item is selected to apply sorting
   // TODO: May need to handle sortable only or filterable only action here as well
-  const handleSortChange = function (
-    event: GridSortChangeEvent,
-    customHandler?: any
-  ) {
+  const handleSortChange = function (event: GridSortChangeEvent, customHandler?: any) {
     const srcEl = event.event.event.srcElement as HTMLElement;
     const columns = getColumns();
     if (!srcEl || !columns) return;
@@ -634,8 +586,7 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
     const menuItemSelected = srcEl.classList.contains("k-columnmenu-item");
 
     // const isPointerEvent = event.event.event instanceof PointerEvent;
-    const fieldIsSortable =
-      columns.find((c) => c.field === event.event.field)?.sortable && true;
+    const fieldIsSortable = columns.find((c) => c.field === event.event.field)?.sortable && true;
 
     // NOTE: Opening the menu should not trigger sorting
     if (menuOpened) return;
@@ -643,9 +594,7 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
     if (menuItemSelected && !fieldIsSortable) {
       // NOTE: Remove sort for current field when clicking the menu item if current field is not sortable
       const sortDescriptor = event.event.sort && undefined;
-      sortDescriptor?.filter(
-        (s: SortDescriptor) => s.field !== event.event.field
-      );
+      sortDescriptor?.filter((s: SortDescriptor) => s.field !== event.event.field);
       // NOTE: Non sortable field, so remove sortDescriptor; do not trigger sort; do not call customHandler
       return;
     }
