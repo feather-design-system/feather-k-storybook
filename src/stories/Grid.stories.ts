@@ -1,6 +1,10 @@
 import { ArgTypes, Args, Meta, StoryObj } from "@storybook/vue3-vite";
+import { ref } from "vue";
 import { Grid } from "@progress/kendo-vue-grid";
-import { filterBy, orderBy } from "@progress/kendo-data-query";
+import { filterBy } from "@progress/kendo-data-query";
+
+import { process } from "@progress/kendo-data-query";
+import { useGridKeyboardNavigation } from "../composables/grid-keyboard-navigation";
 
 const providers = [
   {
@@ -48,7 +52,7 @@ const providers = [
 ];
 
 const columns = [
-  { field: "npi", title: "NPI", width: 100, sortable: true },
+  { field: "npi", title: "NPI", width: 100, sortable: true, filterable: false },
   {
     field: "name",
     title: "Name",
@@ -56,12 +60,12 @@ const columns = [
     sortable: true,
     filterable: true,
   },
-  { field: "specialty", title: "Specialty", width: 100, filterable: true },
+  { field: "specialty", title: "Specialty", width: 100, sortable: false, filterable: true },
   {
     field: "location",
     title: "Location",
     width: 150,
-    sortable: true,
+    sortable: false,
     filterable: true,
   },
   {
@@ -69,7 +73,7 @@ const columns = [
     title: "New Patients?",
     width: 135,
     sortable: true,
-    filterable: true,
+    filterable: false,
   },
 ];
 
@@ -136,7 +140,7 @@ const ArgsDefault: Args = {
   sortable: true,
 };
 
-export const Default: Story = {
+export const BasicGrid: Story = {
   argTypes: {
     ...ArgTypesDefault,
     dataItems: { control: "object" },
@@ -151,42 +155,74 @@ export const Default: Story = {
     data() {
       return {
         providers,
-        columns: args.columns,
+        // local copy so headerClassName can be mutated per-story
+        localColumns: (args.columns || columns).map((c: any) => ({ ...c })),
         sort: [{ field: "npi", dir: "asc" }],
+        filter: undefined,
       };
     },
     computed: {
-      sortedResult() {
-        return orderBy(providers, this.sort);
+      processedItems() {
+        const state = {
+          sort: this.sort,
+          filter: this.filter,
+        };
+        const result = process(this.providers, state as any) as any;
+        if (result && result.data) return result.data;
+        const arr = Array.isArray(result) ? result : this.providers.slice();
+        return arr;
+      },
+      columns() {
+        return this.localColumns;
       },
     },
     methods: {
       columnReorder(options: any) {
-        this.columns = options.columns;
+        this.localColumns = options.columns;
       },
       sortChangeHandler(e: any) {
         this.sort = e.sort;
+      },
+      filterChange(e: any) {
+        this.filter = e.filter;
+
+        // collect filtered fields and set headerClassName 'active'
+        const fields = new Set<string>();
+        const collect = (f: any) => {
+          if (!f) return;
+          if (Array.isArray(f.filters)) {
+            f.filters.forEach((ff: any) => collect(ff));
+          } else if (f.field) {
+            fields.add(String(f.field));
+          }
+        };
+        collect(this.filter);
+
+        this.localColumns = this.localColumns.map((col: any) => {
+          const has = col.field && fields.has(col.field);
+          return { ...col, headerClassName: has ? "active" : "" };
+        });
       },
     },
     setup() {
       return { args };
     },
     template: `
-      <div>
       <Grid
         ref="grid"
-        :dataItems="sortedResult"
+        :dataItems="processedItems"
+        :filter="filter"
+        @filterchange="filterChange"
         :column-menu="true"
         :columns="columns"
-          :resizable="args.resizable"
-          :reorderable="args.reorderable"
-          @columnreorder="columnReorder"
-          :sortable="args.sortable"
-          :sort="sort"
-          @sortchange="sortChangeHandler"
-          >
+        :resizable="args.resizable"
+        :reorderable="args.reorderable"
+        @columnreorder="columnReorder"
+        :sortable="args.sortable"
+        :sort="sort"
+        @sortchange="sortChangeHandler"
+        >
         </Grid>
-      </div>
     `,
   }),
 };
@@ -260,6 +296,119 @@ export const ColumnFiltering: Story = {
         :filter="filter"
         @filterchange="filterChange"
         :columns="columns"
+      >
+      </Grid>
+    </div>
+    `,
+  }),
+};
+
+export const RowNavigation: Story = {
+  argTypes: {
+    ...BasicGrid.argTypes,
+  },
+  args: {
+    ...BasicGrid.args,
+  },
+  render: (args) => ({
+    components: { Grid },
+    setup() {
+      // create a ref for the Grid component instance and wire the keyboard navigation composable
+      const refGridNav = ref(null);
+      const { handleGridKeyDown, handleSortChange } = useGridKeyboardNavigation(refGridNav);
+      return { args, refGridNav, handleGridKeyDown, handleSortChange };
+    },
+    data() {
+      return {
+        selectedKey: null,
+        take: 10,
+        skip: 0,
+        sort: [{ field: "npi", dir: "asc" }],
+        filter: undefined,
+        total: 0,
+        // make a local copy of columns so we can mutate headerClassName per-instance
+        localColumns: columns.map((c) => ({ ...c })),
+      };
+    },
+    computed: {
+      providers() {
+        return providers;
+      },
+      columns() {
+        return this.localColumns;
+      },
+      processedItems() {
+        // Use Kendo process to apply filter, sort and paging
+        const state = {
+          take: this.take,
+          skip: this.skip,
+          sort: this.sort,
+          filter: this.filter,
+        };
+        const result = process(this.providers, state as any) as any;
+        // process returns { data, total }
+        if (result && result.data) {
+          this.total = typeof result.total === "number" ? result.total : result.data.length;
+          return result.data;
+        }
+        // fallback
+        const arr = Array.isArray(result) ? result : this.providers.slice();
+        this.total = arr.length;
+        return arr.slice(this.skip, this.skip + this.take);
+      },
+    },
+    methods: {
+      rowClick(e: any) {
+        this.selectedKey = e.dataItem.npi;
+      },
+      filterChange(e: any) {
+        // update local filter state so processedItems applies the filter
+        this.filter = e.filter;
+        // reset paging when filter changes
+        this.skip = 0;
+
+        // Determine which fields are filtered (CompositeFilterDescriptor can be nested)
+        const fields = new Set<string>();
+        const collect = (f: any) => {
+          if (!f) return;
+          if (Array.isArray(f.filters)) {
+            f.filters.forEach((ff: any) => collect(ff));
+          } else if (f.field) {
+            fields.add(String(f.field));
+          }
+        };
+        collect(this.filter);
+
+        // Apply headerClassName 'active' to columns that have an active filter
+        this.localColumns = this.localColumns.map((col: any) => {
+          const has = col.field && fields.has(col.field);
+          return { ...col, headerClassName: has ? "active" : "" };
+        });
+      },
+      sortChangeHandler(e: any) {
+        // update local sort state when composable forwards legitimate sort changes
+        this.sort = e.sort;
+        // reset paging when sort changes
+        this.skip = 0;
+      },
+    },
+    mounted() {},
+    unmounted() {},
+    template: `
+    <div @keydown="handleGridKeyDown" tabindex="0">
+      <Grid
+        ref="refGridNav"
+  :dataItems="processedItems"
+  :filter="filter"
+  @filterchange="filterChange"
+        :column-menu="true"
+        :columns="columns"
+        :sort="sort"
+        :sortable="args.sortable"
+        :navigatable="false"
+        @sortchange="(e) => handleSortChange ? handleSortChange(e, sortChangeHandler) : sortChangeHandler(e)"
+        @keydown="handleGridKeyDown"
+        @rowclick="rowClick"
       >
       </Grid>
     </div>
