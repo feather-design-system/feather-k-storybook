@@ -1,9 +1,7 @@
 import { ArgTypes, Args, Meta, StoryObj } from "@storybook/vue3-vite";
 import { ref, computed } from "vue";
-import { Grid, GridColumnProps } from "@progress/kendo-vue-grid";
-import { filterBy } from "@progress/kendo-data-query";
-
-import { process } from "@progress/kendo-data-query";
+import { Grid, GridColumnProps, filterGroupByField } from "@progress/kendo-vue-grid";
+import { filterBy, process } from "@progress/kendo-data-query";
 import { useGridKeyboardNavigation } from "../composables/grid-keyboard-navigation";
 
 const providers = [
@@ -157,9 +155,24 @@ export const BasicGrid: Story = {
       // const localColumns = ref((args.columns || columns).map((c: any) => ({ ...c })));
       const localColumns = ref(columns.map((c) => ({ ...c })));
       const sort = ref([{ field: "npi", dir: "asc" }]);
-      const filter = ref<any>(undefined);
+      // start with open === true filter
+      const filter = ref<any>({
+        logic: "and",
+        filters: [
+          {
+            filters: [{ field: "open", operator: "eq", value: false }],
+            logic: "and",
+          },
+        ],
+      });
 
       const columnsRef = computed(() => localColumns.value);
+
+      // initialize headerClassName 'active' for any columns with an active filter
+      localColumns.value = localColumns.value.map((col: any) => {
+        const has = col.field && !!filterGroupByField(col.field, filter.value);
+        return { ...col, headerClassName: has ? "active" : "" };
+      });
 
       const processedItems = computed(() => {
         const state = {
@@ -179,20 +192,9 @@ export const BasicGrid: Story = {
       const filterChange = (e: any) => {
         filter.value = e.filter;
 
-        // collect filtered fields and set headerClassName 'active'
-        const fields = new Set<string>();
-        const collect = (f: any) => {
-          if (!f) return;
-          if (Array.isArray(f.filters)) {
-            f.filters.forEach((ff: any) => collect(ff));
-          } else if (f.field) {
-            fields.add(String(f.field));
-          }
-        };
-        collect(filter.value);
-
+        // Use filterGroupByField(field, filter) exported by kendo-vue-grid to detect per-field filters
         localColumns.value = localColumns.value.map((col: any) => {
-          const has = col.field && fields.has(col.field);
+          const has = col.field && !!filterGroupByField(col.field, filter.value);
           return { ...col, headerClassName: has ? "active" : "" };
         });
       };
@@ -304,7 +306,16 @@ export const RowNavigation: Story = {
       const take = ref(10);
       const skip = ref(0);
       const sort = ref([{ field: "npi", dir: "asc" }]);
-      const filter = ref<any>(undefined);
+      // start with open === true filter
+      const filter = ref<any>({
+        logic: "and",
+        filters: [
+          {
+            filters: [{ field: "open", operator: "eq", value: true }],
+            logic: "and",
+          },
+        ],
+      });
       const total = ref(0);
       const localColumns = ref(columns.map((c) => ({ ...c })));
 
@@ -312,6 +323,12 @@ export const RowNavigation: Story = {
 
       const providersRef = computed(() => providers);
       const columnsRef = computed(() => localColumns.value);
+
+      // initialize headerClassName 'active' for any columns with an active filter
+      localColumns.value = localColumns.value.map((col: any) => {
+        const has = col.field && !!filterGroupByField(col.field, filter.value);
+        return { ...col, headerClassName: has ? "active" : "" };
+      });
 
       const processedItems = computed(() => {
         const state = {
@@ -338,21 +355,9 @@ export const RowNavigation: Story = {
         filter.value = e.filter;
         skip.value = 0;
 
-        // Determine which fields are filtered (CompositeFilterDescriptor can be nested)
-        const fields = new Set<string>();
-        const collect = (f: any) => {
-          if (!f) return;
-          if (Array.isArray(f.filters)) {
-            f.filters.forEach((ff: any) => collect(ff));
-          } else if (f.field) {
-            fields.add(String(f.field));
-          }
-        };
-        collect(filter.value);
-
-        // Apply headerClassName 'active' to columns that have an active filter
+        // Use filterGroupByField(field, filter) exported by kendo-vue-grid to detect per-field filters
         localColumns.value = localColumns.value.map((col: any) => {
-          const has = col.field && fields.has(col.field);
+          const has = col.field && !!filterGroupByField(col.field, filter.value);
           return { ...col, headerClassName: has ? "active" : "" };
         });
       };
