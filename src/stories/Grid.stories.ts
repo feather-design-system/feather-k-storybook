@@ -108,6 +108,7 @@ const meta: Meta<typeof Grid> = {
                     { field: 'smoker', title: 'Smoker', width: '100px' },
                     { field: 'city', title: 'City', width: '200px' },
                   ]"
+                  :column-menu="true"
                   :resizable="true"
                   :reorderable="true"
                   :sortable="true"
