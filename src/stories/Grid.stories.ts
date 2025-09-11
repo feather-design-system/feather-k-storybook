@@ -153,7 +153,6 @@ export const BasicGrid: Story = {
     components: { Grid },
     setup() {
       const providersRef = computed(() => providers);
-      // const localColumns = ref((args.columns || columns).map((c: any) => ({ ...c })));
       const localColumns = ref(columns.map((c) => ({ ...c })));
       const sort = ref([{ field: "npi", dir: "asc" }]);
       // start with open === true filter
