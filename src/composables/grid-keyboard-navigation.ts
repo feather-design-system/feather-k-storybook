@@ -443,12 +443,10 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
           "data-feather-k-sortable",
           columns[index].sortable === false ? "false" : "true"
         );
-
       }
 
       const filterable = (th as HTMLElement).dataset.featherKFilterable !== "false";
       const sortable = (th as HTMLElement).dataset.featherKSortable !== "false";
-
 
       btn.setAttribute("tabindex", "-1");
 
