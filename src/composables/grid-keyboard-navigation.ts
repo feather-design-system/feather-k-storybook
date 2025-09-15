@@ -444,32 +444,13 @@ export const useGridKeyboardNavigation = (gridRef: Ref<any>) => {
           columns[index].sortable === false ? "false" : "true"
         );
 
-        // NOTE:  Find descendent .k-link and set pointer-events: none
-        // (Clicking on .k-link should not trigger the sort)
-        // THEMEBUILDER:  This is only appropriate when using this composable; so DOES NOT belong on THEMEBUILDER
-        const link = th.querySelector(".k-link") as HTMLElement;
-        if (link) {
-          link.style.pointerEvents = "none";
-        }
       }
 
       const filterable = (th as HTMLElement).dataset.featherKFilterable !== "false";
       const sortable = (th as HTMLElement).dataset.featherKSortable !== "false";
 
-      // Visually hide button but keep in DOM for Kendo anchoring
-      // NOTE:  THIS WILL NEED TO BE SETUP IN THEMEBUILDER
-      btn.style.position = "absolute";
-      btn.style.top = "0";
-      btn.style.right = "0";
-      btn.style.width = "100%";
-      btn.style.opacity = "0";
-      btn.style.pointerEvents = "none";
-      btn.style.zIndex = "-1";
-      btn.style.overflow = "hidden";
-      // NOTE: End Themebuilder
 
       btn.setAttribute("tabindex", "-1");
-      // Don't set aria-hidden here; screen readers must not be blocked from a focused element
 
       // Make TH focusable & interactive
       if (filterable) {
