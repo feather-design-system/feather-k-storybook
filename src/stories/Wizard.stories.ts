@@ -1,4 +1,4 @@
-import { provide, reactive, ref } from "vue";
+import { provide, ref, computed } from "vue";
 import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { Stepper } from "@progress/kendo-vue-layout";
 import { Form } from "@progress/kendo-vue-form";
@@ -79,7 +79,8 @@ export const Default: Story = {
     components: { Stepper, Button, Form, LoginInfo, Register, UserInfo },
     setup() {
       const step = ref(args.value);
-      const steps = reactive(args.items ?? []);
+      // treat incoming args.items as the source of truth (computed from args)
+      const steps = computed(() => args.items ?? []);
 
       const registered = ref(false);
       provide("registered", registered);
@@ -90,14 +91,15 @@ export const Default: Story = {
 
       const handleStepperChange = (delta: 1 | -1) => {
         const current = step.value ?? 0;
-        if (current === steps.length - 1 && delta === 1) {
+        const total = steps.value ? steps.value.length : 0;
+        if (current === total - 1 && delta === 1) {
           registered.value = true;
           return;
         }
         if (current === 0 && delta === -1) {
           return;
         }
-        if (current < steps.length) {
+        if (current < total) {
           step.value = current + delta;
         }
       };

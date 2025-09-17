@@ -2,7 +2,7 @@ import { ArgTypes, Args, Meta, StoryObj } from "@storybook/vue3-vite";
 import { ref, computed } from "vue";
 import { Grid, GridColumnProps, filterGroupByField } from "@progress/kendo-vue-grid";
 import { filterBy, process } from "@progress/kendo-data-query";
-import { useGridKeyboardNavigation } from "../composables/grid-keyboard-navigation";
+import { useGridAccessibility } from "../composables/useGridAccessibility";
 
 const providers = [
   {
@@ -319,7 +319,7 @@ export const RowNavigation: Story = {
       const total = ref(0);
       const localColumns = ref(columns.map((c) => ({ ...c })));
 
-      const { handleGridKeyDown, handleSortChange } = useGridKeyboardNavigation(refGridNav);
+      const { handleGridKeyDown, handleSortChange } = useGridAccessibility(refGridNav);
 
       const providersRef = computed(() => providers);
       const columnsRef = computed(() => localColumns.value);
