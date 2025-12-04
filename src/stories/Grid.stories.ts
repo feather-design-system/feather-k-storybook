@@ -2,7 +2,7 @@ import { ArgTypes, Args, Meta, StoryObj } from "@storybook/vue3-vite";
 import { ref, computed } from "vue";
 import { Grid, GridColumnProps, filterGroupByField } from "@progress/kendo-vue-grid";
 import { filterBy, process } from "@progress/kendo-data-query";
-import { useGridAccessibility } from "../composables/useGridAccessibility";
+import { useGridA11y } from "@featherk/composables";
 
 const providers = [
   {
@@ -297,6 +297,45 @@ export const RowNavigation: Story = {
   },
   args: {
     ...BasicGrid.args,
+
+    columns: [
+      {
+        field: "npi",
+        title: "NPI",
+        width: 110,
+        sortable: true,
+        filterable: false,
+      },
+      {
+        field: "name",
+        title: "Name",
+        width: 150,
+        sortable: true,
+        filterable: true,
+      },
+      {
+        field: "specialty",
+        title: "Specialty",
+        width: 150,
+        sortable: false,
+        filterable: false,
+      },
+      {
+        field: "location",
+        title: "Location",
+        width: 150,
+        sortable: false,
+        filterable: true,
+      },
+      {
+        field: "open",
+        title: "Accepting New Patients?",
+        width: 200,
+        filter: "boolean",
+        sortable: true,
+        filterable: true,
+      },
+    ],
   },
   render: (args) => ({
     components: { Grid },
@@ -310,16 +349,16 @@ export const RowNavigation: Story = {
       const filter = ref<any>({
         logic: "and",
         filters: [
-          {
-            filters: [{ field: "open", operator: "eq", value: true }],
-            logic: "and",
-          },
+          // {
+          //   filters: [{ field: "open", operator: "eq", value: true }],
+          //   logic: "and",
+          // },
         ],
       });
       const total = ref(0);
       const localColumns = ref(columns.map((c) => ({ ...c })));
 
-      const { handleGridKeyDown, handleSortChange } = useGridAccessibility(refGridNav);
+      const { handleGridKeyDown, handleSortChange, initA11y } = useGridA11y(refGridNav);
 
       const providersRef = computed(() => providers);
       const columnsRef = computed(() => localColumns.value);
@@ -366,6 +405,8 @@ export const RowNavigation: Story = {
         sort.value = e.sort;
         skip.value = 0;
       };
+
+      initA11y();
 
       return {
         args,
