@@ -1,5 +1,5 @@
 // ESLint flat config for Vue 3 + TypeScript + Storybook
-const path = require("path");
+// const path = require("path");
 
 // Patterns taken from .eslintignore
 const ignorePatterns = [
@@ -43,7 +43,8 @@ module.exports = [
       // Base rules
       "no-console": ["warn", { allow: ["warn", "error"] }],
       // Run Prettier as an ESLint rule and report formatting issues as errors
-      "prettier/prettier": ["error"],
+      // Allow platform-specific line endings to avoid CRLF/LF noise on Windows
+      "prettier/prettier": ["error", { endOfLine: "auto" }],
       // Vue style
       "vue/html-indent": ["error", 2],
       // TypeScript
