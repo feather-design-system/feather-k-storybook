@@ -20,7 +20,7 @@
     "chromatic": "npx chromatic --build-script-name=storybook:build --exit-zero-on-changes --project-token=chpt_42cf1166636e71c"
   },
   "dependencies": {
-    "@featherk/composables": "^0.4.9",
+    "@featherk/composables": "^0.4.10",
     "@progress/kendo-data-query": "^1.7.1",
     "@progress/kendo-licensing": "^1.6.0",
     "@progress/kendo-svg-icons": "^4.5.0",
